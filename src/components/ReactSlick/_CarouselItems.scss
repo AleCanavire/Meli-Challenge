@@ -1,0 +1,51 @@
+.sellerItems{
+   .slick-slider{
+      width: 100%;
+      .slick-list{
+         padding: 0 4px;
+         margin: 0 -5px;
+         .slick-slide > div{
+            padding: 0 5px;
+         }
+      }
+      .slick-disabled{
+         display: none;
+      }
+   }  
+}
+
+.nextArrowItems, .prevArrowItems{
+   position: absolute;
+   top: 50%;
+   width: 64px;
+   height: 64px;
+   background-color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 12%);
+   z-index: 3;
+   cursor: pointer;
+   svg{
+      width: 34px;
+      height: 34px;
+   }
+}
+.nextArrowItems{
+   right: 0;
+   transform: translate(50%, -50%);
+   &:hover{
+      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+   }
+   svg{
+      transform: rotate(180deg);
+   }
+}
+.prevArrowItems{
+   left: 0;
+   transform: translate(-50%, -50%);
+   &:hover{
+      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+   }
+}

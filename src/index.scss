@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+@font-face {
+   font-family: "Proxima Nova";
+   src: url("./font/proximanova-light.woff2");
+   font-weight: 300;
+}
+@font-face {
+   font-family: "Proxima Nova";
+   src: url("./font/proximanova-regular.woff2");
+   font-weight: 500;
+}
+@font-face {
+   font-family: "Proxima Nova";
+   src: url("./font/proximanova-semibold.woff2");
+   font-weight: 700;
+}
+
+// reset
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: "Proxima Nova", sans-serif;
+}
+body{
+   background-color: #ededed;
+   min-height: 101vh
+}
+
+@import '/src/components/NavBar/NavBar';
+@import '/src/components/ItemListContainer/ItemList';
+@import '/src/components/ItemListContainer/Item';
+@import '/src/components/ItemDetailContainer/itemDetail';
+@import '/src/components/ItemDetailContainer/AddedToCart';
+@import '/src/components/ItemDetailContainer/sellerItem';
+@import '/src/components/CartView/CartView';
+@import '/src/components/FormOrder/FormOrder';
+@import '/src/components/Order/OrderCart';
+@import '/src/components/ReactSlick/CarouselHeader';
+@import '/src/components/ReactSlick/CarouselItems';
+@import '/src/components/PaymentContainer/PaymentContainer';

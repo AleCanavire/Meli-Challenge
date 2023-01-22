@@ -1,0 +1,8 @@
+{
+  "editor.tabSize": 2,
+  "[scss]": {
+    "editor.tabSize": 3
+  },
+
+  "editor.detectIndentation": false
+}

@@ -1,0 +1,274 @@
+.nav{
+   background-color: #fff159;
+   width: 100%;
+   height: 100px;
+   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+   .navContainer{
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding-top: 6px;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: minmax(134px, auto) 600px minmax(340px, auto);
+      grid-template-areas:
+      "logo search disney"
+      "location categories account";
+      a{
+         display: contents;
+         .meliLogo{
+               grid-area: logo;
+               margin: 0 50px 0 10px;
+               cursor: pointer;
+         }
+      }
+      .location{
+         grid-area: location;
+         width: 134px;
+         height: 40px;
+         padding: 4px 8px;
+         margin: 0 60px 5px 0;
+         position: relative;
+         cursor: pointer;
+         &:hover{
+               box-shadow: inset 0px 0px 1px 1px #eadd61;
+               border-radius: 5px;
+         }
+         img{
+               height: 22px;
+               width: 18px;
+               position: absolute;
+               left: 8px;
+               top: 6px;
+         }
+         .envio{
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+               span{
+                  color: rgba(0, 0, 0, .5);
+                  padding-left: 22px;
+                  font-size: 12px;
+                  font-weight: 500;
+               }
+               p{
+                  color: #333;
+                  padding-left: 23px;
+                  font-size: 14px;
+                  font-weight: 500;
+                  line-height: 12px;
+               }
+         }
+      }
+      .search{
+         grid-area: search;
+         width: 600px;
+         border-radius: 2px;
+         overflow: hidden;
+         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+         form{
+               display: grid;
+               grid-template-columns: 1fr 46px;
+               width: 100%;
+               border-radius: 2px;
+               input{
+                  width: 100%;
+                  padding-left: 15px;
+                  border: none;
+                  &::placeholder{
+                     color: rgba(0, 0, 0, .2);
+                     font-size: 16px;
+                     font-weight: 500;
+                  }
+                  &:focus-visible{
+                     outline: none;
+                  }
+               }
+               button{
+                  position: relative;
+                  width: 46px;
+                  height: 39px;
+                  border: none;
+                  background-color: #fff;
+                  cursor: pointer;
+                  &::after{
+                     content: "";
+                     position: absolute;
+                     left: 0;
+                     top: 50%;
+                     transform: translateY(-50%);
+                     border-left: 1px rgba(0, 0, 0, .1) solid;
+                     height: 26px;
+                     
+                  }
+                  img{
+                     height: 16px;
+                  }
+               }
+         }
+      }
+      .categories{
+         grid-area: categories;
+         width: 600px;
+         height: 100%;
+         display: flex;
+         align-items: flex-end;
+         ul{
+               display: flex;
+               gap: 18px;
+               padding-bottom: 10px;
+               li:first-child{
+                  position: relative;
+                  width: 80px;
+                  cursor: pointer;
+                  &:hover > .allCategories{
+                     visibility: visible;
+                  }
+                  &::before{
+                     content: "";
+                     width: 6px;
+                     height: 6px;
+                     position: absolute;
+                     right: 0;
+                     color: rgba(0,0,0,.3);
+                     border-style: solid;
+                     border-width: 0 1.5px 1.5px 0;
+                     margin: 9px 0 0 6px;
+                     transform: rotate(45deg);
+                     box-sizing: border-box;
+                  }
+                  .allCategories{
+                     background-color: #333;
+                     position: absolute;
+                     top: 30px;
+                     left: 50%;
+                     transform: translateX(-50%);
+                     width: 257px;
+                     padding: 22px 0;
+                     border-radius: 4px;
+                     z-index: 3;
+                     visibility: hidden;
+                     cursor: default;
+                     transition-delay: 0.1s;
+                     transition-property: visibility;
+                     &:hover{
+                           visibility: visible;
+                     }
+                     &::before{
+                           content: "";
+                           position: absolute;
+                           top: 0;
+                           left: 155px;
+                           transform: rotate(180deg) translateY(100%);
+                           border-left: 8px solid transparent;
+                           border-right: 8px solid transparent;
+                           border-top: 8px solid #333;
+                     }
+                     a{
+                           color: #fff;
+                           display: block;
+                           font-size: 14px;
+                           font-weight: 700;
+                           line-height: 36px;
+                           text-decoration: none;
+                           padding: 0 36px;
+                           cursor: pointer;
+                           &:hover{
+                              background-color: #3483fa;
+                           }
+                     }
+                  }
+               }
+               li{
+                  list-style: none;
+                  span{
+                     color: rgba(51, 51, 51, .6);
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: 300ms color ease;
+                     cursor: pointer;
+                     &:hover{
+                           color: rgba(51, 51, 51, .9);
+                           transition: 500ms color ease;
+                     }
+                  }
+               }
+         }
+      }
+      .disney{
+         grid-area: disney;
+         width: 340px;
+         height: 39px;
+         margin-left: 55px;
+         margin-right: 10px;
+         cursor: pointer;
+      }
+      .account{
+         grid-area: account;
+         height: 100%;
+         display: flex;
+         align-content: flex-end;
+         justify-content: flex-end;
+         ul{
+               display: flex;
+               align-items: flex-end;
+               justify-content: end;
+               gap: 20px;
+               padding-bottom: 10px;
+               li{
+                  list-style: none;
+                  span{
+                     color: #333;
+                     font-size: 14px;
+                     line-height: 10px;
+                     font-weight: 500;
+                     cursor: pointer;
+                     &:hover{
+                           color: #000;
+                     }
+                  }
+               }
+               .cartWidget{
+                  height: 20px;
+                  width: 20px;
+                  margin-right: 10px;
+                  margin-bottom: 4px;
+                  cursor: pointer;
+                  position: relative;
+                  img{
+                     width: 100%;
+                     height: 100%;
+                  }
+                  .itemsInCart{
+                     position: absolute;
+                     top: -2px;
+                     right: 0;
+                     width: 16px;
+                     height: 12px;
+                     span{
+                           display: block;
+                           width: 100%;
+                           font-size: 11px;
+                           line-height: 11px;
+                           color: #333;
+                           text-align: center;
+                           text-decoration: none;
+                           
+                     }
+                  }
+               }
+         }
+      }
+   }
+}
+.shadow{
+   position: absolute;
+   width: 100%;
+   min-height: 250vh;
+   top: 100px;
+   left: 0;
+   opacity: 0;
+   background-color: #333;
+   z-index: -1;
+}
