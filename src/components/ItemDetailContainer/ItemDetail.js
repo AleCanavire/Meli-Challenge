@@ -8,6 +8,7 @@ import shippingIcon from '../../assets/img/shipping.svg';
 import protectedIcon from '../../assets/img/protected.svg';
 import mercadoPoints from '../../assets/img/mercadoPoints.svg';
 import garantiaIcon from '../../assets/img/garantia.svg';
+import questions from '../../data/questions';
 
 function ItemDetail({ product }) {
   const [products, setProducts] = useState(null);
@@ -126,6 +127,78 @@ function ItemDetail({ product }) {
           <h2>Descripción</h2>
           <p>{product.description.replaceAll("\\n", "\n")}</p>
         </div>
+        <div className="questionsContainer">
+          <h2>Preguntas y respuestas</h2>
+          <div className="buttons">
+            <h3>¿Qué querés saber?</h3>
+            <button>Costo y tiempo de envío</button>
+            <button>Devoluciones gratis</button>
+            <button>Medios de pago y promociones</button>
+            <button>Garantía</button>
+          </div>
+          <div className="yourQuestion">
+            <h3>Preguntale al vendedor</h3>
+            <form>
+              <input type="text" placeholder="Escribí tu pregunta..."></input>
+              <button>Preguntar</button>
+            </form>
+          </div>
+          <div className="lastQuestions">
+            <h3>Últimas realizadas</h3>
+            {
+              questions.map((question)=>{
+                return(
+                <div className="oneQuestion">
+                  <div className="question">
+                    <p>{question.question}<a href='./'>Denunciar</a></p>
+                  </div>
+                  <div className="answer">
+                    <p>{question.answer}
+                      <span>21/01/2023</span>
+                      <a href='./'>Denunciar</a>
+                    </p>
+                  </div>
+                </div>
+                )
+              })
+            }
+            <div className="allQuestions">Ver todas las preguntas</div>
+          </div>
+          <div className="opinions">
+            <h2>Opiniones sobre {product.title}</h2>
+            <div className="reviews">
+              <div className="score">
+                <span>{product.rate}</span>
+                <div className="reviewsRating">
+                  <div className="rate">
+                    <div className='stars'>
+                      { stars.map((star) => {
+                        return(
+                          <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                          </svg>
+                        )})
+                      }  
+                    </div>
+                    <div className='greyStars'>
+                      { greyStars.map((star) => {
+                        return(
+                          <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                          </svg>
+                        )})
+                      } 
+                    </div>
+                  </div>
+                  <p>12 calificaciones</p>
+                </div>
+              </div>
+              <div className="reviewsFilter">
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className='columnRight'>
@@ -178,7 +251,7 @@ function ItemDetail({ product }) {
           </div>
           <div className='shippingAndReturn'>
             <div className='iconShipping'>
-              <img src={shippingIcon}></img>
+              <img src={shippingIcon} alt="icon"></img>
             </div>
             <div className='textIcon'>
               <p>Llega <b>mañana</b></p>
@@ -187,7 +260,7 @@ function ItemDetail({ product }) {
           </div>
           <div className='shippingAndReturn'>
             <div className='iconReturn'>
-              <img src={returnIcon}></img>
+              <img src={returnIcon} alt="icon"></img>
             </div>
             <div className='textIcon'>
               <p>Devolución gratis</p>
@@ -201,15 +274,15 @@ function ItemDetail({ product }) {
           />
           <ul className='benefits'>
             <li>
-              <img src={protectedIcon}></img>
+              <img src={protectedIcon} alt="icon"></img>
               <p><span>Compra Protegida</span>, recibí el producto que esperabas o te devolvemos tu dinero.</p>
             </li>
             <li>
-              <img src={mercadoPoints}></img>
+              <img src={mercadoPoints} alt="icon"></img>
               <p><span>Mercado Puntos</span>. Sumás 14 puntos.</p>
             </li>
             <li>
-              <img src={garantiaIcon}></img>
+              <img src={garantiaIcon} alt="icon"></img>
               <p>2 días de garantía de fábrica.</p>
             </li>  
           </ul>

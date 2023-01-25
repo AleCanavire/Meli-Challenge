@@ -13,9 +13,9 @@
             position: relative;
             text-decoration: none;
             margin-right: 25px;
-            color: rgba(0, 0, 0, .9);
+            color: rgb(0 0 0 / 90%);
             &:hover{
-               color: #2968c8;
+               color: $dark-blue;
             }
             &::before{
                content: "";
@@ -24,20 +24,20 @@
                right: -14px;
                height: 12px;
                width: 1px;
-               background-color: rgba(0, 0, 0, .2);
+               background-color: rgb(0 0 0 / 20%);
             }
          }
          span{
-            color: #3483fa;
+            color: $blue;
             cursor: pointer;
             &:hover{
-               color: #2968c8;
+               color: $dark-blue;
             }
          }
       }
       .share{
          display: flex;
-         color: #3483fa;
+         color: $blue;
          p{
             position: relative;
             margin-right: 24px;
@@ -48,15 +48,15 @@
                right: -15px;
                height: 14px;
                width: 1px;
-               background-color: rgba(0, 0, 0, 0.2);
+               background-color: rgb(0 0 0 / 20%);
             }
             &:hover{
-               color: #2968c8;
+               color: $dark-blue;
                cursor: pointer;
             }
          }
          span:hover{
-            color: #2968c8;
+            color: $dark-blue;
             cursor: pointer;
          }
       }
@@ -81,11 +81,11 @@
                      width: 100%;
                      height: 50px;
                      padding: 2px;
-                     border: 2px solid #3483fa;
+                     border: 2px solid $blue;
                      border-radius: 4px;
                      cursor: pointer;
                      &:hover{
-                        border: 2px solid #3483fa;
+                        border: 2px solid $blue;
                      }
                      img{
                         width: 100%;
@@ -106,11 +106,11 @@
             }
          }
          .sellerProducts{
-            border-top: 1px solid rgba(0,0,0,.1);
+            border-top: 1px solid rgb(0 0 0 / 10%);
             padding: 40px 0;
             margin-left: 50px;
             h2{
-               color: rgba(0 0 0 / 90%);
+               color: rgb(0 0 0 / 90%);
                font-size: 24px;
                font-weight: 500;
                line-height: 30px;
@@ -118,7 +118,7 @@
             }
          }
          .techSpecs{
-            border-top: 1px solid rgba(0 0 0 / 10%);
+            border-top: 1px solid rgb(0 0 0 / 10%);
             margin-left: 50px;
             padding: 40px 0;
             h2{
@@ -196,7 +196,7 @@
             }
          }
          .description{
-            border-top: 1px solid rgba(0 0 0 / 10%);
+            border-top: 1px solid rgb(0 0 0 / 10%);
             padding: 40px 0;
             margin-left: 50px;
             h2{
@@ -213,6 +213,237 @@
                white-space: pre-wrap;
             }
          }
+         .questionsContainer{
+            padding-top: 40px;
+            margin-left: 50px;
+            height: 1800px;
+            h2{
+               font-size: 24px;
+               font-weight: 500;
+               line-height: 30px;
+            }
+            .buttons{
+               margin-top: 40px;
+               h3{
+                  font-size: 18px;
+                  font-weight: 700;
+                  line-height: 24px;
+                  margin-bottom: 28px;
+               }
+               button{
+                  color: $blue;
+                  background-color: rgb(65 137 230 / 15%);
+                  font-size: 14px;
+                  font-weight: 700;
+                  line-height: 32px;
+                  height: 32px;
+                  padding: 0 12px;
+                  margin-right: 12px;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+               }
+            }
+            .yourQuestion{
+               margin-top: 40px;
+               h3{
+                  font-size: 18px;
+                  font-weight: 700;
+                  line-height: 24px;
+                  margin-bottom: 16px
+               }
+               form{
+                  display: flex;
+                  gap: 16px;
+                  input{
+                     font-size: 16px;
+                     flex: 1;
+                     padding-left: 16px;
+                     border: none;
+                     border-radius: 5px;
+                     box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+                     &::placeholder{
+                        color: rgb(0 0 0 / 25%);
+                     }
+                     &:focus-visible{
+                        outline: $blue auto;
+                     }
+                  }
+                  button{
+                     color: #fff;
+                     background-color: $blue;
+                     width: 155px;
+                     font-size: 16px;
+                     font-weight: 700;
+                     line-height: 48px;
+                     border: none;
+                     border-radius: 5px;
+                     transition: background-color 0.3s ease;
+                     &:hover{
+                        background-color: $dark-blue;
+                        cursor: pointer;
+                     }
+                  }
+               }
+            }
+            .lastQuestions{
+               margin-top: 40px;
+               h3{
+                  font-size: 18px;
+                  font-weight: 700;
+                  line-height: 22px;
+               }
+               .oneQuestion{
+                  margin-top: 24px;
+                  .question{
+                     display: flex;
+                     margin-bottom: 6px;
+                     &:hover > p a{
+                        opacity: 1;
+                     }
+                     p{
+                        color: rgb(0 0 0 / 90%);
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        a{
+                           color: $blue;
+                           font-size: 14px;
+                           line-height: 24px;
+                           text-decoration: none;
+                           margin-left: 8px;
+                           opacity: 0;
+                           cursor: pointer;
+                           &:hover{
+                              color: $dark-blue;
+                           }
+                        }
+                     }
+                  }
+                  .answer{
+                     display: flex;
+                     position: relative;
+                     &:hover > p a{
+                        opacity: 1;
+                     }
+                     &::before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 12px;
+                        width: 12px;
+                        height: 12px;
+                        border-left: 1px solid rgb(0 0 0 / 25%);
+                        border-bottom: 1px solid rgb(0 0 0 / 25%);
+                     }
+                     p{
+                        margin-left: 32px;
+                        color: rgb(0 0 0 / 55%);
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 24px;
+                        span{
+                           color: rgb(0 0 0 / 55%);
+                           font-size: 14px;
+                           line-height: 24px;
+                           margin-left: 8px;
+                        }
+                        a{
+                           color: $blue;
+                           font-size: 14px;
+                           line-height: 24px;
+                           text-decoration: none;
+                           margin-left: 8px;
+                           opacity: 0;
+                           cursor: pointer;
+                           &:hover{
+                              color: $dark-blue;
+                           }
+                        }
+                     }
+                  }
+               }
+               .allQuestions{
+                  color: $blue;
+                  font-size: 14px;
+                  font-weight: 500;
+                  padding: 24px 0;
+                  transition: color .3s ease;
+                  &:hover{
+                     color: $dark-blue;
+                     cursor: pointer;
+                  }
+               }
+            }
+            .opinions{
+               h2{
+                  color: #000;
+                  font-size: 24px;
+                  font-weight: 500;
+                  line-height: 30px;
+                  margin-bottom: 10px;
+                  padding: 14px 2px;
+               }
+               .reviews{
+                  display: flex;
+                  gap: 32px;
+                  .score{
+                     display: flex;
+                     flex: 1;
+                     span{
+                        color: #3483fa;
+                        font-size: 48px;
+                        font-weight: 700;
+                        line-height: 50px;
+                        margin-right: 18px;
+                     }
+                     .reviewsRating{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .rate{
+                           position: relative;
+                           margin-bottom: 3px;
+                           .stars{
+                              height: 18px;
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              display: flex;
+                              gap: 9px;
+                              svg{
+                                 fill: $blue;
+                                 width: 18px;
+                                 height: 18px;
+                              }
+                           }
+                           .greyStars{
+                              height: 18px;
+                              display: flex;
+                              gap: 9px;
+                              svg{
+                                 fill: rgb(0 0 0 / 10%);
+                                 width: 18px;
+                                 height: 18px;
+                              }
+                           }
+                        }
+                        p{
+                           color: rgba(0 0 0 / 55%);
+                           font-size: 14px;
+                           font-weight: 500;
+                           line-height: 16px;
+                        }
+                     }
+                  }
+                  .reviewsFilter{
+                     width: 100%;
+                     max-width: 466px;
+                  }
+               }
+            }
+            
+         }
       }
 
       .columnRight{
@@ -221,12 +452,12 @@
             position: relative;
             width: 100%;
             padding: 16px;
-            border: 1px solid rgba(0, 0, 0, .1);
+            border: 1px solid rgb(0 0 0 / 10%);
             border-radius: 8px;
             .productHeader{
                span{
                   display: block;
-                  color: rgba(0,0,0,.55);
+                  color: rgb(0 0 0 / 55%);
                   font-size: 14px;
                   font-weight: 500;
                   line-height: 20px;
@@ -234,7 +465,7 @@
                   margin: 0 40px 8px 0;
                }
                h1{
-                  color: rgba(0, 0, 0, 0.9);
+                  color: rgb(0 0 0 / 90%);
                   font-size: 22px;
                   font-weight: 700;
                   line-height: 26px;
@@ -246,7 +477,7 @@
                   position: absolute;
                   top: 44px;
                   right: 16px;
-                  fill: #3483fa;
+                  fill: $blue;
                   cursor: pointer;
                }
             }
@@ -262,7 +493,7 @@
                      width: 15px;
                      height: 14px;
                      margin-right: 3px;
-                     fill: #3483fa;
+                     fill: $blue;
                   }
                }
                .greyStars{
@@ -270,11 +501,11 @@
                      width: 15px;
                      height: 14px;
                      margin-right: 3px;
-                     fill: rgba(0 0 0 / 10%);
+                     fill: rgb(0 0 0 / 10%);
                   }
                }
                span{
-                  color: #3483fa;
+                  color: $blue;
                   font-size: 14px;
                   font-weight: 500;
                   line-height: 1.35;
@@ -287,12 +518,12 @@
                   line-height: 36px;
                   margin-bottom: 4px;
                   .priceSimbol{
-                     color: rgba(0,0,0,.9);
+                     color: rgb(0 0 0 / 90%);
                      font-weight: 300;
                      margin-right: 0.2em;
                   }
                   .price{
-                     color: rgba(0,0,0,.9);
+                     color: rgb(0 0 0 / 90%);
                      font-weight: 300;
                   }
                }
@@ -305,7 +536,7 @@
                   }
                }
                .payment{
-                  color: #3483fa;
+                  color: $blue;
                   font-size: 14px;
                   font-weight: 500;
                   margin: 8px 0 20px;
@@ -340,7 +571,7 @@
                      margin-bottom: 3px;
                   }
                   p:nth-child(2){
-                     color: rgba(0 0 0 / 55%);
+                     color: rgb(0 0 0 / 55%);
                      font-size: 14px;
                      font-weight: 500;
                      line-height: 20px;
@@ -349,10 +580,10 @@
                   div{
                      width: fit-content;
                      font-size: 14px;
-                     color: #3483fa;
+                     color: $blue;
                      cursor: pointer;
                      &:hover{
-                        color: #2968c8;
+                        color: $dark-blue;
                      }
                   }
                }
@@ -364,7 +595,7 @@
                   align-items: center;
                   flex-wrap: wrap;
                   border: none;
-                  border: 1px solid rgba(0, 0, 0, 0.2);
+                  border: 1px solid rgb(0 0 0 / 20%);
                   border-radius: 8px;
                   overflow: hidden;
                   margin-bottom: 10px;
@@ -372,7 +603,7 @@
                      background-color: #fff;
                      flex: 1;
                      border: none;
-                     color: #3483fa;
+                     color: $blue;
                      font-size: 20px;
                      font-weight: 700;
                      cursor: pointer;
@@ -395,13 +626,14 @@
                      height: 48px;
                      border: none;
                      border-radius: 5px;
-                     background-color: #3483fa;
+                     background-color: $blue;
                      font-size: 16px;
                      font-weight: 700;
                      color: #fff;
+                     transition: background-color .3s ease;
                      &:hover{
                         cursor: pointer;
-                        background-color: #2968c8;
+                        background-color: $dark-blue;
                      }
                   }
                   .addCart{
@@ -409,13 +641,14 @@
                      height: 48px;
                      border: none;
                      border-radius: 5px;
-                     background-color: rgba(65, 137, 230, .15);
+                     background-color: rgb(65 137 230 / 15%);
                      font-size: 16px;
                      font-weight: 700;
-                     color: #3483fa;
+                     color: $blue;
+                     transition: background-color .3s ease;
                      &:hover{
                         cursor: pointer;
-                        background-color: rgba(65, 137, 230, .2);
+                        background-color: rgb(65 137 230 / 20%);
                      }
                   }
                }
@@ -435,12 +668,12 @@
                   p{
                      font-size: 14px;
                      line-height: 18px;
-                     color: rgba(0 0 0 / 55%);
+                     color: rgb(0 0 0 / 55%);
                      span{
-                        color: #3483fa;
+                        color: $blue;
                         cursor: pointer;
                         &:hover{
-                           color: #2968c8;
+                           color: $dark-blue;
                         }
                      }
                   }
@@ -448,170 +681,5 @@
             }
          }
       }
-   }
-}
-
-
-.itemDetailSkeleton{
-   display: grid;
-   grid-template-columns: 768px 416px;
-   background-color: #f3f3f3;
-   border-radius: 4px;
-   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 25%);
-   animation: opacity 1.5s infinite;
-   .columnLeft{
-      .imgProductContainer{
-         padding: 16px 0 28px 16px;
-         .imgProduct{
-            display: grid;
-            grid-template-columns: 56px 1fr;
-            grid-template-rows: 524px;
-            .gallery{
-               width: 50px;
-               height: 100%;
-               .preview{
-                  width: 100%;
-                  height: 50px;
-                  padding: 2px;
-                  border: 2px solid #3483fa;
-                  border-radius: 4px;
-                  cursor: pointer;
-                  &:hover{
-                        border: 2px solid #3483fa;
-                  }
-                  img{
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                  }
-               }
-            }
-            .focusImg{
-               padding: 40px 12px 16px 16px;
-               img{
-                  width: 100%;
-                  height: 100%;
-                  object-fit: contain;
-                  cursor: zoom-in;
-               }
-            }
-         }
-      }
-      .specifications{
-         border-top: 1px solid rgba(0,0,0,.1);
-         padding-top: 40px;
-         margin-left: 50px;
-      }
-   }
-   .columnRight{
-      margin: 16px 16px 16px 48px;
-      .infoProduct{
-         position: relative;
-         width: 100%;
-         height: 100%;
-         padding: 16px;
-         border: 1px solid rgba(0, 0, 0, .1);
-         border-radius: 8px;
-         .productHeader{
-            span{
-               background-color: #ddd;
-               display: block;
-               width: 50%;
-               height: 18px;
-               margin: 0 40px 10px 0;
-               border-radius: 3px;
-            }
-            .title{
-               margin: 0 28px 8px 0;
-               div:first-child{
-                  margin-bottom: 8px;
-               }
-               div{
-                  background-color: #ddd;
-                  width: 260px;
-                  height: 22px;
-               }
-            }
-            svg{
-               width: 22px;
-               height: 22px;
-               position: absolute;
-               top: 44px;
-               right: 16px;
-               fill: #ddd;
-               cursor: pointer;
-            }
-         }
-         .rate{
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-            svg{
-               width: 14px;
-               height: 14px;
-               margin-right: 4px;
-               fill: #ddd;
-            }
-         }
-         .productPrice{
-            .itemPrice{
-               background-color: #ddd;
-               width: 40%;
-               height: 36px;
-               margin-bottom: 6px;
-               border-radius: 3px;
-            }
-            .quotas{
-               background-color: #ddd;
-               width: 40%;
-               height: 18px;
-               border-radius: 3px;
-            }
-            .payment{
-               display: block;
-               background-color: #ddd;
-               width: 45%;
-               height: 16px;
-               margin-top: 12px;
-               margin: 12px 0 22px;
-               border-radius: 3px;
-            }
-         }
-         .cart{
-            .product{
-               background-color: #ddd;
-               width: 100%;
-               height: 32px;
-               border: none;
-               border: 1px solid rgba(0, 0, 0, 0.2);
-               border-radius: 8px;
-               margin-bottom: 10px;
-            }
-            .buttons{
-               display: flex;
-               flex-wrap: wrap;
-               gap: 8px;
-               div{
-                  background-color: #ddd;
-                  width: 100%;
-                  height: 48px;
-                  border: none;
-                  border-radius: 5px;
-               }
-            }
-         }
-      }
-   }
-}
-
-@keyframes opacity {
-   0%{
-      opacity: 1;
-   }
-   50%{
-      opacity: .4;
-   }
-   100%{
-      opacity: 1;
    }
 }
