@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
 
+// FUENTES
 @font-face {
    font-family: "Proxima Nova";
    src: url("./font/proximanova-light.woff2");
@@ -16,6 +17,11 @@
    font-weight: 700;
 }
 
+// VARIABLES
+$meli-yellow: #fff159;
+$blue: #3483fa;
+$dark-blue: #2968c8;
+
 // reset
 *{
    padding: 0;
@@ -25,13 +31,13 @@
 }
 body{
    background-color: #ededed;
-   min-height: 101vh
 }
 
 @import '/src/components/NavBar/NavBar';
 @import '/src/components/ItemListContainer/ItemList';
 @import '/src/components/ItemListContainer/Item';
 @import '/src/components/ItemDetailContainer/itemDetail';
+@import '/src/components/ItemDetailContainer/itemDetailSkeleton';
 @import '/src/components/ItemDetailContainer/AddedToCart';
 @import '/src/components/ItemDetailContainer/sellerItem';
 @import '/src/components/CartView/CartView';

@@ -10,7 +10,7 @@
       ul{
          width: 100%;
          display: flex;
-         justify-content: start;
+         justify-content: flex-start;
          border-bottom: 1px solid rgb(0 0 0 / 10%);
          position: relative;
          li{
@@ -149,7 +149,7 @@
       .shipping{
          width: 100%;
          display: flex;
-         justify-content: end;
+         justify-content: flex-end;
          margin-bottom: 22px;
          .location{
             position: relative;
@@ -177,13 +177,13 @@
             font-size: 24px;
             font-weight: 300;
             line-height: 28px;
-            text-align: end;
+            text-align: right;
          }
       }
       .itemsPrice{
          width: 100%;
          display: flex;
-         justify-content: end;
+         justify-content: flex-end;
          .totalShipping{
             font-size: 26px;
             font-weight: 500;
@@ -194,7 +194,7 @@
             font-size: 26px;
             font-weight: 500;
             line-height: 28px;
-            text-align: end;
+            text-align: right;
          }
       }
    }
