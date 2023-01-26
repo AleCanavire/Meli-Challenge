@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Item(props) {
-  const url = `/PreEntrega1-Canavire/detail/${props.url}`
+  const url = `/detail/${props.url}`
   const num = props.price < 1000 ? Math.trunc(props.price * 160) : props.price;
   const price = num.toLocaleString('es-AR');
 

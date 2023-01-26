@@ -42,7 +42,7 @@ function ItemsInCartContainer() {
       date: new Date()
     };
     const orderId = await createOrder(order);
-    navigate(`/PreEntrega1-Canavire/order/${orderId}`)
+    navigate(`/order/${orderId}`)
   }
   
   return (

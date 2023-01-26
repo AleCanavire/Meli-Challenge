@@ -20,7 +20,7 @@ function NavBar() {
   return (
     <nav className='nav'>
       <div className='navContainer'>
-        <Link to="/PreEntrega1-Canavire">
+        <Link to="/">
           <img className='meliLogo' src={meliLogo} alt='Logo Mercado Libre'></img>
         </Link>
         <div className='location'>
@@ -47,10 +47,10 @@ function NavBar() {
                 <a href='#'>Vehículos</a>
                 <a href='#'>Inmuebles</a>
                 <a href='#'>Supermercado</a>
-                <Link to='/PreEntrega1-Canavire/category/tecnología'>Tecnología</Link>
-                <Link to='/PreEntrega1-Canavire/category/joyería'>Joyeria</Link>
-                <Link to='/PreEntrega1-Canavire/category/ropa-hombre'>Ropa de Hombre</Link>
-                <Link to='/PreEntrega1-Canavire/category/ropa-mujer'>Ropa de Mujer</Link>
+                <Link to='/category/tecnología'>Tecnología</Link>
+                <Link to='/category/joyería'>Joyeria</Link>
+                <Link to='/category/ropa-hombre'>Ropa de Hombre</Link>
+                <Link to='/category/ropa-mujer'>Ropa de Mujer</Link>
                 <a href='#'>Herramientas</a>
                 <a href='#'>Construcción</a>
                 <a href='#'>Deportes y Fitness</a>

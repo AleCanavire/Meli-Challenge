@@ -23,7 +23,7 @@ function AddedToCart(props) {
           </div>
         </div>
         <div className='buttons'>
-          <Link to={"/PreEntrega1-Canavire/cart"}>
+          <Link to={"/cart"}>
             <button>Ver carrito</button>
           </Link>
           <button>Comprar carrito</button>

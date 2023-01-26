@@ -15,11 +15,11 @@ function App() {
             <main className="mainHome">
               <div className="shadow"></div>
               <Routes>
-                <Route path='PreEntrega1-Canavire/' element={<ItemListContainer/>} />
-                <Route path='PreEntrega1-Canavire/category/:idCategory' element={<ItemListContainer/>} />
-                <Route path='PreEntrega1-Canavire/detail/:id' element={<ItemDetailContainer/>} />
-                <Route path='PreEntrega1-Canavire/cart' element={<CartView/>} />
-                <Route path='PreEntrega1-Canavire/order/:idOrder' element={<OrderCart/>}/>
+                <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/category/:idCategory' element={<ItemListContainer/>} />
+                <Route path='/detail/:id' element={<ItemDetailContainer/>} />
+                <Route path='/cart' element={<CartView/>} />
+                <Route path='/order/:idOrder' element={<OrderCart/>}/>
               </Routes>
             </main>
         </BrowserRouter>

@@ -9,7 +9,7 @@ function CartWidget() {
 	const myContext = useContext(cartContext);
 	return (
 		<div className='cartWidget'>
-			<Link to={"/PreEntrega1-Canavire/cart"}>
+			<Link to={"/cart"}>
 				<img src={
 					myContext.itemsInCart() === 0
 					? cart

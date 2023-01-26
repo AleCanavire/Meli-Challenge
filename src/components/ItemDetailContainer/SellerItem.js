@@ -6,7 +6,7 @@ function SellerItem(props) {
   const num = props.price < 1000 ? Math.trunc(props.price * 160) : props.price;
   const price = num.toLocaleString('es-AR');
 
-  const url = `/PreEntrega1-Canavire/detail/${props.url}`
+  const url = `/detail/${props.url}`
 
   function scrollToTop() {
     window.scrollTo(0, 0);
