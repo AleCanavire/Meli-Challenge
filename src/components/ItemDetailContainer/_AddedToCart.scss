@@ -109,16 +109,16 @@
             cursor: pointer;
             transition: .2s background-color ease-in;
             &:nth-child(1){
-               background-color: #3483fa;
+               background-color: $blue;
                color: #fff;
                margin-right: 8px;
                &:hover{
-                  background-color: #2968c8;
+                  background-color: $dark-blue;
                }
             }
             &:nth-child(2){
                background-color: rgba(65 137 230 / 15%);
-               color: #3483fa;
+               color: $blue;
                &:hover{
                   background-color: rgba(65 137 230 / 20%);
                }

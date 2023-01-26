@@ -44,12 +44,12 @@
 }
 .footerText{
    display: block;
-   color: #3483fa;
+   color: $blue;
    font-size: 14px;
    font-weight: 500;
    margin-left: 2px;
    &:hover{
       cursor: pointer;
-      color: #2968c8;
+      color: $dark-blue;
    }
 }

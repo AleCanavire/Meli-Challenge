@@ -8,7 +8,7 @@ import shippingIcon from '../../assets/img/shipping.svg';
 import protectedIcon from '../../assets/img/protected.svg';
 import mercadoPoints from '../../assets/img/mercadoPoints.svg';
 import garantiaIcon from '../../assets/img/garantia.svg';
-import questions from '../../data/questions';
+import questions from '../../data/questionsAndOpinions';
 
 function ItemDetail({ product }) {
   const [products, setProducts] = useState(null);
@@ -138,10 +138,10 @@ function ItemDetail({ product }) {
           </div>
           <div className="yourQuestion">
             <h3>Preguntale al vendedor</h3>
-            <form>
+            <div className='form'>
               <input type="text" placeholder="Escribí tu pregunta..."></input>
               <button>Preguntar</button>
-            </form>
+            </div>
           </div>
           <div className="lastQuestions">
             <h3>Últimas realizadas</h3>
@@ -167,34 +167,103 @@ function ItemDetail({ product }) {
           <div className="opinions">
             <h2>Opiniones sobre {product.title}</h2>
             <div className="reviews">
-              <div className="score">
-                <span>{product.rate}</span>
-                <div className="reviewsRating">
-                  <div className="rate">
-                    <div className='stars'>
-                      { stars.map((star) => {
-                        return(
-                          <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
-                          </svg>
-                        )})
-                      }  
+              <div className="scoreItem">
+                <div className="score">
+                  <span>{product.rate}</span>
+                  <div className="reviewsRating">
+                    <div className="rate">
+                      <div className='stars'>
+                        { stars.map((star) => {
+                          return(
+                            <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                              <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                            </svg>
+                          )})
+                        }  
+                      </div>
+                      <div className='greyStars'>
+                        { greyStars.map((star) => {
+                          return(
+                            <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                              <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                            </svg>
+                          )})
+                        } 
+                      </div>
                     </div>
-                    <div className='greyStars'>
-                      { greyStars.map((star) => {
-                        return(
-                          <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
-                          </svg>
-                        )})
-                      } 
-                    </div>
+                    <p>12 calificaciones</p>
                   </div>
-                  <p>12 calificaciones</p>
+                </div>
+                <div className="ratingBars">
+                  <ul>
+                    { greyStars.reverse().map((star) => {
+                      return(
+                        <li id={`rateBar${star}`}>
+                          <div className="bar"><span></span></div>
+                          <div className="level">
+                            <span>{star}</span>
+                            <svg enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                              <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                            </svg>
+                          </div>
+                        </li>  
+                      )})
+                    }
+                  </ul>
                 </div>
               </div>
               <div className="reviewsFilter">
+                <div className="filterButtons">
+                  <button>
+                    <span>
+                      Ordenar<div></div>
+                    </span>
+                  </button>
+                  <button>
+                    <span>
+                      Calificación<div></div>
+                    </span>
+                  </button>
+                </div>
+                <div className="reviewsComments">
+                  <article className='reviewComment'>
+                    <div className="rateAndDate">
+                      <div className="rate">
+                        <div className='stars'>
+                          { stars.map((star) => {
+                            return(
+                              <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                              </svg>
+                            )})
+                          }  
+                        </div>
+                        <div className='greyStars'>
+                          { greyStars.map((star) => {
+                            return(
+                              <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                              </svg>
+                            )})
+                          } 
+                        </div>
+                      </div>
+                      <div className="date">25 ene 2023</div>
+                    </div>
+                    <p></p>
+                    <div className="buttonsAndDenounce">
+                      <div className="valorizationButtons">
+                        <button>
+                          <span></span>
+                        </button>
+                        <button></button>
+                      </div>
+                      <div className="denounceButton">
 
+                      </div>
+                    </div>
+                  </article>
+                </div>
               </div>
             </div>
           </div>
@@ -212,26 +281,22 @@ function ItemDetail({ product }) {
           </div>
           <div className='rate'>
             <div className='stars'>
-              {
-                stars.map((star) => {
-                  return(
-                    <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
-                      <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
-                    </svg>
-                  )
-                })
+              { stars.map((star) => {
+                return(
+                  <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                  </svg>
+                )})
               }  
             </div>
             <div className='greyStars'>
-              {
-                greyStars.map((star) => {
-                  return(
-                    <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
-                      <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
-                    </svg>
-                  )
-                })
-              } 
+              { greyStars.map((star) => {
+                return(
+                  <svg key={star} enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                  </svg>
+                )})
+              }
             </div>
             <span>{`(${product.count || product.initial_quantity})`}</span>
           </div>
