@@ -29,62 +29,62 @@ const questions =
 export const opinions = [
   {
     "rate": 5,
-    "opinion": "La calidad es buenisima!, los materiales son buenos y estan bien construidos.",
+    "comment": "La calidad es buenisima!, los materiales son buenos y estan bien construidos.",
     "likes": 21
   },
   {
     "rate": 5,
-    "opinion": "Buen material y calidad, lo recomiendo, saludos.",
+    "comment": "Buen material y calidad, lo recomiendo, saludos.",
     "likes": 12
   },
   {
     "rate": 5,
-    "opinion": "Excelente ningún problema, sin nada más que comentar.",
+    "comment": "Excelente ningún problema, sin nada más que comentar.",
     "likes": 8
   },
   {
     "rate": 5,
-    "opinion": "Excelente producto, muy buena calidad, realmente lo esperado.",
+    "comment": "Excelente producto, muy buena calidad, realmente lo esperado.",
     "likes": 5
   },
   {
     "rate": 5,
-    "opinion": "Muy bueno! Muy conforme con el producto.",
+    "comment": "Muy bueno! Muy conforme con el producto.",
     "likes": 5
   },
   {
     "rate": 5,
-    "opinion": "Esta tremendo. Muy buena calidad y excelentes terminaciones.",
+    "comment": "Esta tremendo. Muy buena calidad y excelentes terminaciones.",
     "likes": 4
   },
   {
     "rate": 4,
-    "opinion": "Muy buen producto acorde a la descripción.",
+    "comment": "Muy buen producto acorde a la descripción.",
     "likes": 3
   },
   {
     "rate": 4,
-    "opinion": "Es un producto de buena calidad, muy bueno.",
+    "comment": "Es un producto de buena calidad, muy bueno.",
     "likes": 2
   },
   {
     "rate": 3,
-    "opinion": "Buen producto, pero no es perfecto",
+    "comment": "Buen producto, pero no es perfecto",
     "likes": 1
   },
   {
     "rate": 3,
-    "opinion": "El producto es bueno pero el tamaño esta mal especificado.",
+    "comment": "El producto es bueno pero el tamaño esta mal especificado.",
     "likes": 0
   },
   {
     "rate": 2,
-    "opinion": "El producto es lindo, pero me vino con un desperfecto.",
+    "comment": "El producto es lindo, pero me vino con un desperfecto.",
     "likes": 0
   },
   {
     "rate": 1,
-    "opinion": "No es el mismo que figura en la publicación.",
+    "comment": "No es el mismo que figura en la publicación.",
     "likes": 0
   }
 ];
