@@ -1,8 +1,4 @@
 import CartWidget from '../CartWidget/CartWidget';
-import meliLogo from "../../assets/img/meliLogo.png";
-import location from "../../assets/img/location.svg";
-import search from "../../assets/img/search.svg";
-import disney from "../../assets/img/disneyStar.webp";
 import { Link } from "react-router-dom";
 
 function NavBar() {
@@ -21,10 +17,10 @@ function NavBar() {
     <nav className='nav'>
       <div className='navContainer'>
         <Link to="/">
-          <img className='meliLogo' src={meliLogo} alt='Logo Mercado Libre'></img>
+          <img className='meliLogo' src='/img/meliLogo.png' alt='Logo Mercado Libre'></img>
         </Link>
         <div className='location'>
-          <img src={location} alt='location icon'></img>
+          <img src='/img/location.svg' alt='location icon'></img>
           <div className='envio'>
             <span>Enviar a</span>
             <p>Capital Federal</p>
@@ -35,7 +31,7 @@ function NavBar() {
           <form>
             <input placeholder='Buscar productos, marcas y más...'></input>
             <button>
-              <img src={search} alt='search icon'></img>
+              <img src='/img/search.svg' alt='search icon'></img>
             </button>
           </form>
         </div>
@@ -76,7 +72,7 @@ function NavBar() {
             <li><span>Ayuda</span></li>
           </ul>
         </div>
-        <img className='disney' src={disney} alt='disney icon'></img>
+        <img className='disney' src='/img/disneyStar.webp' alt='disney icon'></img>
         <div className='account'>
           <ul>
             <li><span>Creá  tu cuenta</span></li>

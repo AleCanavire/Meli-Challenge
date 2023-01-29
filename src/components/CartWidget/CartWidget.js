@@ -1,9 +1,6 @@
 import { useContext } from 'react';
 import { cartContext } from "../../context/cartContext";
 import { Link } from 'react-router-dom';
-import cart from '../../assets/img/cart.svg';
-import inCart from '../../assets/img/inCart.svg';
-
 
 function CartWidget() {
 	const myContext = useContext(cartContext);
@@ -12,8 +9,8 @@ function CartWidget() {
 			<Link to={"/cart"}>
 				<img src={
 					myContext.itemsInCart() === 0
-					? cart
-					: inCart
+					? '/img/cart.svg'
+					: '/img/inCart.svg'
 					}>
 				</img>
 				<div className='itemsInCart'>

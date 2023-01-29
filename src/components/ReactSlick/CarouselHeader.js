@@ -2,13 +2,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider from "react-slick";
-import slider1 from '../../assets/img/slider1.webp'
-import slider2 from '../../assets/img/slider2.webp'
-import slider3 from '../../assets/img/slider3.webp'
-import slider4 from '../../assets/img/slider4.webp'
-import slider5 from '../../assets/img/slider5.webp'
-import slider6 from '../../assets/img/slider6.webp'
-
 
 function CarouselHeader() {
   function NextArrow(props) {
@@ -50,12 +43,12 @@ function CarouselHeader() {
   return (
     <div className="carouselHeader">
       <Slider {...settings}>
-        <div className='imageSlide'> <img src={slider1}></img> </div>
-        <div className='imageSlide'> <img src={slider2}></img> </div>
-        <div className='imageSlide'> <img src={slider3}></img> </div>
-        <div className='imageSlide'> <img src={slider4}></img> </div>
-        <div className='imageSlide'> <img src={slider5}></img> </div>
-        <div className='imageSlide'> <img src={slider6}></img> </div>
+        <div className='imageSlide'> <img src='/img/slider1.webp'></img> </div>
+        <div className='imageSlide'> <img src='/img/slider2.webp'></img> </div>
+        <div className='imageSlide'> <img src='/img/slider3.webp'></img> </div>
+        <div className='imageSlide'> <img src='/img/slider4.webp'></img> </div>
+        <div className='imageSlide'> <img src='/img/slider5.webp'></img> </div>
+        <div className='imageSlide'> <img src='/img/slider6.webp'></img> </div>
       </Slider>  
     </div>
   )
