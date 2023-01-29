@@ -58,32 +58,32 @@ export const opinions = [
     "likes": 4
   },
   {
-    "rate": 4,
+    "rate": 5,
     "comment": "Muy buen producto acorde a la descripción.",
     "likes": 3
   },
   {
-    "rate": 4,
+    "rate": 5,
     "comment": "Es un producto de buena calidad, muy bueno.",
     "likes": 2
   },
   {
-    "rate": 3,
+    "rate": 4,
     "comment": "Buen producto, pero no es perfecto",
     "likes": 1
   },
   {
-    "rate": 3,
+    "rate": 4,
     "comment": "El producto es bueno pero el tamaño esta mal especificado.",
     "likes": 0
   },
   {
-    "rate": 2,
+    "rate": 3,
     "comment": "El producto es lindo, pero me vino con un desperfecto.",
     "likes": 0
   },
   {
-    "rate": 1,
+    "rate": 2,
     "comment": "No es el mismo que figura en la publicación.",
     "likes": 0
   }
