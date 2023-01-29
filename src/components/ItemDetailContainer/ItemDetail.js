@@ -3,15 +3,6 @@ import { cartContext} from '../../context/cartContext';
 import getItems from "../../services/firestore";
 import ItemCount from './ItemCount';
 import CarouselItems from '../ReactSlick/CarouselItems';
-import returnIcon from '../../assets/img/return.svg';
-import shippingIcon from '../../assets/img/shipping.svg';
-import protectedIcon from '../../assets/img/protected.svg';
-import mercadoPoints from '../../assets/img/mercadoPoints.svg';
-import garantiaIcon from '../../assets/img/garantia.svg';
-import ubicationIcon from '../../assets/img/ubication.svg';
-import mercadoLider from '../../assets/img/mercadoLider.svg';
-import messagePositive from '../../assets/img/messagePositive.svg';
-import timePositive from '../../assets/img/timePositive.svg';
 import questions, {opinions} from '../../data/questionsAndOpinions';
 
 function ItemDetail({ product }) {
@@ -337,7 +328,7 @@ function ItemDetail({ product }) {
           </div>
           <div className='shippingAndReturn'>
             <div className='iconShipping'>
-              <img src={shippingIcon} alt="icon"></img>
+              <img src='/img/shipping.svg' alt="icon"></img>
             </div>
             <div className='textIcon'>
               <p>Llega <b>mañana</b></p>
@@ -346,7 +337,7 @@ function ItemDetail({ product }) {
           </div>
           <div className='shippingAndReturn'>
             <div className='iconReturn'>
-              <img src={returnIcon} alt="icon"></img>
+              <img src='/img/return.svg' alt="icon"></img>
             </div>
             <div className='textIcon'>
               <p>Devolución gratis</p>
@@ -360,15 +351,15 @@ function ItemDetail({ product }) {
           />
           <ul className='benefits'>
             <li>
-              <img src={protectedIcon} alt="icon"></img>
+              <img src='/img/protected.svg' alt="icon"></img>
               <p><span>Compra Protegida</span>, recibí el producto que esperabas o te devolvemos tu dinero.</p>
             </li>
             <li>
-              <img src={mercadoPoints} alt="icon"></img>
+              <img src='/img/mercadoPoints.svg' alt="icon"></img>
               <p><span>Mercado Puntos</span>. Sumás 14 puntos.</p>
             </li>
             <li>
-              <img src={garantiaIcon} alt="icon"></img>
+              <img src='/img/garantia.svg' alt="icon"></img>
               <p>1 año de garantía de fábrica.</p>
             </li>  
           </ul>
@@ -378,7 +369,7 @@ function ItemDetail({ product }) {
           <div className="sellerInfo">
             <div className="ubicationAndMercadoLider">
               <div className="icon">
-                <img src={ubicationIcon} alt="icon"></img>
+                <img src='/img/ubication.svg' alt="icon"></img>
               </div>
               <div className="text">
                 <p>Ubicación</p>
@@ -387,7 +378,7 @@ function ItemDetail({ product }) {
             </div>
             <div className="ubicationAndMercadoLider">
               <div className="icon">
-                <img src={mercadoLider} alt="icon"></img>
+                <img src='/img/mercadoLider.svg' alt="icon"></img>
               </div>
               <div className="text">
                 <p>MercadoLíder Platinum</p>
@@ -408,11 +399,11 @@ function ItemDetail({ product }) {
                   <p>Ventas en los últimos 60 días</p>
                 </li>
                 <li className='reputationItem'>
-                  <span><img src={messagePositive} alt="" /></span>
+                  <span><img src='/img/messagePositive.svg' alt="" /></span>
                   <p>Brinda buena atención</p>
                 </li>
                 <li className='reputationItem'>
-                  <span><img src={timePositive} alt="" /></span>
+                  <span><img src='/img/timePositive.svg' alt="" /></span>
                   <p>Despacha sus productos a tiempo</p>
                 </li>
               </ul>
