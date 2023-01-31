@@ -13,7 +13,6 @@ function App() {
         <BrowserRouter>
             <NavBar />
             <main className="mainHome">
-              <div className="shadow"></div>
               <Routes>
                 <Route path='/' element={<ItemListContainer/>} />
                 <Route path='/category/:idCategory' element={<ItemListContainer/>} />
