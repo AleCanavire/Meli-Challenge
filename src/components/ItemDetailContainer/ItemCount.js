@@ -1,24 +1,43 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 function ItemCount({stock, onAddToCart}) {
-  let [count, setCount] = useState(1);
+  const [count, setCount] = useState(1);
 
-  function agregarProducto(){
-    if (count < stock) {
-      setCount(count+1)
-    }
+  const [toggle, setToggle] = useState(false);
+
+  const [isActive, setActive] = useState(false);
+
+  function handleQuantity(quantity) {
+    setCount(quantity);
   }
-  function eliminarProducto(){
-    if (count > 1) {
-      setCount(count-1)
-    }
-  }
+
   return (
     <div className='cart'>
-      <div className='product'>
-        <button className='addRemove' onClick={eliminarProducto}>-</button>
-        <div className='count'>{count}</div>
-        <button className='addRemove' onClick={agregarProducto}>+</button>
+      <div className="stockInformation">Stock disponible</div>
+      <div className='quantityButton'>
+        <button className='quantitySelector' onClick={() => {setToggle(!toggle); setActive(!isActive)}}>
+          <span className='buttonContent'>
+            <span className='quantity'>Cantidad:</span>
+            <span className='count'>{count} {count>1 ? "unidades" : "unidad"}</span>
+            <div className={`arrowIcon ${isActive ? 'activeList' : ""}`}><span></span></div>
+            <span className='quantityAvariable'>{`(${stock} disponibles)`}</span>
+          </span>
+        </button>
+        { toggle &&
+          <div className="listQuantity">
+            <ul>
+              {
+                [1,2,3,4,5,6].map((quantity)=>{
+                return(
+                  <li key={quantity} onClick={()=>{handleQuantity(quantity); setToggle(!toggle)}}>
+                    {quantity} {quantity>1 ? "unidades" : "unidad"}
+                  </li>
+                )})
+              }
+              <li key={7}>Más de 6 unidades</li>
+            </ul>
+          </div>
+        }
       </div>
       <div className='buttons'>
         <button className='buyNow'>Comprar ahora</button>
@@ -28,4 +47,4 @@ function ItemCount({stock, onAddToCart}) {
   )
 }
 
-export default ItemCount
+export default ItemCount;

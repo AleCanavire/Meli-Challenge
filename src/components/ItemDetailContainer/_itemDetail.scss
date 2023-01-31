@@ -693,7 +693,7 @@
                   font-size: 22px;
                   font-weight: 700;
                   line-height: 26px;
-                  margin: 0 28px 8px 0;
+                  margin: 0 28px 6px 0;
                }
                svg{
                   width: 22px;
@@ -709,7 +709,7 @@
                position: relative;
                display: flex;
                align-items: center;
-               margin-bottom: 16px;
+               margin-bottom: 14px;
                .stars{
                   position: absolute;
                   left: 0;
@@ -813,65 +813,115 @@
                }
             }
             .cart{
-               .product{
-                  width: 100%;
-                  display: flex;
-                  align-items: center;
-                  flex-wrap: wrap;
-                  border: none;
-                  border: 1px solid rgb(0 0 0 / 20%);
-                  border-radius: 8px;
-                  overflow: hidden;
-                  margin-bottom: 10px;
-                  .addRemove{
-                     background-color: #fff;
-                     flex: 1;
+               .stockInformation{
+                  color: rgb(0 0 0 / 90%);
+                  font-size: 16px;
+                  font-weight: 700;
+               }
+               .quantityButton{
+                  position: relative;
+                  margin: 16px 0 26px;
+                  .quantitySelector{
+                     height: 48px;
                      border: none;
-                     color: $blue;
-                     font-size: 20px;
-                     font-weight: 700;
+                     background-color: transparent;
                      cursor: pointer;
-                     &:hover{
-                        background-color: #f5f5f5;
+                     .buttonContent{
+                        display: flex;
+                        .quantity{
+                           color: rgba(0 0 0 / 90%);
+                           font-size: 16px;
+                           font-weight: 500;
+                           line-height: 1;
+                        }
+                        .count{
+                           color: rgba(0 0 0 / 90%);
+                           font-size: 16px;
+                           font-weight: 700;
+                           line-height: 1;
+                           margin-left: 4px;
+                           white-space: nowrap;
+                        }
+                        .arrowIcon{
+                           position: relative;
+                           width: 16px;
+                           margin-left: 2px;
+                           transition: transform .2s ease;
+                           span{
+                              display: block;
+                              position: absolute;
+                              top: 50%;
+                              left: 0;
+                              width: 7px;
+                              height: 7px;
+                              border: 1px solid $blue;
+                              border-width: 0 2px 2px 0;
+                              transform: rotate(45deg) translateY(-100%);
+                           }
+                        }
+                        .activeList{
+                           transform: rotate(180deg);
+                        }
+                        .quantityAvariable{
+                           color: rgba(0 0 0 / 55%);
+                           font-size: 14px;
+                           font-weight: 500;
+                           line-height: 1;
+                           margin-left: 4px;
+                        }
                      }
                   }
-                  .count{
-                     flex: 1;
-                     text-align: center;
-                     cursor: default;
+                  .listQuantity{
+                     position: absolute;
+                     top: 50px;
+                     left: 3px;
+                     width: 200px;
+                     min-height: 150px;
+                     color: rgb(0 0 0 / 90%);
+                     background-color: #fff;
+                     box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%), 0 0 6px 0 rgb(0 0 0 / 10%);
+                     z-index: 10;
+                     ul{
+                        li{
+                           font-size: 16px;
+                           font-weight: 500;
+                           padding: 16px;
+                           line-height: 1;
+                           list-style: none;
+                           transition: background-color .1s ease-out;
+                           cursor: pointer;
+                           &:hover{
+                              background-color: rgba(0 0 0 / 4%);
+                           }
+                        }
+                     }
                   }
                }
                .buttons{
                   display: flex;
                   flex-wrap: wrap;
                   gap: 8px;
-                  .buyNow{
+                  .buyNow, .addCart{
                      width: 100%;
-                     height: 48px;
+                     line-height: 48px;
                      border: none;
                      border-radius: 5px;
-                     background-color: $blue;
                      font-size: 16px;
                      font-weight: 700;
-                     color: #fff;
                      transition: background-color .3s ease;
+                     cursor: pointer;
+                  }
+                  .buyNow{
+                     background-color: $blue;
+                     color: #fff;
                      &:hover{
-                        cursor: pointer;
                         background-color: $dark-blue;
                      }
                   }
                   .addCart{
-                     width: 100%;
-                     height: 48px;
-                     border: none;
-                     border-radius: 5px;
                      background-color: rgb(65 137 230 / 15%);
-                     font-size: 16px;
-                     font-weight: 700;
                      color: $blue;
-                     transition: background-color .3s ease;
                      &:hover{
-                        cursor: pointer;
                         background-color: rgb(65 137 230 / 20%);
                      }
                   }

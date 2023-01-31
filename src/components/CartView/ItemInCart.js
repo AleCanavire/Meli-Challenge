@@ -18,7 +18,7 @@ function ItemInCart({ product, onRemoveItems, onAddItem, onRemoveItem }) {
 			</div>
 			<div className='itemInfo'>
 				<div className='title'>
-					<Link to={`/PreEntrega1-Canavire/detail/${product.id}`}>
+					<Link to={`/detail/${product.id}`}>
 						<h2>{product.title}</h2>
 					</Link>
           <h3>Categoria: {category}</h3>

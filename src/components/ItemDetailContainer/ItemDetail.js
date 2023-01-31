@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import React,{ useState, useEffect, useContext } from 'react';
 import { cartContext} from '../../context/cartContext';
 import getItems from "../../services/firestore";
 import ItemCount from './ItemCount';
@@ -57,7 +57,7 @@ function ItemDetail({ product }) {
         <div className='sellerProducts'>
           <h2>Publicaciones del vendedor</h2>
           <div className="sellerItems">
-            { <CarouselItems products={products}/> }
+            <CarouselItems products={products}/>
           </div>
           <span className='footerText'>Ver más publicaciones del vendedor</span>
         </div>
@@ -69,34 +69,14 @@ function ItemDetail({ product }) {
             <div className="table">
               <table>
                 <tbody>
-                  <tr>
-                    <th>{product.attributes[1].name}</th>
-                    <td>{product.attributes[1].value_name}</td>
-                  </tr>
-                  <tr>
-                    <th>{product.attributes[3].name}</th>
-                    <td>{product.attributes[3].value_name}</td>
-                  </tr>
-                  <tr>
-                    <th>{product.attributes[4].name}</th>
-                    <td>{product.attributes[4].value_name}</td>
-                  </tr>
-                  <tr>
-                    <th>{product.attributes[5].name}</th>
-                    <td>{product.attributes[5].value_name}</td>
-                  </tr>
-                  <tr>
-                    <th>{product.attributes[7].name}</th>
-                    <td>{product.attributes[7].value_name}</td>
-                  </tr>
-                  <tr>
-                    <th>{product.attributes[10].name}</th>
-                    <td>{product.attributes[10].value_name}</td>
-                  </tr>
-                  <tr>
-                    <th>{product.attributes[14].name}</th>
-                    <td>{product.attributes[14].value_name}</td>
-                  </tr>
+                  { [1,3,4,5,7,10,14].map((row)=>{
+                    return(
+                      <tr key={row}>
+                        <th>{product.attributes[row].name}</th>
+                        <td>{product.attributes[row].value_name}</td>
+                      </tr>
+                    )})
+                  }
                 </tbody>
               </table>  
             </div>
@@ -104,13 +84,11 @@ function ItemDetail({ product }) {
               <h3>Otras características</h3>
               <div className="specsList">
                 <ul>
-                  <li><p><b>{product.attributes[0].name}:</b> {product.attributes[0].value_name}</p></li>
-                  <li><p><b>{product.attributes[2].name}:</b> {product.attributes[2].value_name}</p></li>
-                  <li><p><b>{product.attributes[6].name}:</b> {product.attributes[6].value_name}</p></li>
-                  <li><p><b>{product.attributes[8].name}:</b> {product.attributes[8].value_name}</p></li>
-                  <li><p><b>{product.attributes[9].name}:</b> {product.attributes[9].value_name}</p></li>
-                  <li><p><b>{product.attributes[11].name}:</b> {product.attributes[11].value_name}</p></li>
-                  <li><p><b>{product.attributes[12].name}:</b> {product.attributes[12].value_name}</p></li>
+                  { [0,2,6,8,9,11,12].map((item)=>{
+                    return(
+                      <li key={item}><p><b>{product.attributes[item].name}:</b> {product.attributes[item].value_name}</p></li>
+                    )})
+                  }
                 </ul>
               </div>
             </div>
@@ -139,22 +117,20 @@ function ItemDetail({ product }) {
           </div>
           <div className="lastQuestions">
             <h3>Últimas realizadas</h3>
-            {
-              questions.map((question)=>{
-                return(
-                <div className="oneQuestion">
-                  <div className="question">
-                    <p>{question.question}<a href='./'>Denunciar</a></p>
-                  </div>
-                  <div className="answer">
-                    <p>{question.answer}
-                      <span>21/01/2023</span>
-                      <a href='./'>Denunciar</a>
-                    </p>
-                  </div>
+            { questions.map((question, index)=>{
+              return(
+              <div className="oneQuestion" key={index}>
+                <div className="question">
+                  <p>{question.question}<a href='./'>Denunciar</a></p>
                 </div>
-                )
-              })
+                <div className="answer">
+                  <p>{question.answer}
+                    <span>21/01/2023</span>
+                    <a href='./'>Denunciar</a>
+                  </p>
+                </div>
+              </div>
+              )})
             }
             <div className="allQuestions">Ver todas las preguntas</div>
           </div>
@@ -194,7 +170,7 @@ function ItemDetail({ product }) {
                       const numStars = opinions.filter(opinion => opinion.rate === star);
                       const barWith = (numStars.length / opinions.length) * 100;
                       return(
-                        <li id={`rateBar${star}`}>
+                        <li id={`rateBar${star}`} key={star}>
                           <div className="bar"><span style={{width: `${barWith}%`}}></span></div>
                           <div className="level">
                             <span>{star}</span>
@@ -222,9 +198,9 @@ function ItemDetail({ product }) {
                   </button>
                 </div>
                 <div className="reviewsComments">
-                  { opinions.slice(0, 3).map((opinion)=>{
+                  { opinions.slice(0, 3).map((opinion, index)=>{
                     return(
-                      <>
+                      <React.Fragment key={index}>
                         <article className='reviewComment'>
                           <div className="rateAndDate">
                             <div className="rate">
@@ -271,7 +247,7 @@ function ItemDetail({ product }) {
                           </div>
                         </article>
                         <div className="divider"></div>
-                      </>
+                      </React.Fragment>
                     )})
                   }
                   <p className="moreOpinions">Mostrar todas las opiniones</p>
