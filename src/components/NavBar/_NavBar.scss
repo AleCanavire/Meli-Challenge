@@ -21,9 +21,12 @@
       a{
          display: contents;
          .meliLogo{
-               grid-area: logo;
-               margin: 0 50px 0 10px;
-               cursor: pointer;
+            grid-area: logo;
+            width: 134px;
+            height: 34px;
+            background-image: url(../../assets/img/meliLogo.png);
+            margin-left: 10px;
+            cursor: pointer;
          }
       }
       .location{
@@ -71,44 +74,47 @@
          overflow: hidden;
          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
          form{
-               display: grid;
-               grid-template-columns: 1fr 46px;
+            display: grid;
+            grid-template-areas: "input button";
+            grid-template-columns: 1fr 46px;
+            width: 100%;
+            border-radius: 2px;
+            input{
+               grid-area: input;
                width: 100%;
-               border-radius: 2px;
-               input{
-                  width: 100%;
-                  padding-left: 15px;
-                  border: none;
-                  &::placeholder{
-                     color: rgba(0, 0, 0, .2);
-                     font-size: 16px;
-                     font-weight: 500;
-                  }
-                  &:focus-visible{
-                     outline: none;
-                  }
+               padding-left: 15px;
+               border: none;
+               &::placeholder{
+                  color: rgba(0, 0, 0, .2);
+                  font-size: 16px;
+                  font-weight: 500;
                }
-               button{
-                  position: relative;
-                  width: 46px;
-                  height: 39px;
-                  border: none;
-                  background-color: #fff;
-                  cursor: pointer;
-                  &::after{
-                     content: "";
-                     position: absolute;
-                     left: 0;
-                     top: 50%;
-                     transform: translateY(-50%);
-                     border-left: 1px rgba(0, 0, 0, .1) solid;
-                     height: 26px;
-                     
-                  }
-                  img{
-                     height: 16px;
-                  }
+               &:focus-visible{
+                  outline: none;
                }
+            }
+            button{
+               grid-area: button;
+               position: relative;
+               width: 46px;
+               height: 39px;
+               border: none;
+               background-color: #fff;
+               cursor: pointer;
+               &::after{
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  border-left: 1px rgba(0, 0, 0, .1) solid;
+                  height: 26px;
+                  
+               }
+               img{
+                  height: 16px;
+               }
+            }
          }
       }
       .categories{
@@ -118,85 +124,85 @@
          display: flex;
          align-items: flex-end;
          ul{
-               display: flex;
-               gap: 18px;
-               padding-bottom: 10px;
-               li:first-child{
-                  position: relative;
-                  width: 80px;
-                  cursor: pointer;
-                  &:hover > .allCategories{
+            display: flex;
+            gap: 18px;
+            padding-bottom: 10px;
+            li:first-child{
+               position: relative;
+               width: 80px;
+               cursor: pointer;
+               &:hover > .allCategories{
+                  visibility: visible;
+               }
+               &::before{
+                  content: "";
+                  width: 6px;
+                  height: 6px;
+                  position: absolute;
+                  right: 0;
+                  color: rgba(0,0,0,.3);
+                  border-style: solid;
+                  border-width: 0 1.5px 1.5px 0;
+                  margin: 9px 0 0 6px;
+                  transform: rotate(45deg);
+                  box-sizing: border-box;
+               }
+               .allCategories{
+                  background-color: #333;
+                  position: absolute;
+                  top: 30px;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  width: 257px;
+                  padding: 22px 0;
+                  border-radius: 4px;
+                  z-index: 3;
+                  visibility: hidden;
+                  cursor: default;
+                  transition-delay: 0.1s;
+                  transition-property: visibility;
+                  &:hover{
                      visibility: visible;
                   }
                   &::before{
                      content: "";
-                     width: 6px;
-                     height: 6px;
                      position: absolute;
-                     right: 0;
-                     color: rgba(0,0,0,.3);
-                     border-style: solid;
-                     border-width: 0 1.5px 1.5px 0;
-                     margin: 9px 0 0 6px;
-                     transform: rotate(45deg);
-                     box-sizing: border-box;
+                     top: 0;
+                     left: 155px;
+                     transform: rotate(180deg) translateY(100%);
+                     border-left: 8px solid transparent;
+                     border-right: 8px solid transparent;
+                     border-top: 8px solid #333;
                   }
-                  .allCategories{
-                     background-color: #333;
-                     position: absolute;
-                     top: 30px;
-                     left: 50%;
-                     transform: translateX(-50%);
-                     width: 257px;
-                     padding: 22px 0;
-                     border-radius: 4px;
-                     z-index: 3;
-                     visibility: hidden;
-                     cursor: default;
-                     transition-delay: 0.1s;
-                     transition-property: visibility;
-                     &:hover{
-                           visibility: visible;
-                     }
-                     &::before{
-                           content: "";
-                           position: absolute;
-                           top: 0;
-                           left: 155px;
-                           transform: rotate(180deg) translateY(100%);
-                           border-left: 8px solid transparent;
-                           border-right: 8px solid transparent;
-                           border-top: 8px solid #333;
-                     }
-                     a{
-                           color: #fff;
-                           display: block;
-                           font-size: 14px;
-                           font-weight: 700;
-                           line-height: 36px;
-                           text-decoration: none;
-                           padding: 0 36px;
-                           cursor: pointer;
-                           &:hover{
-                              background-color: $blue;
-                           }
-                     }
-                  }
-               }
-               li{
-                  list-style: none;
-                  span{
-                     color: rgba(51, 51, 51, .6);
+                  a{
+                     color: #fff;
+                     display: block;
                      font-size: 14px;
-                     font-weight: 500;
-                     transition: 300ms color ease;
+                     font-weight: 700;
+                     line-height: 36px;
+                     text-decoration: none;
+                     padding: 0 36px;
                      cursor: pointer;
                      &:hover{
-                           color: rgba(51, 51, 51, .9);
-                           transition: 500ms color ease;
+                        background-color: $blue;
                      }
                   }
                }
+            }
+            li{
+               list-style: none;
+               span{
+                  color: rgba(51, 51, 51, .6);
+                  font-size: 14px;
+                  font-weight: 500;
+                  transition: 300ms color ease;
+                  cursor: pointer;
+                  &:hover{
+                     color: rgba(51, 51, 51, .9);
+                     transition: 500ms color ease;
+                  }
+               }
+            }
          }
       }
       .disney{
@@ -214,53 +220,55 @@
          align-content: flex-end;
          justify-content: flex-end;
          ul{
-               display: flex;
-               align-items: flex-end;
-               justify-content: flex-end;
-               gap: 20px;
-               padding-bottom: 10px;
-               li{
-                  list-style: none;
-                  span{
-                     color: #333;
-                     font-size: 14px;
-                     line-height: 10px;
-                     font-weight: 500;
-                     cursor: pointer;
-                     &:hover{
-                           color: #000;
-                     }
-                  }
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 20px;
+            padding-bottom: 10px;
+            li{
+               list-style: none;
+               &:nth-child(4){
+                  display: none;
                }
-               .cartWidget{
-                  height: 20px;
-                  width: 20px;
-                  margin-right: 10px;
-                  margin-bottom: 4px;
+               span{
+                  color: #333;
+                  font-size: 14px;
+                  line-height: 10px;
+                  font-weight: 500;
                   cursor: pointer;
-                  position: relative;
-                  img{
-                     width: 100%;
-                     height: 100%;
-                  }
-                  .itemsInCart{
-                     position: absolute;
-                     top: -2px;
-                     right: 0;
-                     width: 16px;
-                     height: 12px;
-                     span{
-                           display: block;
-                           width: 100%;
-                           font-size: 11px;
-                           line-height: 11px;
-                           color: #333;
-                           text-align: center;
-                           text-decoration: none;
-                           
-                     }
+                  &:hover{
+                     color: #000;
                   }
                }
+            }
+            .cartWidget{
+               height: 20px;
+               width: 20px;
+               margin-right: 10px;
+               margin-bottom: 4px;
+               cursor: pointer;
+               position: relative;
+               img{
+                  width: 100%;
+                  height: 100%;
+               }
+               .itemsInCart{
+                  position: absolute;
+                  top: -2px;
+                  right: 0;
+                  width: 16px;
+                  height: 12px;
+                  span{
+                     display: block;
+                     width: 100%;
+                     font-size: 11px;
+                     line-height: 11px;
+                     color: #333;
+                     text-align: center;
+                     text-decoration: none;
+                  }
+               }
+            }
          }
       }
    }
@@ -278,4 +286,169 @@
 .shadowActive{
    opacity: 0.3;
    z-index: 2;
+}
+
+@media (max-width:1200px){
+   .nav{
+      height: 87px;
+      .navContainer{
+         max-width: none;
+         width: 100%;
+         padding: 0;
+         grid-template-columns: 64px 1fr 95px;
+         grid-template-areas:
+         "logo search account"
+         "location location location";
+         a{
+            .meliLogo{
+               width: 44px;
+               height: 32px;
+               background-image: url(../../assets/img/meliLogo2.png);
+               background-size: 44px 32px;
+               margin: 0 10px 0;
+            }
+         }
+         .location{
+            width: 100%;
+            height: 39px;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 -1px 0 0 rgb(0 0 0 / 10%);
+            display: flex;
+            align-items: center;
+            img{
+               width: 12px;
+               height: 14px;
+               top: 10px;
+               left: 10px;
+               filter: drop-shadow(0px 0px 0.6px black);
+            }
+            .envio{
+               span, p{
+                  color: #736c28;
+                  font-size: 13px;
+                  font-weight: 500;
+                  line-height: 13px;
+               }
+               span{
+                  padding-left: 28px;
+               }
+               p{
+                  padding-left: 3px;
+               }
+            }
+         }
+         .search{
+            width: 100%;
+            height: 32px;
+            margin: 8px 0;
+            form{
+               grid-template-columns: 35px 1fr;
+               grid-template-areas: "button input";
+               input{
+                  padding: 0;
+                  &::placeholder{
+                     color: rgba(0 0 0 / 20%);
+                     font-size: 16px;
+                     font-weight: 500;
+                  }
+                  &:focus-visible{
+                     outline: none;
+                  }
+               }
+               button{
+                  height: 32px;
+                  width: 35px;
+                  img{
+                     height: 13px;
+                     opacity: 0.7;
+                     
+                  }
+                  &::after{
+                     display: none;
+                  }
+               }
+            }
+         }
+         .categories{
+            display: none;
+         }
+         .disney{
+            display: none;
+         }
+         .account{
+            width: 90px;
+            padding-left: 5px;
+            align-items: center;
+            justify-content: flex-start;
+            ul{
+               display: flex;
+               align-items: flex-end;
+               justify-content: flex-end;
+               gap: 0;
+               padding: 0;
+               .accountOptions{
+                  display: none;
+               }
+               .burgerButton{
+                  display: flex !important;
+                  align-items: center;
+                  justify-content: center;
+                  width: 45px;
+                  height: 48px;
+                  span{
+                     background-color: #333;
+                     position: relative;
+                     display: block;
+                     width: 20px;
+                     height: 1px;
+                     &::before, &::after{
+                        background-color: #333;
+                        position: absolute;
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        width: 20px;
+                        height: 1px;
+                     }
+                     &::before{
+                        top: 7px;
+                     }
+                     &::after{
+                        top: -7px;
+                     }   
+                  }
+               }
+               .cartButton{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 45px;
+                  height: 48px;
+                  .cartWidget{
+                     height: 23px;
+                     width: 23px;
+                     margin: 0;
+                     .itemsInCart{
+                        position: absolute;
+                        top: -2px;
+                        right: 0;
+                        width: 16px;
+                        height: 12px;
+                        span{
+                           display: block;
+                           width: 100%;
+                           font-size: 11px;
+                           line-height: 11px;
+                           color: #333;
+                           text-align: center;
+                           text-decoration: none;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
 }

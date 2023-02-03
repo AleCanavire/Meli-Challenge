@@ -14,7 +14,7 @@ function NavBar() {
       <nav className='nav'>
         <div className='navContainer'>
           <Link to="/">
-            <img className='meliLogo' src='/img/meliLogo.png' alt='Logo Mercado Libre'></img>
+            <div className='meliLogo'></div>
           </Link>
           <div className='location'>
             <img src='/img/location.svg' alt='location icon'></img>
@@ -71,10 +71,11 @@ function NavBar() {
           <img className='disney' src='/img/disneyStar.webp' alt='disney icon'></img>
           <div className='account'>
             <ul>
-              <li><span>Creá  tu cuenta</span></li>
-              <li><span>Ingresá</span></li>
-              <li><span>Mis compras</span></li>
-              <CartWidget/>
+              <li className='accountOptions'><span>Creá  tu cuenta</span></li>
+              <li className='accountOptions'><span>Ingresá</span></li>
+              <li className='accountOptions'><span>Mis compras</span></li>
+              <li className='burgerButton'><span></span></li>
+              <li className='cartButton'><CartWidget/></li>
             </ul>
           </div>
         </div>
@@ -84,4 +85,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default NavBar;

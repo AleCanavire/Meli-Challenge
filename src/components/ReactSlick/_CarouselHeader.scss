@@ -87,3 +87,42 @@
       }   
    }
 }
+
+@media (max-width: 1024px){
+   .imageSlide{
+      img{
+         height: 255px;
+      }
+   }
+   .carouselHeader{
+      .slick-slider{
+         height: 255px;
+      }  
+   }
+}
+
+@media (max-width: 768px){
+   .imageSlide{
+      img{
+         height: 180px;
+      }
+   }
+   .carouselHeader{
+      .slick-slider{
+         height: 180px;
+      }  
+   }
+}
+
+@media (max-width: 600px){
+   .imageSlide{
+      img{
+         height: 130px;
+      }
+   }
+   .carouselHeader{
+      .slick-slider{
+         height: 130px;
+      }  
+   }
+}
