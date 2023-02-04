@@ -6,6 +6,8 @@ import CarouselItems from '../ReactSlick/CarouselItems';
 import questions, {opinions} from '../../data/questionsAndOpinions';
 
 function ItemDetail({ product }) {
+  const { addToCart } = useContext(cartContext);
+
   const [products, setProducts] = useState(null);
 
   async function getItemsAsync() {
@@ -17,16 +19,14 @@ function ItemDetail({ product }) {
     getItemsAsync();
   }, []);
   
-  const { addToCart } = useContext(cartContext);
-
   function onAddToCart(count){
     addToCart(product, count)
   }
 
   // precio
   const num = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
-  
   const price = num.toLocaleString('es-AR');
+
   // cuotas
   const quota = Math.trunc(num / 6).toLocaleString('es-AR');
 
@@ -39,8 +39,44 @@ function ItemDetail({ product }) {
     stars.push(i)
   }
 
+  // Tus Preguntas
+  const [yourQuestions, setQuestions] = useState([])
+  const [oneQuestion, setQuestion] = useState("")
+
+  function onSubmit(evt){
+    evt.preventDefault();
+  }
+  function newQuestion(){
+    let newQuestions = [...yourQuestions];
+    newQuestions.unshift(oneQuestion);
+    setQuestions(newQuestions);
+
+  }
+  function onInputChange(e) {
+    let oneQuestion = e.target.value;
+    let question = {question: oneQuestion}
+    setQuestion(question);
+  }
+
+  // Ocultar menu opiniones
+  const [toggle1, setToggle1] = useState(false);
+  const [toggle2, setToggle2] = useState(false);
+
+  // Ordenar opiniones por estrellas
+  const [reviews, setReviews] = useState(opinions)
+  function filterStars(numRate){
+    const numStar = opinions.filter((opinion)=>opinion.rate === numRate);
+    const otherStars = opinions.filter((opinion)=>opinion.rate !== numRate);
+    const newArray = numStar.concat(otherStars);
+    setReviews(newArray)
+  }
+  function allReviews() {
+    setReviews(reviews.sort((a, b) =>  b.rate - a.rate));
+  }
+
   return (
     <div className='itemDetail'>
+      {/* ----- Columna Izquierda -----*/}
       <div className='columnLeft'>
         <div className='imgProductContainer'>
           <div className='imgProduct'>
@@ -61,7 +97,6 @@ function ItemDetail({ product }) {
           </div>
           <span className='footerText'>Ver más publicaciones del vendedor</span>
         </div>
-        
         {product.attributes &&
         <>
           <div className="techSpecs">
@@ -110,11 +145,24 @@ function ItemDetail({ product }) {
           </div>
           <div className="yourQuestion">
             <h3>Preguntale al vendedor</h3>
-            <div className='form'>
-              <input type="text" placeholder="Escribí tu pregunta..."></input>
-              <button>Preguntar</button>
-            </div>
+            <form className='form' onSubmit={onSubmit}>
+              <input type="text" placeholder="Escribí tu pregunta..." onChange={onInputChange}></input>
+              <button onClick={newQuestion}>Preguntar</button>
+            </form>
           </div>
+          { yourQuestions ==! []
+            ? "" :
+            <div className="yoursQuestions">
+              <h3>Tus preguntas</h3>
+              { yourQuestions.map((question, index)=>{
+                return(
+                  <div className="question" key={index}>
+                    <p>{question.question}</p>
+                  </div>
+                )})
+              }
+            </div>
+          }
           <div className="lastQuestions">
             <h3>Últimas realizadas</h3>
             { questions.map((question, index)=>{
@@ -186,19 +234,43 @@ function ItemDetail({ product }) {
               </div>
               <div className="reviewsFilter">
                 <div className="filterButtons">
-                  <button>
+                  <button onClick={()=> setToggle1(!toggle1)}>
                     <span>
-                      Ordenar<div></div>
+                      Ordenar<div className='arrowIcon'></div>
                     </span>
+                    { toggle1 &&
+                      <div className="optionsMenu">
+                        <ul>
+                          <li>Más útiles</li>
+                          <li>Más recientes</li>
+                        </ul>
+                      </div>
+                    }
                   </button>
-                  <button>
+                  <button onClick={()=> setToggle2(!toggle2)}>
                     <span>
-                      Calificación<div></div>
+                      Calificación<div className='arrowIcon'></div>
                     </span>
+                    { toggle2 &&
+                      <div className="optionsMenu">
+                        <ul>
+                          <li onClick={allReviews}>Todas</li>
+                          { [5,4,3,2,1].map((star, index) => {
+                            return(
+                              <li key={index} onClick={()=>filterStars(star)}>{star}
+                                <svg enableBackground="new 0 0 24 24" version="1.1" viewBox="0 0 24 24" xmlSpace="preserve" xmlns="http://www.w3.org/2000/svg">
+                                  <polygon points="12 19.5 4.6 23.4 6 15.1 0 9.3 8.3 8.1 12 0.6 15.7 8.1 24 9.3 18 15.1 19.4 23.4"/>
+                                </svg>  
+                              </li>
+                            )})
+                          }  
+                        </ul>
+                      </div>  
+                    }
                   </button>
                 </div>
                 <div className="reviewsComments">
-                  { opinions.slice(0, 3).map((opinion, index)=>{
+                  { reviews.slice(0, 3).map((opinion, index)=>{
                     return(
                       <React.Fragment key={index}>
                         <article className='reviewComment'>
@@ -258,6 +330,7 @@ function ItemDetail({ product }) {
         </div>
       </div>
 
+      {/* ----- Columna Derecha -----*/}
       <div className='columnRight'>
         <div className='infoProduct borderRow'>
           <div className='productHeader'>

@@ -287,6 +287,26 @@
                   }
                }
             }
+            .yoursQuestions{
+               margin-top: 40px;
+               color: rgb(0 0 0 / 90%);
+               h3{
+                  font-size: 18px;
+                  font-weight: 700;
+                  line-height: 22px;
+               }
+               .question{
+                  background-color: rgba(0 0 0 / 4%);
+                  border-radius: 6px;
+                  margin-top: 25px;
+                  padding: 16px;
+                  p{
+                     font-size: 16px;
+                     font-weight: 500;
+                     line-height: 23px;
+                  }
+               }
+            }
             .lastQuestions{
                margin-top: 40px;
                h3{
@@ -512,13 +532,46 @@
                               font-size: 14px;
                               font-weight: 700;
                               line-height: 32px;
-                              div{
+                              .arrowIcon{
                                  width: 7px;
                                  height: 7px;
                                  margin: 12px 5px 0 12px;
                                  border: 1px solid $blue;
                                  border-width: 0 1.5px 1.5px 0;
                                  transform: rotate(45deg);
+                              }
+                           }
+                           .optionsMenu{
+                              position: absolute;
+                              top: 32px;
+                              left: 0;
+                              width: 100%;
+                              margin-top: 10px;
+                              padding: 10px 0;
+                              background-color: #fff;
+                              border-radius: 6px;
+                              box-shadow: 0 0 6px rgb(0 0 0 / 10%), 0 6px 16px rgb(0 0 0 / 10%);
+                              z-index: 3;
+                              ul{
+                                 li{
+                                    position: relative;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 1.35;
+                                    padding: 10px 16px;
+                                    text-align: left;
+                                    list-style: none;
+                                    cursor: pointer;
+                                    &:hover{
+                                       background-color: #f5f5f5;
+                                    }
+                                    svg{
+                                       position: absolute;
+                                       top: 10px;
+                                       left: 30px;
+                                       height: 16px;
+                                    }
+                                 }
                               }
                            }
                         }

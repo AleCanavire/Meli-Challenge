@@ -80,11 +80,16 @@ export const opinions = [
   {
     "rate": 3,
     "comment": "El producto es lindo, pero me vino con un desperfecto.",
-    "likes": 0
+    "likes": 1
   },
   {
     "rate": 2,
     "comment": "No es el mismo que figura en la publicación.",
+    "likes": 0
+  },
+  {
+    "rate": 1,
+    "comment": "Este producto tiene materiales de mala calidad.",
     "likes": 0
   }
 ];
