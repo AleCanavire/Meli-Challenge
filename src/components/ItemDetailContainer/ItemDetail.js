@@ -1,4 +1,5 @@
 import React,{ useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
 import { cartContext} from '../../context/cartContext';
 import getItems from "../../services/firestore";
 import ItemCount from './ItemCount';
@@ -40,17 +41,15 @@ function ItemDetail({ product }) {
   }
 
   // Tus Preguntas
-  const [yourQuestions, setQuestions] = useState([])
-  const [oneQuestion, setQuestion] = useState("")
+  const [yourQuestions, setQuestions] = useState([]);
+  const [oneQuestion, setQuestion] = useState("");
 
-  function onSubmit(evt){
-    evt.preventDefault();
+  function onSubmit(e){
+    e.preventDefault();
+    e.target.reset();
   }
   function newQuestion(){
-    let newQuestions = [...yourQuestions];
-    newQuestions.unshift(oneQuestion);
-    setQuestions(newQuestions);
-
+    setQuestions([oneQuestion, ...yourQuestions]);
   }
   function onInputChange(e) {
     let oneQuestion = e.target.value;
@@ -74,6 +73,32 @@ function ItemDetail({ product }) {
     setReviews(reviews.sort((a, b) =>  b.rate - a.rate));
   }
 
+  // Cambiar Imagen
+  const [focusImg, setFocusImg] = useState("");
+  const [ stylePreview, setStylePreview] = useState({
+    imageSelected: null,
+    objects: [{id:1}, {id:2}, {id:3}, {id:4}]
+  });
+  
+  function imageActive(index){
+    setStylePreview({...stylePreview, imageSelected: stylePreview.objects[index]})
+  }
+
+  function imageStyled(index){
+    if (stylePreview.objects[index] === stylePreview.imageSelected) {
+      return "selected"
+    } return ""
+  }
+  
+  function changeImage(imageUrl){
+    setFocusImg(imageUrl)
+  }
+  const { id } = useParams();
+  useEffect(() => {
+    setFocusImg("");
+    setStylePreview({...stylePreview, imageSelected: stylePreview.objects[0]})
+  }, [id]);
+
   return (
     <div className='itemDetail'>
       {/* ----- Columna Izquierda -----*/}
@@ -81,12 +106,24 @@ function ItemDetail({ product }) {
         <div className='imgProductContainer'>
           <div className='imgProduct'>
             <div className='gallery'>
-              <div className='preview'>
-                <img src={product.image || product.pictures[0].url} alt={product.title}></img>
-              </div>
+              { product.image
+                ? <div className="preview selected">
+                    <img src={product.image} alt={product.title}></img>
+                  </div>
+                : product.pictures.map((img, index)=>{
+                return(
+                  <div
+                    className={`preview ${imageStyled(index)}`}
+                    onClick={()=> {changeImage(img.url); imageActive(index)}} key={index}>
+                    <img src={img.url} alt={product.title}></img>
+                  </div>
+                )})
+              }
             </div>
             <div className='focusImg'>
-              <img src={product.image || product.pictures[0].url} alt={product.title}></img>
+              <img src={focusImg === ""
+              ? product.image || product.pictures[0].url
+              : focusImg} alt={product.title}/>
             </div>
           </div>
         </div>
@@ -147,11 +184,10 @@ function ItemDetail({ product }) {
             <h3>Preguntale al vendedor</h3>
             <form className='form' onSubmit={onSubmit}>
               <input type="text" placeholder="Escribí tu pregunta..." onChange={onInputChange}></input>
-              <button onClick={newQuestion}>Preguntar</button>
+              <button type='submit' onClick={newQuestion}>Preguntar</button>
             </form>
           </div>
-          { yourQuestions ==! []
-            ? "" :
+          { yourQuestions.length !== 0 &&
             <div className="yoursQuestions">
               <h3>Tus preguntas</h3>
               { yourQuestions.map((question, index)=>{
