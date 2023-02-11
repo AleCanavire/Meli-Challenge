@@ -28,6 +28,18 @@ function ItemDetailContainer() {
   // precio
   const price = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
 
+  // Responsive Detail
+  const [windowSize, setWindowSize] = useState(window.innerWidth > 1200);
+
+  function updateSize() {
+    setWindowSize(window.innerWidth > 1200);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  });
+
   return (
     <>
       { productIsInCart &&
@@ -37,14 +49,16 @@ function ItemDetailContainer() {
       quantity={productIsInCart.quantity}
       image={product.image || product.thumbnail}/>}
       <div className="itemDetailContainer">
-        <div className="categoryShare">
-          <div className="category">
-            <Link to="/PreEntrega1-Canavire/">Volver al listado</Link><span>{product.category}</span>  
+        { windowSize &&
+          <div className="categoryShare">
+            <div className="category">
+              <Link to="/">Volver al listado</Link><span>{product.category}</span>  
+            </div>
+            <div className="share">
+              <p>Compartir</p><span>Vender uno igual</span>
+            </div>
           </div>
-          <div className="share">
-            <p>Compartir</p><span>Vender uno igual</span>
-          </div>
-        </div>
+        }
         {isLoading ? <ItemDetailSkeleton/> : <ItemDetail product={product}/>}
       </div>
     </>

@@ -32,17 +32,29 @@ function CarouselItems({ products }) {
   const settings = {
     dots: false,
     infinite: false,
-    speed: 500,
     autoplay: false,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
     nextArrow: <NextArrow/>,
-    prevArrow: <PrevArrow/>
+    prevArrow: <PrevArrow/>,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          swipeToSlide: true,
+          variableWidth: true,
+          arrows: false
+        }
+      }
+    ]
   };
   return (
     <Slider {...settings}>
       {
-        products ?
+        products &&
         products.map(product => {
           return(
             <SellerItem
@@ -53,7 +65,6 @@ function CarouselItems({ products }) {
             price={product.price}/>
           )
         })
-        : <h3>hola</h3>
       }
     </Slider>
     
