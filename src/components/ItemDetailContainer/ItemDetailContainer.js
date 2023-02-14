@@ -7,13 +7,13 @@ import ItemDetailSkeleton from "./ItemDetailSkeleton";
 import AddedToCart from "./AddedToCart";
 
 function ItemDetailContainer() {
-  const [product, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
   async function getItemsAsync() {
     getSingleItem(id).then(response => {
-      setProducts(response);
+      setProduct(response);
       setIsLoading(false)
     })
   }

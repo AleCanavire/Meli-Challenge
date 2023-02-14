@@ -344,5 +344,829 @@
             margin-bottom: 24px;
          }
       }
+      .sellerInfoContainer{
+         width: 100%;
+         padding: 40px 16px;
+         border-top: 1px solid rgb(0 0 0 / 10%);
+         h2{
+            color: rgba(0 0 0 / 90%);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 24px;
+         }
+         .sellerInfo{
+            .ubicationAndMercadoLider{
+               display: flex;
+               margin-bottom: 20px;
+               .icon{
+                  margin-right: 10px;
+                  img{
+                     width: 20px;
+                  }
+               }
+               .text{
+                  p:first-child{
+                     color: rgb(0 0 0 / 90%);
+                     font-size: 16px;
+                     font-weight: 500;
+                     line-height: 1.35;
+                  }
+                  p:nth-child(2){
+                     color: rgb(0 0 0 / 55%);
+                     font-size: 14px;
+                     font-weight: 500;
+                     line-height: 1.35;
+                  }
+               }
+               &:nth-of-type(2){
+                  p:first-child{
+                     color: #00a650;
+                  }
+               }
+            }
+            .thermometer{
+               display: flex;
+               align-items: center;
+               gap: 6px;
+               .thermometerLevel{
+                  height: 8px;
+                  flex: 1;
+                  list-style: none;
+                  &:nth-child(1){
+                     background-color: #fff0f0;
+                  }
+                  &:nth-child(2){
+                     background-color: #fff5e8;
+                  }
+                  &:nth-child(3){
+                     background-color: #fffcda;
+                  }
+                  &:nth-child(4){
+                     background-color: #f1fdd7;
+                  }
+                  &:nth-child(5){
+                     background-color: #39b54a;
+                     height: 12px;
+                  }
+               }
+            }
+            .sellerReputation{
+               margin-top: 16px;
+               ul{
+                  display: flex;
+                  .reputationItem{
+                     position: relative;
+                     flex: 1;
+                     padding: 0 5px;
+                     list-style: none;
+                     span{
+                        color: #000;
+                        display: block;
+                        font-size: 24px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        text-align: center;
+                        height: 28px;
+                        img{
+                           width: 28px;
+                           padding-top: 3px;
+                        }
+                     }
+                     p{
+                        color: rgba(0 0 0 / 70%);
+                        font-size: 12px;
+                        font-weight: 500;
+                        line-height: 1;
+                        text-align: center;
+                        margin-top: 8px;
+                     }
+                     &:nth-of-type(2){
+                        &::before, &::after{
+                           content: "";
+                           position: absolute;
+                           top: 0;
+                           width: 1px;
+                           height: 100%;
+                           margin-top: 5px;
+                           background-color: #ddd;
+                        }
+                        &::before{
+                           left: 0;
+                        }
+                        &::after{
+                           right: 0;
+                        }
+                     }
+                  }
+               }
+               .moreInfoSeller{
+                  color: $blue;
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 16px;
+                  margin-top: 32px;
+                  padding: 16px;
+                  border: 1px solid rgb(0 0 0 / 10%);
+                  border-radius: 6px;
+                  transition: .3s color ease;
+                  cursor: pointer;
+                  &:hover{
+                     color: $dark-blue;
+                  }
+               }
+            }
+         }
+      }
+      .techSpecs{
+         width: 100%;
+         padding: 40px 16px;
+         border-top: 1px solid rgb(0 0 0 / 10%);
+         h2{
+            color: rgb(0 0 0 / 90%);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            margin-bottom: 24px;
+         }
+         .table{
+            border: 1px solid #ededed;
+            border-radius: 5px;
+            overflow: hidden;
+            table{
+               width: 100%;
+               border-spacing: 0;
+               tbody{
+                  tr{
+                     display: flex;
+                     text-align: left;
+                     th{
+                        width: 40%;
+                        font-size: 14px;
+                        padding: 14px;
+                     }
+                     td{
+                        flex: 1;
+                        padding: 14px;
+                     }
+                  }
+                  tr:nth-child(odd){
+                     th{
+                        background-color: #ebebeb;
+                     }
+                     td{
+                        background-color: #f5f5f5;
+                     }
+                  }
+                  tr:nth-child(even){
+                     th{
+                        background-color: #f5f5f5;
+                     }
+                     td{
+                        background-color: #fff;
+                     }
+                  }
+               }
+            }   
+         }
+         .moreTechs{
+            color: $blue;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16px;
+            margin-top: 32px;
+            padding: 16px;
+            border: 1px solid rgba(0 0 0 / 10%);
+            border-radius: 6px;
+            transition: 0.3s color ease;
+            cursor: pointer;
+            &:hover{
+               color: $dark-blue;
+            }
+         }
+      }
+      .description{
+         border-top: 1px solid rgb(0 0 0 / 10%);
+         padding: 40px 16px;
+         h2{
+            color: rgb(0 0 0 / 90%);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            margin-bottom: 24px;
+         }
+         p{
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            white-space: pre-wrap;
+         }
+      }
+      .listContent{
+         width: 100%;
+         border-top: 1px solid rgb(0 0 0 / 10%);
+         .freeReturn, .warranty{
+            padding: 40px 16px;
+            h2{
+               color: rgb(0 0 0 / 90%);
+               font-size: 20px;
+               font-weight: 500;
+               line-height: 25px;
+               margin-bottom: 24px;
+            }
+            h3{
+               color: rgb(0 0 0 / 90%);
+               font-size: 16px;
+               font-weight: 500;
+               line-height: 22px;
+               margin-bottom: 8px;
+            }
+            p{
+               color: rgb(0 0 0 / 55%);
+               font-size: 16px;
+               font-weight: 500;
+               line-height: 22px;
+            }
+            span{
+               display: block;
+               color: $blue;
+               font-size: 14px;
+               font-weight: 500;
+               line-height: 16px;
+               margin-top: 32px;
+               padding: 16px;
+               border: 1px solid rgba(0 0 0 / 10%);
+               border-radius: 6px;
+               transition: .3s color ease;
+               cursor: pointer;
+               &:hover{
+                  color: $dark-blue;
+               }
+            }
+         }
+         .warranty{
+            border-top: 1px solid rgba(0 0 0 / 10%);
+            p{
+               margin-bottom: 32px;
+            }
+         }
+         .paymentMethods{
+            border-top: 1px solid rgba(0 0 0 / 10%);
+            padding: 40px 16px;
+            .creditCards, .debitCards, .cash{
+               margin-top: 28px;
+            }
+            h2{
+               color: rgb(0 0 0 / 90%);
+               font-size: 20px;
+               font-weight: 500;
+               line-height: 25px;
+               margin-bottom: 24px;
+            }
+            p{
+               color: rgb(0 0 0 / 90%);
+               font-size: 16px;
+               font-weight: 400;
+               line-height: 12px;
+               margin-bottom: 24px;
+            }
+            .payment{
+               height: 32px;
+               display: flex;
+               flex-wrap: wrap;
+               gap: 24px;
+            }
+            .moreMethods{
+               display: block;
+               color: $blue;
+               font-size: 14px;
+               font-weight: 500;
+               line-height: 16px;
+               margin-top: 32px;
+               padding: 16px;
+               border: 1px solid rgba(0 0 0 / 10%);
+               border-radius: 6px;
+               transition: 0.3s color ease;
+               cursor: pointer;
+               &:hover{
+                  color: $dark-blue;
+               }
+            }
+         }
+      }
+      .questionsContainer{
+         width: 100%;
+         border-top: 1px solid rgb(0 0 0 / 10%);
+         padding: 40px 16px;
+         h2{
+            color: rgb(0 0 0 / 90%);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+         }
+         .buttons{
+            margin-top: 24px;
+            h3{
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 24px;
+               margin-bottom: 18px;
+            }
+            button{
+               color: $blue;
+               background-color: rgb(65 137 230 / 15%);
+               font-size: 12px;
+               font-weight: 700;
+               line-height: 34px;
+               height: 34px;
+               padding: 0 12px;
+               margin: 0 8px 8px 0;
+               border: none;
+               border-radius: 5px;
+               cursor: pointer;
+            }
+         }
+         .yourQuestion{
+            margin-top: 32px;
+            h3{
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 24px;
+               margin-bottom: 16px
+            }
+            .form{
+               display: flex;
+               flex-wrap: wrap;
+               gap: 16px;
+               input{
+                  width: 100%;
+                  padding: 12px;
+                  font-size: 16px;
+                  line-height: 1;
+                  border: none;
+                  border-radius: 5px;
+                  box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+                  &::placeholder{
+                     color: rgb(0 0 0 / 25%);
+                  }
+                  &:focus-visible{
+                     outline: $blue auto;
+                  }
+               }
+               button{
+                  color: #fff;
+                  background-color: $blue;
+                  width: 100%;
+                  font-size: 16px;
+                  font-weight: 700;
+                  line-height: 48px;
+                  border: none;
+                  border-radius: 5px;
+                  transition: background-color 0.3s ease;
+                  &:hover{
+                     background-color: $dark-blue;
+                     cursor: pointer;
+                  }
+               }
+            }
+         }
+         .yoursQuestions{
+            margin-top: 40px;
+            color: rgb(0 0 0 / 90%);
+            h3{
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 22px;
+            }
+            .question{
+               background-color: rgba(0 0 0 / 4%);
+               border-radius: 6px;
+               margin-top: 25px;
+               padding: 16px;
+               p{
+                  font-size: 16px;
+                  font-weight: 500;
+                  line-height: 23px;
+               }
+            }
+         }
+         .lastQuestions{
+            padding: 40px 0;
+            h3{
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 22px;
+            }
+            .oneQuestion{
+               margin-top: 16px;
+               .question{
+                  display: flex;
+                  margin-bottom: 6px;
+                  &:hover > p a{
+                     opacity: 1;
+                  }
+                  p{
+                     color: rgb(0 0 0 / 90%);
+                     font-size: 16px;
+                     font-weight: 500;
+                     line-height: 24px;
+                     a{
+                        color: $blue;
+                        font-size: 14px;
+                        line-height: 24px;
+                        text-decoration: none;
+                        margin-left: 8px;
+                        opacity: 0;
+                        cursor: pointer;
+                        &:hover{
+                           color: $dark-blue;
+                        }
+                     }
+                  }
+               }
+               .answer{
+                  display: flex;
+                  position: relative;
+                  &:hover > p a{
+                     opacity: 1;
+                  }
+                  &::before{
+                     content: "";
+                     position: absolute;
+                     top: 0;
+                     left: 12px;
+                     width: 12px;
+                     height: 12px;
+                     border-left: 1px solid rgb(0 0 0 / 25%);
+                     border-bottom: 1px solid rgb(0 0 0 / 25%);
+                  }
+                  p{
+                     margin-left: 32px;
+                     color: rgb(0 0 0 / 55%);
+                     font-size: 16px;
+                     font-weight: 500;
+                     line-height: 24px;
+                     span{
+                        color: rgb(0 0 0 / 55%);
+                        font-size: 14px;
+                        line-height: 24px;
+                        margin-left: 8px;
+                     }
+                     a{
+                        color: $blue;
+                        font-size: 14px;
+                        line-height: 24px;
+                        text-decoration: none;
+                        margin-left: 8px;
+                        opacity: 0;
+                        cursor: pointer;
+                        &:hover{
+                           color: $dark-blue;
+                        }
+                     }
+                  }
+               }
+            }
+            .allQuestions{
+               color: $blue;
+               font-size: 14px;
+               font-weight: 500;
+               line-height: 16px;
+               margin-top: 24px;
+               padding: 16px;
+               border: 1px solid rgba(0 0 0 / 10%);
+               border-radius: 6px;
+               transition: color .3s ease;
+               &:hover{
+                  color: $dark-blue;
+                  cursor: pointer;
+               }
+            }
+         }
+         .opinions{
+            padding: 0 4px;
+            h2{
+               color: rgb(0 0 0 / 90%);
+               font-size: 20px;
+               font-weight: 500;
+               line-height: 25px;
+               margin: 20px 0;
+            }
+            .reviews{
+               display: flex;
+               flex-direction: column;
+               gap: 22px;
+               .scoreItem{
+                  display: flex;
+                  align-content: flex-start;
+                  flex: 1;
+                  .score{
+                     width: 50%;
+                     display: flex;
+                     flex-direction: column;
+                     margin-bottom: 8px;
+                     span{
+                        color: #3483fa;
+                        font-size: 40px;
+                        font-weight: 700;
+                        line-height: 1;
+                        margin-bottom: 8px;
+                     }
+                     .reviewsRating{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .rate{
+                           position: relative;
+                           margin-bottom: 20px;
+                           .stars{
+                              height: 18px;
+                              position: absolute;
+                              top: 0;
+                              left: 0;
+                              display: flex;
+                              gap: 9px;
+                              svg{
+                                 fill: $blue;
+                                 width: 18px;
+                                 height: 18px;
+                              }
+                           }
+                           .greyStars{
+                              height: 18px;
+                              display: flex;
+                              gap: 9px;
+                              svg{
+                                 fill: rgb(0 0 0 / 10%);
+                                 width: 18px;
+                                 height: 18px;
+                              }
+                           }
+                        }
+                        p{
+                           color: rgba(0 0 0 / 55%);
+                           font-size: 14px;
+                           font-weight: 500;
+                           line-height: 16px;
+                        }
+                     }
+                  }
+                  .ratingBars{
+                     width: 50%;
+                     ul{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        li{
+                           display: flex;
+                           align-items: flex-end;
+                           gap: 16px;
+                           list-style: none;
+                           .bar{
+                              position: relative;
+                              width: 100%;
+                              height: 4px;
+                              border-radius: 2px;
+                              background-color: rgb(0 0 0 / 10%);
+                              span{
+                                 position: absolute;
+                                 top: 0;
+                                 left: 0;
+                                 width: 0;
+                                 height: 4px;
+                                 border-radius: 2px;
+                                 background-color: rgb(0 0 0 / 55%);
+                              }
+                           }
+                           .level{
+                              display: flex;
+                              align-items: center;
+                              span{
+                                 color: rgb(0 0 0 / 55%);
+                                 width: 8px;
+                                 font-size: 14px;
+                                 font-weight: 300;
+                                 line-height: 14px;
+                                 text-align: center;
+                              }
+                              svg{
+                                 fill: rgb(0 0 0 / 25%);
+                                 width: 11px;
+                                 height: 11px;
+                                 margin-left: 5px;
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+               .reviewsFilter{
+                  width: 100%;
+                  .filterButtons{
+                     display: flex;
+                     gap: 20px;
+                     margin-bottom: 25px;
+                     button{
+                        background-color: rgba(65 137 230 / 15%);
+                        position: relative;
+                        height: 32px;
+                        padding: 0 22px;
+                        border-radius: 16px;
+                        border: none;
+                        cursor: pointer;
+                        span{
+                           display: flex;
+                           color: $blue;
+                           font-size: 14px;
+                           font-weight: 700;
+                           line-height: 32px;
+                           .arrowIcon{
+                              width: 7px;
+                              height: 7px;
+                              margin: 12px 5px 0 12px;
+                              border: 1px solid $blue;
+                              border-width: 0 1.5px 1.5px 0;
+                              transform: rotate(45deg);
+                           }
+                        }
+                        .optionsMenu{
+                           position: absolute;
+                           top: 32px;
+                           left: 0;
+                           width: 100%;
+                           margin-top: 10px;
+                           padding: 10px 0;
+                           background-color: #fff;
+                           border-radius: 6px;
+                           box-shadow: 0 0 6px rgb(0 0 0 / 10%), 0 6px 16px rgb(0 0 0 / 10%);
+                           z-index: 3;
+                           ul{
+                              li{
+                                 position: relative;
+                                 font-size: 14px;
+                                 font-weight: 500;
+                                 line-height: 1.35;
+                                 padding: 10px 16px;
+                                 text-align: left;
+                                 list-style: none;
+                                 cursor: pointer;
+                                 &:hover{
+                                    background-color: #f5f5f5;
+                                 }
+                                 svg{
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 30px;
+                                    height: 16px;
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+                  .reviewsComments{
+                     .reviewComment{
+                        .rateAndDate{
+                           display: flex;
+                           align-items: center;
+                           justify-content: space-between;
+                           .rate{
+                              position: relative;
+                              .stars{
+                                 position: absolute;
+                                 top: 0;
+                                 left: 0;
+                                 display: flex;
+                                 gap: 3px;
+                                 svg{
+                                    fill: $blue;
+                                    width: 12px;
+                                    height: 12px;
+                                 }
+                              }
+                              .greyStars{
+                                 display: flex;
+                                 gap: 3px;
+                                 svg{
+                                    fill: rgb(0 0 0 / 10%);
+                                    width: 12px;
+                                    height: 12px;
+                                 }
+                              }
+                           }
+                           .date{
+                              color: rgba(0 0 0 / 55%);
+                              font-size: 12px;
+                              font-weight: 300;
+                              line-height: 20px;
+                           }
+                        }
+                        .comment{
+                           color: rgba(0 0 0 / 90%);
+                           font-size: 16px;
+                           font-weight: 400;
+                           line-height: 20px;
+                           margin-top: 10px;
+                        }
+                        .buttonsAndDenounce{
+                           display: flex;
+                           justify-content: space-between;
+                           margin-top: 12px;
+                           .valorizationButtons{
+                              display: flex;
+                              gap: 12px;
+                              button{
+                                 display: flex;
+                                 align-items: center;
+                                 height: 32px;
+                                 color: rgb(0 0 0 / 55%);
+                                 background-color: #fff;
+                                 border: 1px solid rgb(0 0 0 / 20%);
+                                 border-radius: 16px;
+                                 transition-property: color background-color border;
+                                 transition: .3s ease;
+                                 cursor: pointer;
+                                 &:first-child{
+                                    padding: 0 11px;
+                                 }
+                                 &:nth-child(2){
+                                    width: 32px;
+                                    svg{
+                                       width: 16px;
+                                       margin: auto;
+                                    }
+                                 }
+                                 &:hover{
+                                    color: $blue;
+                                    border-color: $blue;
+                                    background-color: rgba(65 137 230 / 10%);
+                                    svg{
+                                       color: $blue;
+                                    }
+                                 }
+                                 .likeButton{
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 6px;
+                                    span, p{
+                                       display: block;
+                                       font-size: 12px;
+                                       font-weight: 700;
+                                       line-height: 32px;
+                                    }
+                                    svg{
+                                       width: 16px;
+                                       height: 16px;
+                                    }
+                                 }
+                              }
+                           }
+                           .denounceButton{
+                              width: 32px;
+                              height: 32px;
+                              padding: 8px 16px;
+                              border: none;
+                              background-color: transparent;
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                              gap: 2px;
+                              cursor: pointer;
+                              span{
+                                 display: block;
+                                 position: relative;
+                                 width: 4px;
+                                 height: 4px;
+                                 border-radius: 50%;
+                                 background-color: #ccc;
+                              }
+                           }
+                        }
+                     }
+                     .divider{
+                        background-color: #e8e8ec;
+                        width: 100%;
+                        height: 1px;
+                        margin-top: 24px;
+                        margin-bottom: 32px;
+                        &:last-of-type{
+                           display: none;
+                        }
+                     }
+                     .moreOpinions{
+                        color: $blue;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        margin: 36px 0 20px;
+                        cursor: pointer;
+                     }
+                  }
+               }
+            }
+         }
+         
+      }
    }
 }
