@@ -3,7 +3,6 @@
    .item{
       display: flex;
       flex-wrap: wrap;
-      margin: 0 8px 16px;
       width: 224px;
       height: 330px;
       border-left: 1px rgb(0 0 0 / 1%) solid;
@@ -91,6 +90,12 @@
             }
          }
       }
+   }
+}
+
+.itemCard{
+   .item{
+      margin-right: 12px;
    }
 }
 

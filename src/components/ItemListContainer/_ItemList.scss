@@ -1,10 +1,6 @@
 .recommendations{
    max-width: 1200px;
    margin: 20px auto;
-   overflow-x: auto;
-   &::-webkit-scrollbar {
-      display: none;
-   }
    .sectionTitle{
       display: flex;
       align-items: baseline;
@@ -27,7 +23,30 @@
       }
    }
    .itemsContainer{
-      display: flex;
-      flex-wrap: wrap;
+      padding: 0 8px;
+      .slick-slider{
+         width: 100%;
+         .slick-list{
+            margin-right: -12px;
+            overflow-x: hidden;
+         }
+      }
+   }
+}
+
+@media (max-width: 1200px){
+   .recommendations{
+      .itemsContainer{
+         padding: 0;
+         padding-left: 8px;
+         overflow-x: hidden;
+         .slick-slider{
+            width: 100%;
+            .slick-list{
+               margin-right: -12px;
+               overflow-x: hidden;
+            }
+         }
+      }
    }
 }

@@ -21,6 +21,10 @@ function App() {
                 <Route path='/order/:idOrder' element={<OrderCart/>}/>
               </Routes>
             </main>
+            <footer className='footer'>
+              <span>Desarrollado por <a href='https://www.linkedin.com/in/alexander-canavire/' target="blank">Alexander Canavire</a></span>
+              <p>ATENCIÓN: Esta web se trata de un challenge, no es un intento de phishing hacia los usuarios que la visitan.</p>
+            </footer>
         </BrowserRouter>
       </CartContextProvider>
     </div>

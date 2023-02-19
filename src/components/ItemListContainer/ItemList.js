@@ -2,6 +2,7 @@ import React from "react";
 import Item from "./Item";
 import ItemSkeleton from "./ItemSkeleton";
 import stitchProduct from "../../data/stitchProduct";
+import CarouselItems from "../ReactSlick/CarouselItems";
 
 function ItemList({ products }) {
   let numbers = [];
@@ -23,24 +24,20 @@ function ItemList({ products }) {
 
   return (
     <div className="itemsContainer">
-      {products.map((product) => {
-        return (
-          <Item
-            key={product.id}
-            url={product.id}
-            title={product.title}
-            img={product.image}
-            price={product.price}
-          />
-        );
-      })}
-      <Item
-        key={stitchProduct.id}
-        url={'M4NdCzPD3Z465Edj1bj0'}
-        title={stitchProduct.title}
-        img={stitchProduct.pictures[0].url}
-        price={stitchProduct.price}
-      />
+      <CarouselItems number={5}>
+        {products.map((product) => {
+          return (
+            <Item
+              key={product.id}
+              url={product.id}
+              title={product.title}
+              img={product.image || product.pictures[0].url}
+              price={product.price}
+            />
+          );
+        })}  
+      </CarouselItems>
+      
     </div>
   );
 }

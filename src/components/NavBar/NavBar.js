@@ -1,6 +1,7 @@
-import CartWidget from '../CartWidget/CartWidget';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useResize } from '../../hooks/utilities';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
   const [shadowActive, setShadow] = useState(false);
@@ -8,6 +9,10 @@ function NavBar() {
   function shadowEffect() {
     setShadow(!shadowActive)
   }
+
+  const searchText = useResize()
+  ? "Buscar productos, marcas y más..."
+  : "Estoy buscando..."
 
   return (
     <>
@@ -25,7 +30,7 @@ function NavBar() {
           </div>
           <div className='search'>
             <form>
-              <input placeholder='Buscar productos, marcas y más...'></input>
+              <input placeholder={searchText}></input>
               <button>
                 <img src='/img/search.svg' alt='search icon'></img>
               </button>

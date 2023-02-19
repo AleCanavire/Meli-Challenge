@@ -1,6 +1,6 @@
 .paymentContainer{
    width: 100%;
-   max-width: 1184px;
+   max-width: 1200px;
    margin: 0 auto;
    padding: 40px 8px;
    border-radius: 4px;
@@ -64,9 +64,10 @@
 
 @media (max-width: 1056px){
    .paymentContainer{
-      padding: 40px 8px;
+      padding: 0 0 20px;
       .paymentOptions{
          .paymentData{
+            justify-content: center;
             &:nth-child(4){
                display: none;
             }
@@ -94,6 +95,13 @@
                display: none;
             }
          }
+      }
+   }
+}
+@media (max-width: 380px){
+   .paymentContainer{
+      .moreOptions{
+         display: none;
       }
    }
 }
