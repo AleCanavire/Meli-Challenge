@@ -1,0 +1,88 @@
+.denouncePost{
+   display: flex;
+   justify-content: flex-end;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 1.35;
+   margin: 20px 0;
+   p{
+      padding: 0 12px;
+      span{
+         font-weight: 700;
+      }
+   }
+   a{
+      color: $blue;
+      padding-left: 12px;
+      position: relative;
+      &::before{
+         content: "";
+         position: absolute;
+         top: 3px;
+         left: 0;
+         width: 1px;
+         height: 12px;
+         display: block;
+         background-color: rgba(0 0 0 / 25%);
+      }
+      &:hover{
+         color: $dark-blue;
+      }
+   }
+}
+.productsCarousel{
+   h2{
+      color: rgb(0 0 0 / 90%);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+      margin-bottom: 24px;
+   }
+   .slick-slider{
+      .slick-list{
+         margin-right: -12px;
+         overflow-x: hidden;
+      }
+   }
+}
+.footer{
+   background-color: #fff;
+   text-align: center;
+   padding: 30px 16px;
+   span{
+      font-weight: 700;
+      a{
+         color: $blue;
+      }
+   }
+   p{
+      margin-top: 10px;
+   }
+}
+
+@media (max-width: 1200px){
+   .denouncePost{
+      justify-content: flex-start;
+      margin: 24px 16px;
+      p{
+         padding: 0;
+         padding-right: 12px;
+         span{
+            font-weight: 700;
+         }
+      }
+   }
+   .productsCarousel{
+      padding-left: 16px;
+      h2{
+         font-size: 20px;
+         line-height: 25px;
+         margin-bottom: 16px;
+      }
+      .slick-slider{
+         .slick-list{
+            margin: 0;
+         }
+      }
+   }
+}

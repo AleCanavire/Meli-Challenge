@@ -1,50 +1,13 @@
-import React,{useState, useEffect, useContext} from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
 import getItems from "../../services/firestore";
 import questions, {opinions} from '../../data/questionsAndOpinions';
+import CarouselImages from '../ReactSlick/CarouselImages';
 import ItemCount from './ItemCount';
 import CarouselItems from '../ReactSlick/CarouselItems';
+import SellerItem from './SellerItem';
 
-
-function ResponsiveDetail({ product }) {
-  // Vendidos
-  const solds = Math.trunc(product.count * 2.3);
-
-  // ===== SELECCIONAR IMAGEN =====
-  // Cambiar Imagen
-  const [focusImg, setFocusImg] = useState("");
-  const [stylePreview, setStylePreview] = useState({
-    imageSelected: null,
-    objects: [{id:1}, {id:2}, {id:3}, {id:4}]
-  });
-  // Setear la imagen seleccionada
-  function imageActive(index){
-    setStylePreview({...stylePreview, imageSelected: stylePreview.objects[index]})
-  }
-  // Agrega el css a la imagen seleccionada
-  function imageStyled(index){
-    if (stylePreview.objects[index] === stylePreview.imageSelected) {
-      return "selected"
-    } return ""
-  }
-  // Cambia la Imagen Principal
-  function changeImage(imageUrl){
-    setFocusImg(imageUrl)
-  }
-  // Resetear imagen al cambiar de producto
-  const { id } = useParams();
-  useEffect(() => {
-    setFocusImg("");
-    setStylePreview(state =>({...state, imageSelected: state.objects[0]}))
-  }, [id]);
-
-  // Precio
-  const num = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
-  const price = num.toLocaleString('es-AR');
-
-  // Cuotas
-  const quota = Math.trunc(num / 6).toLocaleString('es-AR');
+function ResponsiveDetail({ product, price, quota, solds }) {
 
   // Cart
   const { addToCart } = useContext(cartContext);
@@ -134,27 +97,7 @@ function ResponsiveDetail({ product }) {
       </div>
       <div className='imgProductContainer'>
         <div className='imgProduct'>
-          <div className='gallery'>
-            { product.image
-              ? <div className="preview selected">
-                  <img src={product.image} alt={product.title}></img>
-                </div>
-              : product.pictures.map((img, index)=>{
-                return(
-                  <div
-                    className={`preview ${imageStyled(index)}`}
-                    onClick={()=> {changeImage(img.url); imageActive(index)}} key={index}>
-                    <img src={img.url} alt={product.title}></img>
-                  </div>
-                )
-              })
-            }
-          </div>
-          <div className='focusImg'>
-            <img src={focusImg === ""
-            ? product.image || product.pictures[0].url
-            : focusImg} alt={product.title}/>
-          </div>
+          <CarouselImages images={product.image || product.pictures}/>
         </div>
       </div>
       <div className='productPrice'>
@@ -208,7 +151,19 @@ function ResponsiveDetail({ product }) {
       <div className='sellerProducts'>
         <h2>Publicaciones del vendedor</h2>
         <div className="sellerItems">
-          <CarouselItems products={products}/>
+          <CarouselItems number={3}>
+            { products &&
+              products.map(product => {
+                return(
+                  <SellerItem
+                  key={product.id}
+                  url={product.id}
+                  image={product.image || product.pictures[0].url}
+                  title={product.title}
+                  price={product.price}/>
+                )})
+            }
+          </CarouselItems>
         </div>
         <span className='footerText'>Ver más publicaciones del vendedor</span>
       </div>
@@ -277,7 +232,7 @@ function ResponsiveDetail({ product }) {
             </tbody>
           </table>  
         </div>
-        <p class="moreTechs">Ver más características</p>
+        <p className="moreTechs">Ver más características</p>
       </div>
       </>
       }
@@ -351,7 +306,7 @@ function ResponsiveDetail({ product }) {
         <div className="yourQuestion">
           <h3>Preguntale al vendedor</h3>
           <form className='form' onSubmit={onSubmit}>
-            <input type="text" placeholder="Escribí tu pregunta..." onChange={onInputChange}></input>
+            <textarea type="text" placeholder="Escribí tu pregunta..." onChange={onInputChange}></textarea>
             <button type='submit' onClick={newQuestion}>Preguntar</button>
           </form>
         </div>

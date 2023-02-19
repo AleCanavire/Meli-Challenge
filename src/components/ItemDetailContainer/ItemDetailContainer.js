@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getSingleItem } from "../../services/firestore";
 import { cartContext } from "../../context/cartContext";
+import { useResize } from "../../hooks/utilities";
 import ItemDetail from "../ItemDetailContainer/ItemDetail";
 import ItemDetailSkeleton from "./ItemDetailSkeleton";
 import AddedToCart from "./AddedToCart";
@@ -25,20 +26,10 @@ function ItemDetailContainer() {
   const myContext = useContext(cartContext);
   let productIsInCart = myContext.isInCart(product.id);
 
-  // precio
+  // Precio
   const price = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
 
-  // Responsive Detail
-  const [windowSize, setWindowSize] = useState(window.innerWidth > 1200);
-
-  function updateSize() {
-    setWindowSize(window.innerWidth > 1200);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
-  });
+  const windowSize = useResize();
 
   return (
     <>
@@ -48,6 +39,7 @@ function ItemDetailContainer() {
       price={(Math.trunc(price * productIsInCart.quantity)).toLocaleString("es-AR")}
       quantity={productIsInCart.quantity}
       image={product.image || product.thumbnail}/>}
+
       <div className="itemDetailContainer">
         { windowSize &&
           <div className="categoryShare">
@@ -59,7 +51,9 @@ function ItemDetailContainer() {
             </div>
           </div>
         }
-        {isLoading ? <ItemDetailSkeleton/> : <ItemDetail product={product}/>}
+        {isLoading
+        ? <ItemDetailSkeleton/>
+        : <ItemDetail product={product} windowSize={windowSize}/>}
       </div>
     </>
   )

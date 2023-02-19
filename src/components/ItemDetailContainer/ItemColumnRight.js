@@ -2,22 +2,12 @@ import React,{ useContext } from 'react';
 import { cartContext} from '../../context/cartContext';
 import ItemCount from './ItemCount';
 
-function ItemColumnRight({ product }) {
+function ItemColumnRight({ product, price, quota, solds }) {
   const { addToCart } = useContext(cartContext);
 
   function onAddToCart(count){
     addToCart(product, count)
   }
-
-  // Precio
-  const num = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
-  const price = num.toLocaleString('es-AR');
-
-  // Cuotas
-  const quota = Math.trunc(num / 6).toLocaleString('es-AR');
-
-  // Vendidos
-  const solds = Math.trunc(product.count * 2.3);
 
   return (
     <div className='columnRight'>

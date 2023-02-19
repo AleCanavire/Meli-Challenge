@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import getItems from "../../services/firestore";
-import questions, {opinions} from '../../data/questionsAndOpinions';
+import questions, { opinions } from '../../data/questionsAndOpinions';
 import CarouselItems from '../ReactSlick/CarouselItems';
+import SellerItem from './SellerItem';
 
 function ItemColumnLeft({ product }) {
   // Productos del vendedor
@@ -113,7 +114,19 @@ function ItemColumnLeft({ product }) {
       <div className='sellerProducts'>
         <h2>Publicaciones del vendedor</h2>
         <div className="sellerItems">
-          <CarouselItems products={products}/>
+          <CarouselItems number={3}>
+            { products &&
+              products.map(product => {
+              return(
+                <SellerItem
+                key={product.id}
+                url={product.id}
+                image={product.image || product.pictures[0].url}
+                title={product.title}
+                price={product.price}/>
+              )})
+            }
+          </CarouselItems>
         </div>
         <span className='footerText'>Ver más publicaciones del vendedor</span>
       </div>

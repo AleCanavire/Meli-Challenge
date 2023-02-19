@@ -34,7 +34,7 @@
 }
 .nextArrowItems{
    right: 0;
-   transform: translate(50%, -50%);
+   transform: translate(50%, -100%);
    &:hover{
       box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
    }
@@ -44,7 +44,7 @@
 }
 .prevArrowItems{
    left: 0;
-   transform: translate(-50%, -50%);
+   transform: translate(-50%, -100%);
    &:hover{
       box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
    }
