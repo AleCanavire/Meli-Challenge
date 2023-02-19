@@ -267,11 +267,13 @@
                .title{
                   width: 100%;
                   margin: 0;
+                  padding-right: 16px;
                   a{
                      h2{
                         font-size: 14px;
                         font-weight: 500;
                         line-height: 1.25;
+                        white-space: pre-wrap;
                         margin: 0;
                      }
                   }
