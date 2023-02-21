@@ -1,0 +1,186 @@
+.buyLevel6Container{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 10px 40px;
+   .buyLevel6{
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+      overflow: hidden;
+      .buyLevelHeader{
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 24px;
+         color: #fff;
+         background: linear-gradient(90deg,#a90f90 55%,#0c1a51);
+         h2{
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 30px;
+         }
+         .levelDiscount{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &::before{
+               content: "";
+               position: absolute;
+               left: -8px;
+               top: 0;
+               width: 2px;
+               height: 100%;
+               background-color: #fff;
+            }
+            .price{
+               font-size: 14px;
+               font-weight: 500;
+               line-height: 1;
+               text-decoration: line-through;
+            }
+            .discountPrice{
+               font-size: 24px;
+               font-weight: 700;
+               line-height: 1;
+               .month{
+                  font-size: 14px;
+                  line-height: 1;
+               }
+            }
+            
+         }
+      }
+      .buyLevelBody{
+         background-color: #fff;
+         padding: 24px;
+         h3{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1;
+         }
+         .levelBenefits{
+            display: flex;
+            margin-top: 32px;
+            .levelBenefit{
+               display: flex;
+               align-items: center;
+               flex: 1;
+               .benefitLogo{
+                  width: 72px;
+                  height: 72px;
+                  min-width: 72px;
+                  border: 1px solid #efefef;
+                  border-radius: 50%;
+                  box-sizing: content-box;
+                  overflow: hidden;
+                  img{
+                     width: 100%;
+                     height: 100%;
+                  }
+               }
+               .benefitText{
+                  font-size: 16px;
+                  line-height: 1;
+                  margin: 0 16px;
+               }
+            }
+         }
+      }
+      .buyLevelAction{
+         background-color: #fff;
+         display: flex;
+         align-items: center;
+         justify-content: flex-end;
+         border-top: 1px solid #ededed;
+         padding: 16px 30px;
+         .buyLevelButton{
+            color: #fff;
+            background-color: $blue;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 48px;
+            padding: 0 24px;
+            border: 0;
+            border-radius: 6px;
+            transition: .3s ease-out background-color;
+            &:hover{
+               background-color: $dark-blue;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1024px){
+   .buyLevel6Container{
+      .buyLevel6{
+         .buyLevelHeader{
+            padding: 16px;
+            h2{
+               font-size: 18px;
+               line-height: 22px;
+            }
+         }
+         .buyLevelBody{
+            padding: 16px;
+            h3{
+               font-size: 14px;
+               font-weight: 700;
+               line-height: 18px;
+               max-width: 215px;
+            }
+            .levelBenefits{
+               flex-direction: column;
+               margin: 0;
+               .levelBenefit{
+                  margin-top: 24px;
+                  .benefitLogo{
+                     width: 48px;
+                     height: 48px;
+                     min-width: 48px;
+                     border: 0;
+                     img{
+                        padding: 5px;
+                     }
+                  }
+                  .benefitText{
+                     font-size: 14px;
+                     line-height: 18px;
+                     margin: 0 8px;
+                  }
+                  &:nth-child(3){
+                     .benefitLogo{
+                        img{
+                           padding: 0;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         .buyLevelAction{
+            justify-content: flex-start;
+            border-top: 1px solid #ededed;
+            padding: 0;
+            .buyLevelButton{
+               width: 100%;
+               color: $blue;
+               background-color: transparent;
+               font-size: 14px;
+               font-weight: 700;
+               line-height: 18px;
+               text-align: left;
+               padding: 13px 16px;
+               border: 0;
+               border-radius: 0;
+               transition: .3s ease-out color;
+               &:hover{
+                  background-color: transparent;
+                  color: $dark-blue;
+               }
+            }
+         }
+      }
+   }
+}
