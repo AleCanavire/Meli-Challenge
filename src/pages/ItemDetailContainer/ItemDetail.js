@@ -3,8 +3,8 @@ import getItems from '../../services/firestore';
 import ItemColumnLeft from './ItemColumnLeft';
 import ItemColumnRight from './ItemColumnRight';
 import ResponsiveDetail from './ResponsiveDetail';
-import CarouselItems from '../ReactSlick/CarouselItems';
-import Item from '../ItemListContainer/Item';
+import CarouselItems from '../../components/ReactSlick/CarouselItems';
+import Item from '../ItemListContainer/components/ItemList/Item';
 
 function ItemDetail({ product, windowSize }) {
   // Productos del vendedor

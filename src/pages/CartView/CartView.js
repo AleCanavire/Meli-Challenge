@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
-import ItemsInCartContainer from './ItemsInCartContainer';
+import ItemsInCartContainer from './components/ItemsInCart/ItemsInCartContainer';
 
 function CartView() {
 

@@ -1,6 +1,6 @@
 import React,{ useContext } from 'react';
 import { cartContext} from '../../context/cartContext';
-import ItemCount from './ItemCount';
+import ItemCount from './components/ItemCount/ItemCount';
 
 function ItemColumnRight({ product, price, quota, solds }) {
   const { addToCart } = useContext(cartContext);

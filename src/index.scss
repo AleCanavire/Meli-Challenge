@@ -3,17 +3,17 @@
 // FUENTES
 @font-face {
    font-family: "Proxima Nova";
-   src: url("./font/proximanova-light.woff2");
+   src: url("./assets/font/proximanova-light.woff2");
    font-weight: 300;
 }
 @font-face {
    font-family: "Proxima Nova";
-   src: url("./font/proximanova-regular.woff2");
+   src: url("./assets/font/proximanova-regular.woff2");
    font-weight: 500;
 }
 @font-face {
    font-family: "Proxima Nova";
-   src: url("./font/proximanova-semibold.woff2");
+   src: url("./assets/font/proximanova-semibold.woff2");
    font-weight: 700;
 }
 
@@ -34,17 +34,18 @@ body{
 }
 
 @import '/src/components/NavBar/NavBar';
-@import '/src/components/ItemListContainer/ItemList';
-@import '/src/components/ItemListContainer/Item';
-@import '/src/components/ItemDetailContainer/ResponsiveDetail';
-@import '/src/components/ItemDetailContainer/itemDetail';
-@import '/src/components/ItemDetailContainer/ItemDetailSkeleton';
-@import '/src/components/ItemDetailContainer/AddedToCart';
-@import '/src/components/ItemDetailContainer/sellerItem';
-@import '/src/components/CartView/CartView';
-@import '/src/components/FormOrder/FormOrder';
-@import '/src/components/Order/OrderCart';
+@import '/src/pages/ItemListContainer/components/ItemList/ItemList';
+@import '/src/pages/ItemListContainer/components/ItemList/Item';
+@import '/src/pages/ItemDetailContainer/ResponsiveDetail';
+@import '/src/pages/ItemDetailContainer/itemDetail';
+@import '/src/pages/ItemDetailContainer/components/ItemDetailSkeleton/ItemDetailSkeleton';
+@import '/src/pages/ItemDetailContainer/components/AddedToCart/AddedToCart';
+@import '/src/pages/ItemDetailContainer/components/SellerItem/SellerItem';
+@import '/src/pages/CartView/CartView';
+@import '/src/pages/CartView/components/FormOrder/FormOrder';
+@import '/src/pages/Order/OrderCart';
 @import '/src/components/ReactSlick/CarouselHeader';
 @import '/src/components/ReactSlick/CarouselItems';
-@import '/src/components/PaymentContainer/PaymentContainer';
-@import '/src/components/ItemDetailContainer/BottomContainer'
+@import '/src/pages/ItemListContainer/components/PaymentContainer/PaymentContainer';
+@import '/src/pages/ItemDetailContainer/BottomContainer';
+@import '/src/pages/ItemListContainer/components/BuyLevel6/BuyLevel6'

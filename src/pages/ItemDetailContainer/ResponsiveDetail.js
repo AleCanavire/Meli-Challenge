@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
 import getItems from "../../services/firestore";
 import questions, {opinions} from '../../data/questionsAndOpinions';
-import CarouselImages from '../ReactSlick/CarouselImages';
-import ItemCount from './ItemCount';
-import CarouselItems from '../ReactSlick/CarouselItems';
-import SellerItem from './SellerItem';
+import CarouselImages from '../../components/ReactSlick/CarouselImages';
+import ItemCount from './components/ItemCount/ItemCount';
+import CarouselItems from '../../components/ReactSlick/CarouselItems';
+import SellerItem from './components/SellerItem/SellerItem';
 
 function ResponsiveDetail({ product, price, quota, solds }) {
 

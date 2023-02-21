@@ -4,8 +4,8 @@ import { getSingleItem } from "../../services/firestore";
 import { cartContext } from "../../context/cartContext";
 import { useResize } from "../../hooks/utilities";
 import ItemDetail from "../ItemDetailContainer/ItemDetail";
-import ItemDetailSkeleton from "./ItemDetailSkeleton";
-import AddedToCart from "./AddedToCart";
+import ItemDetailSkeleton from "./components/ItemDetailSkeleton/ItemDetailSkeleton";
+import AddedToCart from "./components/AddedToCart/AddedToCart";
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState([]);

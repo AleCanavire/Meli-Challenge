@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import getItems from "../../services/firestore";
 import questions, { opinions } from '../../data/questionsAndOpinions';
-import CarouselItems from '../ReactSlick/CarouselItems';
-import SellerItem from './SellerItem';
+import CarouselItems from '../../components/ReactSlick/CarouselItems';
+import SellerItem from './components/SellerItem/SellerItem'
 
 function ItemColumnLeft({ product }) {
   // Productos del vendedor

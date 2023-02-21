@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import getItems, { getItemsCategory } from "../../services/firestore";
-import PaymentContainer from "../PaymentContainer/PaymentContainer";
-import CarouselHeader from "../ReactSlick/CarouselHeader";
-import ItemList from "./ItemList";
+import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
+import CarouselHeader from "../../components/ReactSlick/CarouselHeader";
+import ItemList from "./components/ItemList/ItemList";
+import BuyLevel6 from "./components/BuyLevel6/BuyLevel6";
 
 function ItemListContainer() {
 
@@ -33,7 +34,12 @@ function ItemListContainer() {
           <h3>Productos</h3>
           <Link to="#">Ver todos</Link>
         </div>
-        {products ? <ItemList products={products} /> : <ItemList products={0}/> }
+        <div className="itemsContainer">
+          {products ? <ItemList products={products} /> : <ItemList products={0}/>}
+        </div>
+      </div>
+      <div className="buyLevel6Container">
+        <BuyLevel6/>
       </div>
     </>
   )

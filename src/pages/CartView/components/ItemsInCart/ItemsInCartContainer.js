@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { cartContext } from '../../context/cartContext';
-import { createOrder } from '../../services/firestore';
+import { cartContext } from '../../../../context/cartContext';
+import { createOrder } from '../../../../services/firestore';
 import FormOrder from '../FormOrder/FormOrder';
 import ItemInCart from './ItemInCart';
 
