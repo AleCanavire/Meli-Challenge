@@ -1,11 +1,11 @@
 import {useState, useEffect} from "react";
 
 // Responsive Detail
-export const useResize = () => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth > 1200);
+export const useResize = (size) => {
+  const [windowSize, setWindowSize] = useState(window.innerWidth > size);
 
   function updateSize() {
-    setWindowSize(window.innerWidth > 1200);
+    setWindowSize(window.innerWidth > size);
   };
 
   useEffect(() => {

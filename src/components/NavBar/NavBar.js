@@ -10,7 +10,7 @@ function NavBar() {
     setShadow(!shadowActive)
   }
 
-  const searchText = useResize()
+  const searchText = useResize(1200)
   ? "Buscar productos, marcas y más..."
   : "Estoy buscando..."
 

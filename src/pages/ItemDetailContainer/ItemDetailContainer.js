@@ -29,7 +29,7 @@ function ItemDetailContainer() {
   // Precio
   const price = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
 
-  const windowSize = useResize();
+  const windowSize = useResize(1200);
 
   return (
     <>
