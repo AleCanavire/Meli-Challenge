@@ -1,0 +1,204 @@
+.partnersContainer{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 40px 0;
+   margin-bottom: 200px;
+   .partners{
+      .partnersHeader{
+         display: flex;
+         margin-bottom: 22px;
+         h2{
+            color: #666;
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 32px;
+            margin-left: 8px;
+         }
+         a{
+            color: $blue;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            text-decoration: none;
+            margin: auto 0 2px 16px;
+            transition: .3s ease-out color;
+            cursor: pointer;
+            &:hover{
+               color: $dark-blue;
+            }
+         }
+      }
+      .partnersBody{
+         .slick-slider{
+            .slick-list{
+               .partnerContainer{
+                  max-width: 400px;
+                  width: 100%;
+                  height: 250px;
+                  padding: 0 8px;
+                  .partnerSuscription{
+                     position: relative;
+                     width: 100%;
+                     height: 100%;
+                     border-radius: 6px;
+                     overflow: hidden;
+                     cursor: pointer;
+                     .partnerBackground{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: top;
+                        position: absolute;
+                        z-index: 1;
+                     }
+                     .partnerGradient{
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 124px;
+                        z-index: 2;
+                     }
+                     .partnerContent{
+                        width: 100%;
+                        padding: 16px;
+                        position: absolute;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                        z-index: 3;
+                        .partnerLogo{
+                           width: 80px;
+                           min-width: 80px;
+                           height: 80px;
+                           min-height: 80px;
+                           border-radius: 6px;
+                           object-fit: cover;
+                           overflow: hidden;
+                        }
+                        .partnerText{
+                           color: #fff;
+                           margin-left: 16px;
+                           text-align: left;
+                           .partnerLineText{
+                              display: block;
+                              font-size: 12px;
+                              font-weight: 700;
+                              line-height: 16px;
+                              margin-bottom: 4px;
+                           }
+                           .partnerBenefit{
+                              display: block;
+                              font-size: 22px;
+                              font-weight: 700;
+                              line-height: 24px;
+                           }
+                           .partnerName{
+                              display: block;
+                              font-size: 18px;
+                              font-weight: 500;
+                              line-height: 20px;
+                              letter-spacing: .4px;
+                              margin-top: 5px;
+                           }
+                        }
+                     }
+                  }   
+               }    
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1024px){
+   .partnersContainer{
+      width: auto;
+      overflow: hidden;
+      padding: 24px 10px 0;
+      .partners{
+         background-color: #fff;
+         box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+         border-radius: 6px;
+         overflow: visible;
+         .partnersHeader{
+            margin: 0;
+            padding: 0 16px;
+            h2{
+               color: #000;
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 22px;
+               margin: 12px 0;
+            }
+         }
+         .partnersBody{
+            padding: 16px;
+            border-top: 1px solid #ededed;
+            .slick-slider{
+               .slick-list{
+                  margin: 0 -4px;
+                  overflow: visible;
+                  .partnerContainer{
+                     max-width: none;
+                     height: 184px;
+                     padding: 0 4px;
+                     .partnerSuscription{
+                        .partnerContent{
+                           padding: 0;
+                           top: 0;
+                           bottom: initial;
+                           display: flex;
+                           flex-direction: column;
+                           margin-top: 34px;
+                           .partnerLogo{
+                              width: 48px;
+                              min-width: 48px;
+                              height: 48px;
+                              min-height: 48px;
+                           }
+                           .partnerText{
+                              margin: 0;
+                              margin-top: 12px;
+                              text-align: center;
+                              .partnerLineText{
+                                 font-size: 9px;
+                                 line-height: 14px;
+                                 margin: 0;
+                              }
+                              .partnerBenefit{
+                                 font-size: 16px;
+                                 line-height: 18px;
+                                 padding: 0 8px;
+                              }
+                              .partnerName{
+                                 color: rgb(255 255 255 / 70%);
+                                 font-size: 12px;
+                                 font-weight: 500;
+                                 line-height: 16px;
+                                 letter-spacing: 0;
+                                 margin: 0;
+                              }
+                           }
+                        }
+                     }   
+                  }    
+               }
+            }
+         }
+         .partnerSuscribe{
+            color: $blue;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            padding: 13px 16px;
+            border-top: 1px solid #ededed;
+            transition: .3s ease-out color;
+            cursor: pointer;
+            &:hover{
+               color: $dark-blue;
+            }
+         }
+      }
+   }
+}

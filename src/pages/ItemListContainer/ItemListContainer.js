@@ -5,6 +5,7 @@ import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
 import CarouselHeader from "../../components/ReactSlick/CarouselHeader";
 import ItemList from "./components/ItemList/ItemList";
 import BuyLevel6 from "./components/BuyLevel6/BuyLevel6";
+import PartnersContainer from "./components/Partners/PartnersContainer";
 
 function ItemListContainer() {
 
@@ -40,6 +41,9 @@ function ItemListContainer() {
       </div>
       <div className="buyLevel6Container">
         <BuyLevel6/>
+      </div>
+      <div className="partnersContainer">
+        <PartnersContainer/>
       </div>
     </>
   )
