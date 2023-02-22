@@ -104,6 +104,7 @@
             border: 0;
             border-radius: 6px;
             transition: .3s ease-out background-color;
+            cursor: pointer;
             &:hover{
                background-color: $dark-blue;
             }
@@ -114,12 +115,14 @@
 
 @media (max-width: 1024px){
    .buyLevel6Container{
+      padding: 0 10px;
       .buyLevel6{
          .buyLevelHeader{
             padding: 16px;
             h2{
                font-size: 18px;
                line-height: 22px;
+               width: 45%;
             }
          }
          .buyLevelBody{

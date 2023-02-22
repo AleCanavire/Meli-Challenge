@@ -5,7 +5,7 @@ function BuyLevel6() {
   return (
     <div className='buyLevel6'>
       <div className="buyLevelHeader">
-        <h2 className='headerTitle'>Suscribite al nivel 6</h2>
+        <h2 className='headerTitle'>{"Suscribite al\u00A0nivel 6"}</h2>
         <div className="levelDiscount">
           <span className="price">$ 1.439</span>
           <span className="discountPrice">$ 499
@@ -16,9 +16,10 @@ function BuyLevel6() {
       <div className="buyLevelBody">
         <h3 className='bodyTitle'>Conseguí los mejores beneficios en Mercado Libre</h3>
         <div className="levelBenefits">
-          { benefits.map((benefit)=>{
+          { benefits.map((benefit, index)=>{
             return(
               <Level6Benefit
+                key={index}
                 logo={benefit.logo}
                 text={benefit.text}
               />
