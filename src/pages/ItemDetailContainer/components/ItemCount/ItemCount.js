@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { scrollToTop } from '../../../../hooks/utilities';
 
 function ItemCount({stock, onAddToCart}) {
   const [count, setCount] = useState(1);
@@ -29,8 +30,8 @@ function ItemCount({stock, onAddToCart}) {
               {
                 [1,2,3,4,5,6].map((quantity)=>{
                 return(
-                  <li key={quantity} onClick={()=>{handleQuantity(quantity); setToggle(!toggle)}}>
-                    {quantity} {quantity>1 ? "unidades" : "unidad"}
+                  <li key={quantity} onClick={()=>{ handleQuantity(quantity); setToggle(!toggle) }}>
+                    {quantity} { quantity > 1 ? "unidades" : "unidad" }
                   </li>
                 )})
               }
@@ -41,7 +42,7 @@ function ItemCount({stock, onAddToCart}) {
       </div>
       <div className='buttons'>
         <button className='buyNow'>Comprar ahora</button>
-        <button onClick={() => onAddToCart(count)} className='addCart'>Agregar al carrito</button>
+        <button onClick={() => {onAddToCart(count); scrollToTop()}} className='addCart'>Agregar al carrito</button>
       </div>
     </div>
   )

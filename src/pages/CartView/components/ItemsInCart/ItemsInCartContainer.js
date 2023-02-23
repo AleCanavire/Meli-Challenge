@@ -11,20 +11,23 @@ function ItemsInCartContainer() {
   const myContext = useContext(cartContext);
 	const cart = myContext.cart
 
-  // Eliminar todas la unidades de un producto
-  const { removeItems } = useContext(cartContext);
-  function onRemoveItems(id) {
-    removeItems(id);
-  }
+  const { 
+    addItem,
+    removeItems,
+    removeItem
+  } = useContext(cartContext);
 
   // Añadir una unidad de producto
-  const { addItem } = useContext(cartContext);
   function onAddItem(id) {
     addItem(id)
   }
 
+  // Eliminar todas la unidades de un producto
+  function onRemoveItems(id) {
+    removeItems(id);
+  }
+
   // Eliminar una unidad de producto
-  const { removeItem } = useContext(cartContext);
   function onRemoveItem(id) {
     removeItem(id)
   }
@@ -47,17 +50,15 @@ function ItemsInCartContainer() {
   
   return (
     <>
-      {
-        cart.map((product) => {
-          return(
-            <ItemInCart
-            product={product}
-            key={product.id}
-            onRemoveItems={onRemoveItems}
-            onAddItem={onAddItem}
-            onRemoveItem={onRemoveItem}/>
-          )
-        })
+      { cart.map((product) => {
+        return(
+          <ItemInCart
+          product={product}
+          key={product.id}
+          onRemoveItems={onRemoveItems}
+          onAddItem={onAddItem}
+          onRemoveItem={onRemoveItem}/>
+        )})
       }
       <div className='totalCart'>
         <div className='shipping'>

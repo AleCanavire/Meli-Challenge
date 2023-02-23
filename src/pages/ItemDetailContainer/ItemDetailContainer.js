@@ -1,34 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
-import { getSingleItem } from "../../services/firestore";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { cartContext } from "../../context/cartContext";
-import { useResize } from "../../hooks/utilities";
+import { GetProduct, priceItem, useResize } from "../../hooks/utilities";
 import ItemDetail from "../ItemDetailContainer/ItemDetail";
 import ItemDetailSkeleton from "./components/ItemDetailSkeleton/ItemDetailSkeleton";
 import AddedToCart from "./components/AddedToCart/AddedToCart";
 
 function ItemDetailContainer() {
-  const [product, setProduct] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const { id } = useParams();
-
-  async function getItemsAsync() {
-    getSingleItem(id).then(response => {
-      setProduct(response);
-      setIsLoading(false)
-    })
-  }
-
-  useEffect(() => {
-    getItemsAsync();
-  }, [id]);
+  const { product, isLoading } = GetProduct()
 
   const myContext = useContext(cartContext);
   let productIsInCart = myContext.isInCart(product.id);
 
   // Precio
-  const price = product.price < 1000 ? Math.trunc(product.price * 160) : product.price;
+  const { price } = priceItem(product.price);
 
+  // Responsive
   const windowSize = useResize(1200);
 
   return (

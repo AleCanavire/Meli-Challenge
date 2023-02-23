@@ -41,28 +41,28 @@ function NavBar() {
               <li onMouseEnter={shadowEffect} onMouseLeave={shadowEffect}>
                 <span>Categorías</span>
                 <div className='allCategories'>
-                  <a href='#'>Vehículos</a>
-                  <a href='#'>Inmuebles</a>
-                  <a href='#'>Supermercado</a>
+                  <span>Vehículos</span>
+                  <span>Inmuebles</span>
+                  <span>Supermercado</span>
                   <Link to='/category/tecnología'>Tecnología</Link>
                   <Link to='/category/joyería'>Joyeria</Link>
                   <Link to='/category/ropa-hombre'>Ropa de Hombre</Link>
                   <Link to='/category/ropa-mujer'>Ropa de Mujer</Link>
-                  <a href='#'>Herramientas</a>
-                  <a href='#'>Construcción</a>
-                  <a href='#'>Deportes y Fitness</a>
-                  <a href='#'>Accesorios para Vehiculos</a>
-                  <a href='#'>Moda</a>
-                  <a href='#'>Juegos y Juguetes</a>
-                  <a href='#'>Bebés</a>
-                  <a href='#'>Belleza y Cuidado Personal</a>
-                  <a href='#'>Salud y Equipamento Médico</a>
-                  <a href='#'>Industrias y Oficinas</a>
-                  <a href='#'>Productos Sustentables</a>
-                  <a href='#'>Servicios</a>
-                  <a href='#'>Más Vendidos</a>
-                  <a href='#'>Tiendas oficiales</a>
-                  <a href='#'>Ver más categorias</a>
+                  <span>Herramientas</span>
+                  <span>Construcción</span>
+                  <span>Deportes y Fitness</span>
+                  <span>Accesorios para Vehiculos</span>
+                  <span>Moda</span>
+                  <span>Juegos y Juguetes</span>
+                  <span>Bebés</span>
+                  <span>Belleza y Cuidado Personal</span>
+                  <span>Salud y Equipamento Médico</span>
+                  <span>Industrias y Oficinas</span>
+                  <span>Productos Sustentables</span>
+                  <span>Servicios</span>
+                  <span>Más Vendidos</span>
+                  <span>Tiendas oficiales</span>
+                  <span>Ver más categorias</span>
                 </div>
               </li>
               <li><span>Ofertas</span></li>
@@ -85,7 +85,7 @@ function NavBar() {
           </div>
         </div>
       </nav>
-      <div className={`shadow ${shadowActive ? "shadowActive" : ""}`}></div>
+      <div className={`shadow${shadowActive ? " shadowActive" : ""}`}></div>
     </>
     )
 }

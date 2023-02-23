@@ -41,7 +41,7 @@ function PartnerSuscription({ logo, background, gradient, lineText, benefit, par
         <img className="partnerBackground" src={background} alt={partnerName} />
         <div className="partnerGradient" style={{background: gradient}}></div>
         <div className="partnerContent">
-          <img className="partnerLogo" src={logo}/>
+          <img className="partnerLogo" src={logo} alt={partnerName}/>
           <div className="partnerText">
             {lineText &&
               <span className="partnerLineText">{lineText}</span>

@@ -1,30 +1,14 @@
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import getItems, { getItemsCategory } from "../../services/firestore";
+import { Link } from "react-router-dom";
 import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
 import CarouselHeader from "../../components/ReactSlick/CarouselHeader";
 import ItemList from "./components/ItemList/ItemList";
 import BuyLevel6 from "./components/BuyLevel6/BuyLevel6";
 import PartnersContainer from "./components/Partners/PartnersContainer";
+import { GetProducts } from "../../hooks/utilities";
 
 function ItemListContainer() {
 
-  const [products, setProducts] = useState(null);
-  const { idCategory } = useParams();
-
-  async function getItemsAsync() {
-    if (idCategory) {
-      const response = await getItemsCategory(idCategory);
-      setProducts(response);
-    } else {
-      const response = await getItems();
-      setProducts(response);
-    }
-  }
-
-  useEffect(() => {
-    getItemsAsync();
-  }, [idCategory]);
+  const products = GetProducts();
 
   return (
     <>

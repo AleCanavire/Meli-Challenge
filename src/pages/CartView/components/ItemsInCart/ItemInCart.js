@@ -1,13 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { priceItem } from '../../../../hooks/utilities';
 
 function ItemInCart({ product, onRemoveItems, onAddItem, onRemoveItem }) {
-	// precio
-  const num = product.price < 1000 ? product.price * 160 : product.price;
-	const price = Math.trunc(num * product.quantity);
-	const priceItems = price.toLocaleString('es-AR');
 
-  // category
+	// Precio
+  const { price } = priceItem(product.price);
+	const priceItems = Math.trunc(price * product.quantity).toLocaleString('es-AR');
+
+  // Category
   const replace = product.category.replace("-", " de ");
   const category = replace.charAt(0).toUpperCase() + replace.slice(1);
 

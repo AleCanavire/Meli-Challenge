@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { priceItem, scrollToTop } from '../../../../hooks/utilities';
 
 function Item(props) {
-  const url = `/detail/${props.url}`
-  const num = props.price < 1000 ? Math.trunc(props.price * 160) : props.price;
-  const price = num.toLocaleString('es-AR');
+  const url = `/detail/${props.url}`;
+  const { price } = priceItem(props.price);
+  const priceArg = price.toLocaleString('es-AR');
 
-  function scrollToTop() {
-    window.scrollTo(0, 0);
-  }
   return (
     <div className='itemCard'>
       <div className='item'>
@@ -19,7 +17,7 @@ function Item(props) {
           <div className='itemContent'>
             <div className='itemPrice'>
               <span className='priceSimbol'>$</span>
-              <span className='price'>{price}</span>
+              <span className='price'>{priceArg}</span>
             </div>
             <div className='itemTitle'>
               <span>Envío gratis</span> 

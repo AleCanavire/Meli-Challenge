@@ -1,88 +1,37 @@
-import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import getItems from "../../services/firestore";
+import React from 'react';
+import { GetProducts, useQuestions, useOpinions, useSelectImage } from '../../hooks/utilities';
 import questions, { opinions } from '../../data/questionsAndOpinions';
 import CarouselItems from '../../components/ReactSlick/CarouselItems';
 import SellerItem from './components/SellerItem/SellerItem'
 
 function ItemColumnLeft({ product }) {
-  // Productos del vendedor
-  const [products, setProducts] = useState(null);
+  // ===== Productos del vendedor ===== 
+  const products = GetProducts();
 
-  async function getItemsAsync() {
-    const response = await getItems();
-    setProducts(response);
-  }
+  // ========== PREGUNTAS ==========
+  const {
+    yourQuestions,
+    onSubmit,
+    newQuestion,
+    onInputChange
+  } = useQuestions();
 
-  useEffect(() => {
-    getItemsAsync();
-  }, []);
-
-  // ===== PREGUNTAS =====
-  const [yourQuestions, setQuestions] = useState([]);
-  const [oneQuestion, setQuestion] = useState("");
-
-  function onSubmit(e){
-    e.preventDefault();
-    e.target.reset();
-  }
-  // Agrega la pregunta al array del state
-  function newQuestion(){
-    setQuestions([oneQuestion, ...yourQuestions]);
-  }
-  // Pregunta en el Input
-  function onInputChange(e) {
-    let oneQuestion = e.target.value;
-    let question = {question: oneQuestion}
-    setQuestion(question);
-  }
-
-  // ===== OPINIONES =====
-  // Ocultar menu opiniones
-  const [toggle, setToggle] = useState({
-    button1: false,
-    button2: false
-  });
-  // Ordenar opiniones por estrellas
-  const [reviews, setReviews] = useState(opinions)
-  function filterStars(numRate){
-    const numStar = opinions.filter((opinion)=>opinion.rate === numRate);
-    const otherStars = opinions.filter((opinion)=>opinion.rate !== numRate);
-    const newArray = numStar.concat(otherStars);
-    setReviews(newArray)
-  }
-  // Todas las reviews ordenadas
-  function allReviews() {
-    setReviews(reviews.sort((a, b) =>  b.rate - a.rate));
-  }
+  // ========== OPINIONES ==========
+  const {
+    toggle,
+    setToggle,
+    reviews,
+    filterStars,
+    allReviews
+  } = useOpinions(opinions);
 
   // ===== SELECCIONAR IMAGEN =====
-  // Cambiar Imagen
-  const [focusImg, setFocusImg] = useState("");
-  const [stylePreview, setStylePreview] = useState({
-    imageSelected: null,
-    objects: [{id:1}, {id:2}, {id:3}, {id:4}]
-  });
-  // Setear la imagen seleccionada
-  function imageActive(index){
-    setStylePreview({...stylePreview, imageSelected: stylePreview.objects[index]})
-  }
-  // Agrega el css a la imagen seleccionada
-  function imageStyled(index){
-    if (stylePreview.objects[index] === stylePreview.imageSelected) {
-      return "selected"
-    } return ""
-  }
-  // Cambia la Imagen Principal
-  function changeImage(imageUrl){
-    setFocusImg(imageUrl)
-  }
-  // Resetear imagen al cambiar de producto
-  const { id } = useParams();
-  useEffect(() => {
-    setFocusImg("");
-    setStylePreview(state =>({...state, imageSelected: state.objects[0]}))
-  }, [id]);
+  const {
+    focusImg,
+    imageActive,
+    imageStyled,
+    changeImage
+  } = useSelectImage();
 
   return (
     <div className='columnLeft'>
@@ -120,10 +69,7 @@ function ItemColumnLeft({ product }) {
               return(
                 <SellerItem
                 key={product.id}
-                url={product.id}
-                image={product.image || product.pictures[0].url}
-                title={product.title}
-                price={product.price}/>
+                product={product}/>
               )})
             }
           </CarouselItems>
@@ -201,12 +147,12 @@ function ItemColumnLeft({ product }) {
             return(
             <div className="oneQuestion" key={index}>
               <div className="question">
-                <p>{question.question}<a href='./'>Denunciar</a></p>
+                <p>{question.question}<span className="denounce">Denunciar</span></p>
               </div>
               <div className="answer">
                 <p>{question.answer}
                   <span>21/01/2023</span>
-                  <a href='./'>Denunciar</a>
+                  <span className="denounce">Denunciar</span>
                 </p>
               </div>
             </div>

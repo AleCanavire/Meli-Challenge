@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
-import getItems from "../../services/firestore";
-import questions, {opinions} from '../../data/questionsAndOpinions';
+import { GetProducts, useQuestions, useOpinions } from '../../hooks/utilities';
+import questions, { opinions } from '../../data/questionsAndOpinions';
 import CarouselImages from '../../components/ReactSlick/CarouselImages';
 import ItemCount from './components/ItemCount/ItemCount';
 import CarouselItems from '../../components/ReactSlick/CarouselItems';
@@ -9,62 +9,32 @@ import SellerItem from './components/SellerItem/SellerItem';
 
 function ResponsiveDetail({ product, price, quota, solds }) {
 
-  // Cart
+  // ========== Cart ==========
   const { addToCart } = useContext(cartContext);
   
   function onAddToCart(count){
     addToCart(product, count)
   }
 
-  // Productos del vendedor
-  const [products, setProducts] = useState(null);
+  // ===== Productos del vendedor ===== 
+  const products = GetProducts();
 
-  async function getItemsAsync() {
-    const response = await getItems();
-    setProducts(response);
-  }
+  // ========== PREGUNTAS ==========
+  const {
+    yourQuestions,
+    onSubmit,
+    newQuestion,
+    onInputChange
+  } = useQuestions();
 
-  useEffect(() => {
-    getItemsAsync();
-  }, []);
-
-  // ===== PREGUNTAS =====
-  const [yourQuestions, setQuestions] = useState([]);
-  const [oneQuestion, setQuestion] = useState("");
-
-  function onSubmit(e){
-    e.preventDefault();
-    e.target.reset();
-  }
-  // Agrega la pregunta al array del state
-  function newQuestion(){
-    setQuestions([oneQuestion, ...yourQuestions]);
-  }
-  // Pregunta en el Input
-  function onInputChange(e) {
-    let oneQuestion = e.target.value;
-    let question = {question: oneQuestion}
-    setQuestion(question);
-  }
-
-  // ===== OPINIONES =====
-  // Ocultar menu opiniones
-  const [toggle, setToggle] = useState({
-    button1: false,
-    button2: false
-  });
-  // Ordenar opiniones por estrellas
-  const [reviews, setReviews] = useState(opinions)
-  function filterStars(numRate){
-    const numStar = opinions.filter((opinion)=>opinion.rate === numRate);
-    const otherStars = opinions.filter((opinion)=>opinion.rate !== numRate);
-    const newArray = numStar.concat(otherStars);
-    setReviews(newArray)
-  }
-  // Todas las reviews ordenadas
-  function allReviews() {
-    setReviews(reviews.sort((a, b) =>  b.rate - a.rate));
-  }
+  // ========== OPINIONES ==========
+  const {
+    toggle,
+    setToggle,
+    reviews,
+    filterStars,
+    allReviews
+  } = useOpinions(opinions);
 
   return (
     <>
@@ -154,14 +124,11 @@ function ResponsiveDetail({ product, price, quota, solds }) {
           <CarouselItems number={3}>
             { products &&
               products.map(product => {
-                return(
-                  <SellerItem
-                  key={product.id}
-                  url={product.id}
-                  image={product.image || product.pictures[0].url}
-                  title={product.title}
-                  price={product.price}/>
-                )})
+              return(
+                <SellerItem
+                key={product.id}
+                product={product}/>
+              )})
             }
           </CarouselItems>
         </div>

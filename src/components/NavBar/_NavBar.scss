@@ -156,7 +156,7 @@
                   width: 257px;
                   padding: 22px 0;
                   border-radius: 4px;
-                  z-index: 3;
+                  z-index: 10;
                   visibility: hidden;
                   cursor: default;
                   transition-delay: 0.1s;
@@ -174,7 +174,7 @@
                      border-right: 8px solid transparent;
                      border-top: 8px solid #333;
                   }
-                  a{
+                  a, span{
                      color: #fff;
                      display: block;
                      font-size: 14px;
@@ -285,7 +285,7 @@
 }
 .shadowActive{
    opacity: 0.3;
-   z-index: 2;
+   z-index: 5;
 }
 
 @media (max-width:1200px){

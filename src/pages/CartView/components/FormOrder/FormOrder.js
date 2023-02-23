@@ -1,6 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import { cartContext } from '../../../../context/cartContext';
+import { scrollToTop } from '../../../../hooks/utilities';
 
 function FormOrder(props) {
+
+  const myContext = useContext(cartContext);
+
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -21,6 +26,17 @@ function FormOrder(props) {
 
     evt.preventDefault();
     props.onSubmit(evt, data);
+    scrollToTop();
+    myContext.clearCart();
+  }
+
+  function filterNumbers(evt) {
+    const numbers = [1,2,3,4,5,6,7,8,9,0]
+    if (evt.key === "Backspace") return;
+      
+    if (!numbers.some( number => evt.key.includes(number) )) {
+      evt.preventDefault();
+    }
   }
   return (
     <form className='formOrder' onSubmit={onSubmit}>
@@ -34,11 +50,12 @@ function FormOrder(props) {
       </div>
       <div className='inputBox'>
         <label htmlFor='tel'>Teléfono</label>
-        <input name='phone' type='tel' maxLength='10' required onChange={onInputChange}/>
+        <input name='phone' type='tel' minLength='10' maxLength='10'
+        size='10' required onChange={onInputChange} onKeyDown={filterNumbers}/>
       </div>
       <div className='buyNow'>
         <button
-        disabled={(data.name === "" || data.phone === "" || data.email === "")}
+        disabled={(data.name === "" || data.phone === "" || data.phone.length !== 10 || data.email === "")}
         type='submit'>
           Finalizar compra
         </button>

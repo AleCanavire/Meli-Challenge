@@ -1,26 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { priceItem, scrollToTop } from '../../../../hooks/utilities';
 
-function SellerItem(props) {
-  // precio
-  const num = props.price < 1000 ? Math.trunc(props.price * 160) : props.price;
-  const price = num.toLocaleString('es-AR');
+function SellerItem({ product }) {
+  // Prices
+  const { price } = priceItem(product.price);
+  const priceArg = price.toLocaleString('es-AR');
 
-  const url = `/detail/${props.url}`
-
-  function scrollToTop() {
-    window.scrollTo(0, 0);
-  }
+  const url = `/detail/${product.id}`
 
   return (
-    <div className='sellerItem'>
+    <div className="sellerItem">
       <Link to={url} onClick={scrollToTop}>
-        <div className='productImage'>
-          <img src={props.image}/>
+        <div className="productImage">
+          <img src={product.image || product.pictures[0].url} alt={product.title}/>
         </div>
         <div className="cardContent">
-          <div className="price">$  {price}</div>
-          <p className="title">{props.title}</p>
+          <div className="price">$  {priceArg}</div>
+          <p className="title">{product.title}</p>
         </div>
       </Link>
     </div>

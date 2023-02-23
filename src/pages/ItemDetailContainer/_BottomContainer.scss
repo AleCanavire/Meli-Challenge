@@ -11,10 +11,11 @@
          font-weight: 700;
       }
    }
-   a{
+   .denounce{
       color: $blue;
       padding-left: 12px;
       position: relative;
+      cursor: pointer;
       &::before{
          content: "";
          position: absolute;

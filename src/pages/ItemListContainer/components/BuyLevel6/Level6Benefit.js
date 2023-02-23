@@ -20,7 +20,7 @@ function Level6Benefit({ logo, text }) {
   return (
     <div className="levelBenefit">
       <div className="benefitLogo">
-        <img src={logo}/>
+        <img src={logo} alt={text}/>
       </div>
       <span className="benefitText">{text}</span>
     </div>

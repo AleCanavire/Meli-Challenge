@@ -324,7 +324,7 @@
                   .question{
                      display: flex;
                      margin-bottom: 6px;
-                     &:hover > p a{
+                     &:hover > p .denounce{
                         opacity: 1;
                      }
                      p{
@@ -332,7 +332,7 @@
                         font-size: 16px;
                         font-weight: 500;
                         line-height: 24px;
-                        a{
+                        .denounce{
                            color: $blue;
                            font-size: 14px;
                            line-height: 24px;
@@ -349,7 +349,7 @@
                   .answer{
                      display: flex;
                      position: relative;
-                     &:hover > p a{
+                     &:hover > p .denounce{
                         opacity: 1;
                      }
                      &::before{
@@ -374,7 +374,7 @@
                            line-height: 24px;
                            margin-left: 8px;
                         }
-                        a{
+                        .denounce{
                            color: $blue;
                            font-size: 14px;
                            line-height: 24px;
