@@ -2,6 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from 'react';
 import Slider from "react-slick";
+import { useResize } from "../../hooks/utilities";
 
 function CarouselHeader() {
   function NextArrow(props) {
@@ -24,7 +25,7 @@ function CarouselHeader() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 250,
     autoplay: true,
     autoplaySpeed: 4500,
     slidesToShow: 1,
@@ -38,17 +39,30 @@ function CarouselHeader() {
     ),
     customPaging: i => (
       <div></div>
-    )
+    ),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          swipeToSlide: true,
+          arrows: false
+        }
+      }
+    ]
   };
   return (
     <div className="carouselHeader">
       <Slider {...settings}>
-        <div className='imageSlide'> <img src='/img/slider1.webp'></img> </div>
-        <div className='imageSlide'> <img src='/img/slider2.webp'></img> </div>
-        <div className='imageSlide'> <img src='/img/slider3.webp'></img> </div>
-        <div className='imageSlide'> <img src='/img/slider4.webp'></img> </div>
-        <div className='imageSlide'> <img src='/img/slider5.webp'></img> </div>
-        <div className='imageSlide'> <img src='/img/slider6.webp'></img> </div>
+        { useResize(1024)
+        ? [1,2,3,4,5,6].map((number)=>{
+          return(
+            <div className='imageSlide' key={number}> <img src={`/img/slider${number}.webp`}></img> </div>
+          )})
+        : [1,2,3,4,5,6].map((number)=>{
+          return(
+            <div className='imageSlide' key={number}> <img src={`/img/slider${number}-1024px.webp`}></img> </div>
+          )})
+        }
       </Slider>  
     </div>
   )
