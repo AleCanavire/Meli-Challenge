@@ -25,7 +25,7 @@ function PartnersSlider() {
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 540,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
