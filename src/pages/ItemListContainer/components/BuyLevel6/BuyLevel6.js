@@ -5,7 +5,7 @@ function BuyLevel6() {
   return (
     <div className='buyLevel6'>
       <div className="buyLevelHeader">
-        <h2 className='headerTitle'>{"Suscribite al\u00A0nivel 6"}</h2>
+        <h2 className='headerTitle'>{"Suscribite al\u00A0nivel\u00A06"}</h2>
         <div className="levelDiscount">
           <span className="price">$ 1.439</span>
           <span className="discountPrice">$ 499
