@@ -9,7 +9,7 @@ function NotPhishing({ onHideAlert }) {
       </div>
       <div className="notPhishingButtons">
         <button className="notPhishingBtn" onClick={() => { onHideAlert() }}>Entendido</button>
-        <a href="https://www.linkedin.com/in/alexander-canavire/" target="_blank">
+        <a href="https://www.linkedin.com/in/alexander-canavire/" target="_blank" rel="noreferrer">
           <button className="notPhishingBtn">Perfil de Linkedin</button>
         </a>
       </div>
