@@ -1,0 +1,109 @@
+.notPhishingContainer{
+   width: 100%;
+   padding: 18px 48px;
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   color: #fff;
+   background: rgb(0 0 0 / 90%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   .notPhishingContent{
+      margin-right: 50px;
+      max-width: 585px;
+      min-width: 200px;
+      text-align: left;
+      h2{
+         font-size: 20px;
+         font-weight: 700;
+         line-height: 30px;
+         margin-bottom: 12px;
+      }
+      p{
+         font-size: 16px;
+         font-weight: 500;
+         margin-bottom: 12px;
+      }
+   }
+   .notPhishingButtons{
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      .notPhishingBtn{
+         color: #fff;
+         font-size: 16px;
+         font-weight: 700;
+         line-height: 1;
+         white-space: nowrap;
+         border: none;
+         border-radius: 6px;
+         padding: 16px 24px;
+         background-color: $blue;
+         margin: 0 8px 8px 0;
+         cursor: pointer;
+      }
+      a .notPhishingBtn{
+         background-color: rgba(65 137 230 / 15%);
+         margin: 0;
+         margin-bottom: 8px;
+      }
+   }
+}
+
+@media (max-width: 1024px){
+   .notPhishingContainer{
+      padding: 24px 16px;
+      flex-direction: column;
+      .notPhishingContent{
+         width: 100%;
+         max-width: none;
+         min-width: none;
+         margin-right: 0;
+         h2{
+            font-size: 18px;
+            line-height: 26px;
+            margin-bottom: 8px;
+         }
+         p{
+            line-height: 23px;
+         }
+      }
+      .notPhishingButtons{
+         margin: 0;
+         width: 100%;
+         gap: 8px;
+         .notPhishingBtn{
+            width: 50%;
+            margin: 0;
+         }
+         a{
+            width: 50%;
+         }
+         a .notPhishingBtn{
+            width: 100%;
+            margin: 0;
+         }
+      }
+   }
+}
+
+@media (max-width: 480px){
+   .notPhishingContainer{
+      .notPhishingButtons{
+         flex-direction: column;
+         .notPhishingBtn{
+            width: 100%;
+            margin: 0;
+         }
+         a{
+            width: 100%;
+         }
+         a .notPhishingBtn{
+            width: 100%;
+            margin: 0;
+         }
+      }
+   }
+}

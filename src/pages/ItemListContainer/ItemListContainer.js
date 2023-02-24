@@ -5,11 +5,17 @@ import ItemList from "./components/ItemList/ItemList";
 import BuyLevel6 from "./components/BuyLevel6/BuyLevel6";
 import PartnersContainer from "./components/Partners/PartnersContainer";
 import { GetProducts } from "../../hooks/utilities";
+import NotPhishing from "../../components/NotPhishing/NotPhishing";
+import { useState } from "react";
 
 function ItemListContainer() {
 
   const products = GetProducts();
 
+  const [isHidden, setIsHidden] = useState(true);
+  const onHideAlert = () => {
+    setIsHidden(false)
+  }
   return (
     <>
       <CarouselHeader/>
@@ -29,6 +35,7 @@ function ItemListContainer() {
       <div className="partnersContainer">
         <PartnersContainer/>
       </div>
+      { isHidden && <NotPhishing onHideAlert={onHideAlert}/> }
     </>
   )
 }
