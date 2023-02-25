@@ -3,33 +3,9 @@
    max-width: 1200px;
    margin: 0 auto;
    padding: 40px 0;
-   margin-bottom: 200px;
    .partners{
-      .partnersHeader{
-         display: flex;
-         margin-bottom: 22px;
-         h2{
-            color: #666;
-            font-size: 26px;
-            font-weight: 300;
-            line-height: 32px;
-            margin-left: 8px;
-         }
-         a{
-            color: $blue;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 20px;
-            text-decoration: none;
-            margin: auto 0 2px 16px;
-            transition: .3s ease-out color;
-            cursor: pointer;
-            &:hover{
-               color: $dark-blue;
-            }
-         }
-      }
       .partnersBody{
+         padding-bottom: 15px;
          .slick-slider{
             .slick-list{
                .partnerContainer{
@@ -115,13 +91,13 @@
    .partnersContainer{
       width: auto;
       overflow: hidden;
-      padding: 24px 10px 0;
+      padding: 24px 10px 2px;
       .partners{
          background-color: #fff;
          box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
          border-radius: 6px;
          overflow: visible;
-         .partnersHeader{
+         .sectionTitle{
             margin: 0;
             padding: 0 16px;
             h2{

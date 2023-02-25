@@ -6,7 +6,7 @@ function PartnersContainer() {
   const windowSize = useResize(1024);
   return (
     <div className="partners">
-      <div className="partnersHeader">
+      <div className="sectionTitle">
         <h2>Beneficios de Mercado Puntos</h2>
         { windowSize && <a>Ver todos los beneficios</a> }
       </div>
