@@ -1064,7 +1064,7 @@
                            .valorizationButtons{
                               display: flex;
                               gap: 12px;
-                              button{
+                              .likeButton, .dislikeButton{
                                  display: flex;
                                  align-items: center;
                                  height: 32px;
@@ -1093,7 +1093,33 @@
                                        color: $blue;
                                     }
                                  }
-                                 .likeButton{
+                                 .contentButton{
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 6px;
+                                    span, p{
+                                       display: block;
+                                       font-size: 12px;
+                                       font-weight: 700;
+                                       line-height: 32px;
+                                    }
+                                    svg{
+                                       width: 16px;
+                                       height: 16px;
+                                    }
+                                 }
+                              }
+                              .liked{
+                                 color: #fff;
+                                 background-color: $blue;
+                                 display: flex;
+                                 align-items: center;
+                                 height: 32px;
+                                 border: none;
+                                 border-radius: 16px;
+                                 padding: 0 11px;
+                                 cursor: pointer;
+                                 .contentButton{
                                     display: flex;
                                     align-items: center;
                                     gap: 6px;

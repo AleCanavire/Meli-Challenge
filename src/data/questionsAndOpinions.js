@@ -28,66 +28,79 @@ const questions =
 
 export const opinions = [
   {
+    "id": 1,
     "rate": 5,
     "comment": "La calidad es buenisima!, los materiales son buenos y estan bien construidos.",
     "likes": 21
   },
   {
+    "id": 2,
     "rate": 5,
     "comment": "Buen material y calidad, lo recomiendo, saludos.",
     "likes": 12
   },
   {
+    "id": 3,
     "rate": 5,
     "comment": "Excelente ningún problema, sin nada más que comentar.",
     "likes": 8
   },
   {
+    "id": 4,
     "rate": 5,
     "comment": "Excelente producto, muy buena calidad, realmente lo esperado.",
     "likes": 5
   },
   {
+    "id": 5,
     "rate": 5,
     "comment": "Muy bueno! Muy conforme con el producto.",
     "likes": 5
   },
   {
+    "id": 6,
     "rate": 5,
     "comment": "Esta tremendo. Muy buena calidad y excelentes terminaciones.",
     "likes": 4
   },
   {
+    "id": 7,
     "rate": 5,
     "comment": "Muy buen producto acorde a la descripción.",
     "likes": 3
   },
   {
+    "id": 8,
     "rate": 5,
     "comment": "Es un producto de buena calidad, muy bueno.",
     "likes": 2
   },
   {
+    "id": 9,
     "rate": 4,
     "comment": "Buen producto, pero no es perfecto",
     "likes": 1
   },
   {
+    "id": 10,
     "rate": 4,
     "comment": "El producto es bueno pero el tamaño esta mal especificado.",
     "likes": 0
   },
   {
+    "id": 11,
     "rate": 3,
     "comment": "El producto es lindo, pero me vino con un desperfecto.",
     "likes": 1
   },
   {
+    "id": 12,
     "rate": 2,
     "comment": "No es el mismo que figura en la publicación.",
     "likes": 0
   },
   {
+    "id": 13,
     "rate": 1,
     "comment": "Este producto tiene materiales de mala calidad.",
     "likes": 0
