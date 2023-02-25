@@ -1,27 +1,29 @@
+.sectionTitle{
+   display: flex;
+   align-items: baseline;
+   margin-bottom: 22px;
+   h2{
+      color: #666;
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 1.2;
+      margin-left: 8px;
+   }
+   a{
+      color: $blue;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-decoration: none;
+      margin: 10px 0 2px 16px;
+      &:hover{
+         color: #1259c3;
+      }
+   }
+}
 .recommendations{
    max-width: 1200px;
    margin: 10px auto;
-   .sectionTitle{
-      display: flex;
-      align-items: baseline;
-      h3{
-         color: #666;
-         font-size: 26px;
-         font-weight: 300;
-         line-height: 28px;
-         margin: 0 0 25px 8px;
-      }
-      a{
-         color: $blue;
-         font-size: 16px;
-         font-weight: 500;
-         text-decoration: none;
-         margin-left: 15px;
-         &:hover{
-               color: #1259c3;
-         }
-      }
-   }
    .itemsContainer{
       padding: 0 8px;
       display: flex;
