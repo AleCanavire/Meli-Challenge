@@ -7,6 +7,7 @@ import PartnersContainer from "./components/Partners/PartnersContainer";
 import { GetProducts } from "../../hooks/utilities";
 import NotPhishing from "../../components/NotPhishing/NotPhishing";
 import { useState } from "react";
+import DiscoveryContainer from "./components/Discovery/DiscoveryContainer";
 
 function ItemListContainer() {
 
@@ -20,21 +21,24 @@ function ItemListContainer() {
     <>
       <CarouselHeader/>
       <PaymentContainer/>
-      <div className="recommendations">
+      <section className="recommendations">
         <div className="sectionTitle">
-          <h3>Productos</h3>
+          <h2>Productos</h2>
           <Link to="#">Ver todos</Link>
         </div>
         <div className="itemsContainer">
           {products ? <ItemList products={products} /> : <ItemList products={0}/>}
         </div>
-      </div>
-      <div className="buyLevel6Container">
+      </section>
+      <section className="buyLevel6Container">
         <BuyLevel6/>
-      </div>
-      <div className="partnersContainer">
+      </section>
+      <section className="partnersContainer">
         <PartnersContainer/>
-      </div>
+      </section>
+      <section className="discoveryContainer">
+        <DiscoveryContainer number1={0} number2={2}/>
+      </section>
       { isHidden && <NotPhishing onHideAlert={onHideAlert}/> }
     </>
   )

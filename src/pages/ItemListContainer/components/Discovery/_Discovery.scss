@@ -1,0 +1,141 @@
+.discoveryContainer{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 40px 0;
+   margin-bottom: 200px;
+   .discoveryBody{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 0 8px;
+      .advertising{
+         background: #fff;
+         height: 250px;
+         display: flex;
+         align-items: center;
+         border-radius: 4px;
+         box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+         overflow: hidden;
+         transition: .1s box-shadow ease-out;
+         cursor: pointer;
+         &:hover{
+            box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+         }
+         .advertisingInfo{
+            color: #4b4b4b;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 32px 0 32px 32px;
+            margin-right: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            .advertisingTitle{
+               font-size: 12px;
+               line-height: 1;
+               letter-spacing: 4px;
+               margin-bottom: 12px;
+            }
+            .advertisingText{
+               font-size: 28px;
+               line-height: 1.1;
+               white-space: nowrap;
+            }
+            .advertisingButton{
+               color: #fff;
+               background-color: $blue;
+               width: 96px;
+               height: 36px;
+               font-size: 14px;
+               font-weight: 700;
+               line-height: 1;
+               margin-top: 13px;
+               padding: 9px 10px;
+               border: 0;
+               border-radius: 2px;
+               transition: .2s background-color ease-out;
+               cursor: pointer;
+               &:hover{
+                  background-color: $dark-blue;
+               }
+            }
+         }
+         .advertisingImage{
+            height: 100%;
+            img{
+               height: 100%;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1024px){
+   .discoveryContainer{
+      padding: 0;
+      margin-top: 24px;
+      .sectionTitle{
+         display: none;
+      }
+      .discoveryBody{
+         gap: 8px;
+         padding: 0 10px;
+         .advertising{
+            height: 190px;
+            align-items: flex-start;
+            .advertisingInfo{
+               flex: 1;
+               height: 100%;
+               padding: 20px 0 20px 20px;
+               margin: 0;
+               .advertisingTitle{
+                  font-size: 10px;
+                  letter-spacing: 2.5px;
+                  margin-bottom: 8px;
+               }
+               .advertisingText{
+                  font-size: 20px;
+               }
+               .advertisingButton{
+                  color: $blue;
+                  background-color: transparent;
+                  width: auto;
+                  height: auto;
+                  position: absolute;
+                  left: 20px;
+                  bottom: 20px;
+                  padding: 0;
+                  margin: 0;
+                  line-height: 20px;
+                  &:hover{
+                     background-color: transparent;
+                     color: $dark-blue;
+                  }
+               }
+            }
+            .advertisingImage{
+               flex: 0 1 153px;
+               overflow: hidden;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 700px){
+   .discoveryContainer{
+      .discoveryBody{
+         grid-template-columns: 1fr;
+         gap: 10px;
+         .advertising{
+            .advertisingInfo{
+               .advertisingText:nth-child(3){
+                  white-space: pre-wrap;
+               }
+            }
+         }
+      }
+   }
+}
