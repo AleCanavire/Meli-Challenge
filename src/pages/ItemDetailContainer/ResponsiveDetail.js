@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
 import { GetProducts, useQuestions, useOpinions } from '../../hooks/utilities';
 import questions, { opinions } from '../../data/questionsAndOpinions';
@@ -36,6 +36,9 @@ function ResponsiveDetail({ product, price, quota, solds }) {
     filterStars,
     allReviews
   } = useOpinions(opinions);
+
+  // ===== Texto Ver mas Opiniones =====
+  const [isHidden, setIsHidden] = useState(true);
 
   return (
     <>
@@ -396,7 +399,7 @@ function ResponsiveDetail({ product, price, quota, solds }) {
                   }
                 </button>
               </div>
-              <div className="reviewsComments">
+              <div className={`reviewsComments${ isHidden ? "" :  " reviewsVisibles"}`}>
                 { reviews.map((opinion)=>{
                   return(
                     <Opinion
@@ -407,8 +410,10 @@ function ResponsiveDetail({ product, price, quota, solds }) {
                     />
                   )})
                 }
-                <p className="moreOpinions">Mostrar todas las opiniones</p>
               </div>
+              <span className="moreOpinions" onClick={()=>setIsHidden(!isHidden)}>
+                {isHidden ? "Mostrar todas las opiniones" : "Ver menos opiniones"}
+              </span>
             </div>
           </div>
         </div>

@@ -6,8 +6,6 @@ function ItemCount({stock, onAddToCart}) {
 
   const [toggle, setToggle] = useState(false);
 
-  const [isActive, setActive] = useState(false);
-
   function handleQuantity(quantity) {
     setCount(quantity);
   }
@@ -16,11 +14,11 @@ function ItemCount({stock, onAddToCart}) {
     <div className='cart'>
       <div className="stockInformation">Stock disponible</div>
       <div className='quantityButton'>
-        <button className='quantitySelector' onClick={() => {setToggle(!toggle); setActive(!isActive)}}>
+        <button className='quantitySelector' onClick={() => setToggle(!toggle)}>
           <span className='buttonContent'>
             <span className='quantity'>Cantidad:</span>
             <span className='count'>{count} {count>1 ? "unidades" : "unidad"}</span>
-            <div className={`arrowIcon ${isActive ? 'activeList' : ""}`}><span></span></div>
+            <div className={`arrowIcon ${toggle ? 'activeList' : ""}`}><span></span></div>
             <span className='quantityAvariable'>{`(${stock} disponibles)`}</span>
           </span>
         </button>

@@ -1014,6 +1014,8 @@
                      }
                   }
                   .reviewsComments{
+                     height: 396px;
+                     overflow-y: hidden;
                      .reviewComment{
                         .rateAndDate{
                            display: flex;
@@ -1168,14 +1170,19 @@
                            display: none;
                         }
                      }
-                     .moreOpinions{
-                        color: $blue;
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 20px;
-                        margin: 36px 0 20px;
-                        cursor: pointer;
-                     }
+                  }
+                  .reviewsVisibles{
+                     height: auto !important;
+                     overflow-y: visible;
+                  }
+                  .moreOpinions{
+                     display: block;
+                     color: $blue;
+                     font-size: 14px;
+                     font-weight: 500;
+                     line-height: 20px;
+                     margin: 36px 0 20px;
+                     cursor: pointer;
                   }
                }
             }
@@ -1197,6 +1204,54 @@
                }
             }
          }
-      }
+      }  
+   }
+}
+
+@media (max-width: 580px){
+   .itemDetail{
+      .questionsContainer{
+         .opinions{
+            .reviews{
+               .reviewsFilter{
+                  .reviewsComments{
+                     height: 416px;
+                  }
+               }
+            }
+         }
+      } 
+   }
+}
+
+@media (max-width: 480px){
+   .itemDetail{
+      .questionsContainer{
+         .opinions{
+            .reviews{
+               .reviewsFilter{
+                  .reviewsComments{
+                     height: 436px;
+                  }
+               }
+            }
+         }
+      } 
+   }
+}
+
+@media (max-width: 380px){
+   .itemDetail{
+      .questionsContainer{
+         .opinions{
+            .reviews{
+               .reviewsFilter{
+                  .reviewsComments{
+                     height: 456px;
+                  }
+               }
+            }
+         }
+      } 
    }
 }

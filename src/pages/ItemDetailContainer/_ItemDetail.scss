@@ -582,6 +582,8 @@
                         }
                      }
                      .reviewsComments{
+                        height: 416px;
+                        overflow-y: hidden;
                         .reviewComment{
                            .rateAndDate{
                               display: flex;
@@ -736,14 +738,19 @@
                               display: none;
                            }
                         }
-                        .moreOpinions{
-                           color: $blue;
-                           font-size: 14px;
-                           font-weight: 500;
-                           line-height: 20px;
-                           margin: 36px 0 20px;
-                           cursor: pointer;
-                        }
+                     }
+                     .reviewsVisibles{
+                        height: auto;
+                        overflow-y: visible;
+                     }
+                     .moreOpinions{
+                        display: block;
+                        color: $blue;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                        margin: 36px 0 20px;
+                        cursor: pointer;
                      }
                   }
                }

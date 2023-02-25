@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GetProducts, useQuestions, useOpinions, useSelectImage } from '../../hooks/utilities';
 import questions, { opinions } from '../../data/questionsAndOpinions';
 import CarouselItems from '../../components/ReactSlick/CarouselItems';
@@ -34,6 +34,9 @@ function ItemColumnLeft({ product }) {
     imageStyled,
     changeImage
   } = useSelectImage();
+
+  // ===== Texto Ver mas Opiniones =====
+  const [isHidden, setIsHidden] = useState(true);
 
   return (
     <div className='columnLeft'>
@@ -249,7 +252,7 @@ function ItemColumnLeft({ product }) {
                   }
                 </button>
               </div>
-              <div className="reviewsComments">
+              <div className={`reviewsComments${ isHidden ? "" :  " reviewsVisibles"}`}>
                 { reviews.map((opinion)=>{
                   return(
                     <Opinion
@@ -260,8 +263,10 @@ function ItemColumnLeft({ product }) {
                     />
                   )})
                 }
-                <p className="moreOpinions">Mostrar todas las opiniones</p>
               </div>
+              <span className="moreOpinions" onClick={()=>setIsHidden(!isHidden)}>
+                {isHidden ? "Mostrar todas las opiniones" : "Ver menos opiniones"}
+              </span>
             </div>
           </div>
         </div>
