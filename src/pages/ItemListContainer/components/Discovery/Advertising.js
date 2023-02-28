@@ -42,7 +42,7 @@ function Advertising({ title, text1, text2, image, image1024 }) {
       </div>
       <div className="advertisingImage">
         <picture>
-          <source media="(max-width:1024px)" srcset={image1024}/>
+          <source media="(max-width:1024px)" srcSet={image1024}/>
           <img src={image} alt={title} />
         </picture>
       </div>
