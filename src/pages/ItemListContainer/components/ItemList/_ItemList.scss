@@ -16,33 +16,21 @@
       line-height: 1.2;
       text-decoration: none;
       margin: 10px 0 2px 16px;
+      transition: .3s color ease-out;
+      cursor: pointer;
       &:hover{
          color: #1259c3;
       }
    }
 }
 .recommendations{
-   max-width: 1200px;
-   margin: 10px auto;
-   .itemsContainer{
-      padding: 0 8px;
-      display: flex;
-      .slick-slider{
-         width: 100%;
-         .slick-list{
-            margin-right: -12px;
-            overflow-x: hidden;
-         }
-      }
-   }
-}
-
-@media (max-width: 1200px){
-   .recommendations{
+   overflow: hidden;
+   .recommendationsList{
+      max-width: 1200px;
+      margin: 10px auto;
       .itemsContainer{
-         padding: 0;
-         padding-left: 8px;
-         overflow-x: hidden;
+         padding: 0 10px;
+         display: flex;
          .slick-slider{
             width: 100%;
             .slick-list{
@@ -50,6 +38,68 @@
                overflow-x: hidden;
             }
          }
+      }   
+   }
+   
+}
+
+@media (max-width: 1200px){
+   .recommendations{
+      overflow: visible;
+      margin: 0;
+      padding: 0 10px 40px;
+      .recommendationsList{
+         background-color: #fff;
+         box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+         border-radius: 6px;
+         margin: 0;
+         .sectionTitle{
+            margin: 0;
+            padding: 0 16px;
+            h2{
+               color: #000;
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 22px;
+               margin: 12px 0;
+            }
+         }
+         .itemsContainer{
+            height: 456px;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 0;
+            .slick-slider{
+               width: 100%;
+               .slick-list{
+                  margin-right: -12px;
+                  overflow-x: hidden;
+               }
+            }
+         }
+         .itemsVisibles{
+            height: auto;
+            overflow: visible;
+         }
+         .moreProducts{
+            color: $blue;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 18px;
+            padding: 13px 16px;
+            transition: 0.3s ease-out color;
+            cursor: pointer;
+            &:hover{
+               color: $dark-blue;
+            }
+         }
       }
+      
+   }
+}
+
+@media (max-width: 1056px){
+   .recommendations{
+      padding: 24px 10px;
    }
 }

@@ -1,17 +1,13 @@
-import { Link } from "react-router-dom";
-import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
+import { useState } from "react";
 import CarouselHeader from "../../components/ReactSlick/CarouselHeader";
+import PaymentContainer from "./components/PaymentContainer/PaymentContainer";
 import ItemList from "./components/ItemList/ItemList";
 import BuyLevel6 from "./components/BuyLevel6/BuyLevel6";
 import PartnersContainer from "./components/Partners/PartnersContainer";
-import { GetProducts } from "../../hooks/utilities";
-import NotPhishing from "../../components/NotPhishing/NotPhishing";
-import { useState } from "react";
 import DiscoveryContainer from "./components/Discovery/DiscoveryContainer";
+import NotPhishing from "../../components/NotPhishing/NotPhishing";
 
 function ItemListContainer() {
-
-  const products = GetProducts();
 
   const [isHidden, setIsHidden] = useState(true);
   const onHideAlert = () => {
@@ -22,13 +18,7 @@ function ItemListContainer() {
       <CarouselHeader/>
       <PaymentContainer/>
       <section className="recommendations">
-        <div className="sectionTitle">
-          <h2>Productos</h2>
-          <Link to="#">Ver todos</Link>
-        </div>
-        <div className="itemsContainer">
-          {products ? <ItemList products={products} /> : <ItemList products={0}/>}
-        </div>
+        <ItemList/>
       </section>
       <section className="buyLevel6Container">
         <BuyLevel6/>

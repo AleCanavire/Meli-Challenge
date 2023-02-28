@@ -38,18 +38,6 @@ function CarouselItems({ children, number }) {
     slidesToScroll: number,
     nextArrow: <NextArrow/>,
     prevArrow: <PrevArrow/>,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          swipeToSlide: true,
-          variableWidth: true,
-          arrows: false
-        }
-      }
-    ]
   };
   return (
     <Slider {...settings}>
