@@ -94,66 +94,69 @@
    }
 }
 @media (max-width: 1200px){
-   .itemCard{
-      height: auto;
-      .item{
-         width: 100%;
+   .itemsContainer{
+      .itemCard{
          height: auto;
-         margin: 0;
-         border: none;
-         border-top: 1px solid #ededed;
-         border-bottom: 1px solid #ededed;
-         border-radius: 0;
-         box-shadow: none;
-         transition: none;
-         &:hover{
+         .item{
+            width: 100%;
+            height: auto;
+            margin: 0;
+            border: none;
+            border-top: 1px solid #ededed;
+            border-bottom: 1px solid #ededed;
+            border-radius: 0;
             box-shadow: none;
-         }
-         a{
-            display: flex;
-            .imgProduct{
-               width: 104px;
-               min-width: 104px;
-               height: 104px;
-               margin: 4px;
-               padding: 4px;
+            transition: none;
+            &:hover{
+               box-shadow: none;
             }
-            .itemContent{
-               max-width: 240px;
-               padding: 8px 16px 10px 4px;
-               border: none;
-               .itemTitle{
-                  span{
-                     display: block;
-                     line-height: 12px;
+            a{
+               display: flex;
+               .imgProduct{
+                  width: 104px;
+                  min-width: 104px;
+                  height: 104px;
+                  margin: 4px;
+                  padding: 4px;
+               }
+               .itemContent{
+                  max-width: 240px;
+                  padding: 8px 16px 10px 4px;
+                  border: none;
+                  .itemTitle{
+                     span{
+                        display: block;
+                        line-height: 12px;
+                     }
+                     p{
+                        color: #424242;
+                        font-weight: 500;
+                        line-height: 18px;
+                        margin: 0;
+                        opacity: 1;
+                     }
                   }
-                  p{
-                     color: #424242;
-                     font-weight: 500;
-                     line-height: 18px;
-                     margin: 0;
-                     opacity: 1;
+                  .itemPrice{
+                     margin: 6px 0 4px;
+                     line-height: 20px;
+                     .priceSimbol{
+                        font-size: 20px;
+                        line-height: 1;
+                     }
+                     .price{
+                        font-size: 20px;
+                        line-height: 1;
+                     }
                   }
                }
-               .itemPrice{
-                  margin: 6px 0 4px;
-                  line-height: 20px;
-                  .priceSimbol{
-                     font-size: 20px;
-                     line-height: 1;
-                  }
-                  .price{
-                     font-size: 20px;
-                     line-height: 1;
-                  }
+               svg{
+                  display: none;
                }
             }
-            svg{
-               display: none;
-            }
          }
-      }
+      }      
    }
+
 }
 
 .itemSkeleton{

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Item from "./Item";
+import { ItemHome } from "./Item";
 import ItemSkeleton from "./ItemSkeleton";
 import CarouselItems from "../../../../components/ReactSlick/CarouselItems";
 import { useResize, GetProducts } from "../../../../hooks/utilities";
@@ -24,7 +24,7 @@ function ItemList() {
               ? <CarouselItems number={5}>
                   {products.map((product) => {
                     return(
-                      <Item
+                      <ItemHome
                         key={product.id}
                         url={product.id}
                         title={product.title}
@@ -50,7 +50,7 @@ function ItemList() {
               { products &&
                 products.map((product) => {
                   return (
-                    <Item
+                    <ItemHome
                       key={product.id}
                       url={product.id}
                       title={product.title}

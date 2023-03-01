@@ -322,14 +322,31 @@
          width: 100%;
          border-top: 1px solid rgb(0 0 0 / 10%);
          padding: 40px 0;
-         padding-left: 16px;
          overflow: hidden;
          h2{
             color: rgb(0 0 0 / 90%);
             font-size: 20px;
             font-weight: 500;
             line-height: 25px;
-            margin-bottom: 16px;
+            margin: 0 0 16px 16px;
+         }
+         .sellerItems{
+            overflow-x: scroll;
+            &::-webkit-scrollbar{
+               display: none;
+            }
+            .carrouselItems{
+               display: inline-flex;
+               gap: 14px;
+               padding: 0 16px;
+            }
+         }
+         .footerText{
+            line-height: 1;
+            margin: 0 16px;
+            padding: 16px;
+            border: 1px solid rgb(0 0 0 / 10%);
+            border-radius: 6px;
          }
       }
       .sellerInfoContainer{

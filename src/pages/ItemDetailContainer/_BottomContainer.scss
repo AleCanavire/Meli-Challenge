@@ -74,15 +74,23 @@
       }
    }
    .productsCarousel{
-      padding-left: 16px;
       h2{
          font-size: 20px;
          line-height: 25px;
-         margin-bottom: 16px;
+         margin: 0 0 16px 16px;
       }
-      .slick-slider{
-         .slick-list{
-            margin: 0;
+      .promotedProductsContainer{
+         overflow-x: scroll;
+         &::-webkit-scrollbar{
+            display: none;
+         }
+         .promotedProducts{
+            display: inline-flex;
+            gap: 12px;
+            padding: 0 16px;
+            .item{
+               margin-right: 0;
+            }
          }
       }
    }

@@ -32,6 +32,9 @@ $dark-blue: #2968c8;
 body{
    background-color: #ededed;
 }
+.mainHome{
+   overflow-x: hidden
+}
 
 @import '/src/components/NavBar/NavBar';
 @import '/src/pages/ItemListContainer/components/ItemList/ItemList';
