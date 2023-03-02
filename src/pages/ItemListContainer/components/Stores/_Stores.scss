@@ -1,0 +1,183 @@
+.storesContainer{
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 40px 0;
+   .storeSlider{
+      .storeBody{
+         &:hover .prevArrowItems, &:hover .nextArrowItems{
+            opacity: 1;
+         }
+         .prevArrowItems{
+            transform: translate(-50%, -50%);
+            opacity: 0;
+         }
+         .nextArrowItems{
+            transform: translate(50%, -50%);
+            opacity: 0;
+         }
+         .store{
+            background-color: #fff;
+            width: 100%;
+            max-width: 284px;
+            height: 340px;
+            margin: 0 8px 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%), 0 0 2px 0 rgb(0 0 0 / 10%);
+            transition: .1s box-shadow ease-out;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            &:hover{
+               box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+            }
+            &:hover .seeShop{
+               color: $blue;
+            }
+            .storeBackground{
+               width: 100%;
+               height: 95px;
+               margin-bottom: -40px;
+               overflow: hidden;
+               img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+            }
+            .storeLogo{
+               width: 80px;
+               height: 80px;
+               margin: 0 auto;
+               border-radius: 8px;
+               box-shadow: 0 2px 15px 0 rgb(0 0 0 / 10%);
+               overflow: hidden;
+               img{
+                  width: 100%;
+                  height: 100%;
+               }
+            }
+            .storeTitle{
+               .title{
+                  color: #333;
+                  height: 35px;
+                  margin: 16px 0;
+                  padding: 0 16px;
+                  font-size: 24px;
+                  font-weight: 700;
+                  text-align: center;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                  overflow: hidden;
+               }
+            }
+            .storeItems{
+               height: 74px;
+               text-align: center;
+               img{
+                  display: inline-block;
+                  width: 70px;
+                  height: 70px;
+                  margin: 3px;
+                  border: 1px solid #eee;
+                  border-radius: 8px;
+                  overflow: hidden;
+               }
+            }
+            .seeShop{
+               color: #999;
+               font-size: 15px;
+               font-weight: 700;
+               margin-top: 22px;
+               text-align: center;
+               transition: .1s color ease-out;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1200px){
+   .storesContainer{
+      .storeSlider{
+         padding: 0 2px;
+         .storeBody{
+            .prevArrowItems{
+               transform: translate(0, -50%);
+            }
+            .nextArrowItems{
+               transform: translate(0, -50%);
+            }
+            .store{
+               width: auto;
+               max-width: none;
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1024px){
+   .storesContainer{
+      margin-top: 24px;
+      padding: 0;
+      .storeSlider{
+         padding: 0;
+         .sectionTitle{
+            margin: 0 10px 16px;
+            h2{
+               font-size: 18px;
+               font-weight: 500;
+               margin: auto auto 0 0;
+            }
+         }
+         .storeBody{
+            overflow-x: scroll;
+            &::-webkit-scrollbar{
+               display: none;
+            }
+            .stores{
+               width: max-content;
+               display: flex;
+               gap: 8px;
+               padding: 0 10px 10px;
+               .store{
+                  width: 328px;
+                  height: auto;
+                  margin: 0;
+                  &:hover{
+                     box-shadow: 0 0px 16px 0 rgb(0 0 0 / 20%), 0 2px 4px 0 rgb(0 0 0 / 10%);
+                  }
+                  .storeBackground{
+                     height: 115px;
+                     margin-bottom: 0;
+                  }
+                  .storeLogo{
+                     position: absolute;
+                     left: 16px;
+                     bottom: 16px;
+                     margin: 0;
+                  }
+                  .storeTitle{
+                     position: relative;
+                     height: 66px;
+                     .title{
+                        height: auto;
+                        position: absolute;
+                        left: 119px;
+                        bottom: 50%;
+                        margin: 0;
+                        padding: 0;
+                        font-size: 16px;
+                        font-weight: 700;
+                        text-align: left;
+                        white-space: pre-wrap;
+                        transform: translateY(50%);
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

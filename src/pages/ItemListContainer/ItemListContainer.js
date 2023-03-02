@@ -6,6 +6,7 @@ import BuyLevel6 from "./components/BuyLevel6/BuyLevel6";
 import PartnersContainer from "./components/Partners/PartnersContainer";
 import DiscoveryContainer from "./components/Discovery/DiscoveryContainer";
 import NotPhishing from "../../components/NotPhishing/NotPhishing";
+import StoresContainer from "./components/Stores/StoresContainer";
 
 function ItemListContainer() {
 
@@ -28,6 +29,12 @@ function ItemListContainer() {
       </section>
       <section className="discoveryContainer">
         <DiscoveryContainer number1={0} number2={2}/>
+      </section>
+      <section className="storesContainer">
+        <StoresContainer/>
+      </section>
+      <section className="discoveryContainer">
+        <DiscoveryContainer number1={2} number2={4}/>
       </section>
       { isHidden && <NotPhishing onHideAlert={onHideAlert}/> }
     </>
