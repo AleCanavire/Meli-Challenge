@@ -12,7 +12,7 @@ function StoresContainer() {
       </div>
       <div className="storeBody">
         <div className="stores">
-          { useResize(1024)
+          { useResize(768)
             ? <StoreSlider/>
             :  stores.map((store, index) => {
               return(

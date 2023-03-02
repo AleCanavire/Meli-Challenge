@@ -16,7 +16,7 @@ function BottomContainer({ product }) {
       </div>
       <div className="productsCarousel">
         <h2>Productos promocionados</h2>
-        { useResize(1200)
+        { useResize(768)
           ? <CarouselItems number={5}>
               { products &&
                 products.map(product => {
@@ -51,7 +51,7 @@ function BottomContainer({ product }) {
       </div>
       <div className="productsCarousel">
         <h2>Quienes compraron este producto también compraron</h2>
-        { useResize(1200)
+        { useResize(768)
           ? <CarouselItems number={5}>
               { products &&
                 products.reverse().map(product => {

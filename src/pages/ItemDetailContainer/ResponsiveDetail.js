@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { cartContext } from '../../context/cartContext';
-import { GetProducts, useQuestions, useOpinions } from '../../hooks/utilities';
+import { GetProducts, useQuestions, useOpinions, useResize } from '../../hooks/utilities';
 import questions, { opinions } from '../../data/questionsAndOpinions';
 import CarouselImages from '../../components/ReactSlick/CarouselImages';
 import ItemCount from './components/ItemCount/ItemCount';
 import SellerItem from './components/SellerItem/SellerItem';
 import Opinion from './components/Opinion/Opinion';
+import CarouselItems from '../../components/ReactSlick/CarouselItems';
 
 function ResponsiveDetail({ product, price, quota, solds }) {
 
@@ -124,16 +125,28 @@ function ResponsiveDetail({ product, price, quota, solds }) {
       <div className='sellerProducts'>
         <h2>Publicaciones del vendedor</h2>
         <div className="sellerItems">
-          <div className="carrouselItems">
-            { products &&
-              products.map(product => {
-              return(
-                <SellerItem
-                key={product.id}
-                product={product}/>
-              )})
-            }
-          </div>
+          { useResize(768)
+            ? <CarouselItems>
+                { products &&
+                  products.map(product => {
+                  return(
+                    <SellerItem
+                    key={product.id}
+                    product={product}/>
+                  )})
+                }
+              </CarouselItems>
+            : <div className="carrouselItems">
+                { products &&
+                  products.map(product => {
+                  return(
+                    <SellerItem
+                    key={product.id}
+                    product={product}/>
+                  )})
+                }
+              </div>
+          }
         </div>
         <span className='footerText'>Ver más publicaciones del vendedor</span>
       </div>

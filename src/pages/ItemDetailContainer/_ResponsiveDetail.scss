@@ -331,6 +331,19 @@
             margin: 0 0 16px 16px;
          }
          .sellerItems{
+            .slick-slider{
+               .slick-list{
+                  padding: 0 16px;
+               }
+               .prevArrowItems{
+                  transform: translate(0%, -100%);
+               }
+               .nextArrowItems{
+                  transform: translate(0%, -100%);
+               }
+            }
+         }
+         .sellerItems{
             overflow-x: scroll;
             &::-webkit-scrollbar{
                display: none;

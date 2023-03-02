@@ -6,7 +6,11 @@ import Store, { stores } from "./Store";
 import { useResize } from "../../../../hooks/utilities"
 
 function StoreSlider() {
-  const number = useResize(1200) ? 4 : 3
+  let number = useResize(1200) ? 4 : 3;
+  if (useResize(1024) === false) {
+    number = 0;
+  }
+
   function NextArrow(props) {
     const { onClick, currentSlide, slideCount} = props;
     return (
@@ -47,6 +51,15 @@ function StoreSlider() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true
         }
       }
     ]

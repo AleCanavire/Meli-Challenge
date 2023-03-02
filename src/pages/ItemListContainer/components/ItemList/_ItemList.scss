@@ -33,6 +33,12 @@
          display: flex;
          .slick-slider{
             width: 100%;
+            &:hover > .prevArrowItems, &:hover > .nextArrowItems{
+               opacity: 1;
+            }
+            .prevArrowItems, .nextArrowItems{
+               opacity: 0;
+            }
             .slick-list{
                margin-right: -12px;
                overflow-x: hidden;
@@ -44,6 +50,21 @@
 }
 
 @media (max-width: 1200px){
+   .recommendations{
+      .recommendationsList{
+         .itemsContainer{
+            .prevArrowItems{
+               transform: translate(-8px, -100%);
+            }
+            .nextArrowItems{
+               transform: translate(8px, -100%);
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1024px){
    .recommendations{
       overflow: visible;
       margin: 0;

@@ -40,6 +40,12 @@
       margin-bottom: 24px;
    }
    .slick-slider{
+      &:hover > .prevArrowItems, &:hover > .nextArrowItems{
+         opacity: 1;
+      }
+      .prevArrowItems, .nextArrowItems{
+         opacity: 0;
+      }
       .slick-list{
          margin-right: -12px;
          overflow-x: hidden;
@@ -80,18 +86,27 @@
          line-height: 25px;
          margin: 0 0 16px 16px;
       }
-      .promotedProductsContainer{
-         overflow-x: scroll;
-         &::-webkit-scrollbar{
-            display: none;
-         }
-         .promotedProducts{
-            display: inline-flex;
-            gap: 12px;
-            padding: 0 16px;
-            .item{
-               margin-right: 0;
-            }
+      .prevArrowItems, .nextArrowItems{
+         transform: translate(0, -100%);
+      }
+      .slick-slider{
+         padding: 0 16px;
+      }
+   }
+}
+
+@media (max-width: 768px){
+   .promotedProductsContainer{
+      overflow-x: scroll;
+      &::-webkit-scrollbar{
+         display: none;
+      }
+      .promotedProducts{
+         display: inline-flex;
+         gap: 12px;
+         padding: 0 16px;
+         .item{
+            margin-right: 0;
          }
       }
    }

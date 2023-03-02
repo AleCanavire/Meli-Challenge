@@ -13,7 +13,7 @@ function ItemList() {
 
   return (
     <div className="recommendationsList">
-      { useResize(1200)
+      { useResize(1024)
         ? <>
             <div className="sectionTitle">
               <h2>Productos</h2>

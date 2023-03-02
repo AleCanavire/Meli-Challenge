@@ -46,7 +46,7 @@ export function ItemHome(props) {
             <img src={props.img} alt={props.title}></img>
           </div>
           <div className='itemContent'>
-            { useResize(1200)
+            { useResize(1024)
               ? <>
                   <div className='itemPrice'>
                     <span className='priceSimbol'>$</span>

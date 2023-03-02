@@ -132,19 +132,18 @@
             }
          }
          .storeBody{
-            overflow-x: scroll;
-            &::-webkit-scrollbar{
-               display: none;
-            }
             .stores{
-               width: max-content;
-               display: flex;
-               gap: 8px;
-               padding: 0 10px 10px;
+               .slick-slider{
+                  padding: 0 10px;
+                  .slick-list{
+                     overflow: visible;
+                  }
+               }
                .store{
                   width: 328px;
                   height: auto;
                   margin: 0;
+                  margin-right: 10px;
                   &:hover{
                      box-shadow: 0 0px 16px 0 rgb(0 0 0 / 20%), 0 2px 4px 0 rgb(0 0 0 / 10%);
                   }
@@ -175,6 +174,56 @@
                         transform: translateY(50%);
                      }
                   }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 768px){
+   .storeBody{
+      overflow-x: scroll;
+      &::-webkit-scrollbar{
+         display: none;
+      }
+      .stores{
+         width: max-content;
+         display: flex;
+         gap: 8px;
+         padding: 0 10px 10px;
+         .store{
+            width: 328px;
+            height: auto;
+            margin: 0;
+            &:hover{
+               box-shadow: 0 0px 16px 0 rgb(0 0 0 / 20%), 0 2px 4px 0 rgb(0 0 0 / 10%);
+            }
+            .storeBackground{
+               height: 115px;
+               margin-bottom: 0;
+            }
+            .storeLogo{
+               position: absolute;
+               left: 16px;
+               bottom: 16px;
+               margin: 0;
+            }
+            .storeTitle{
+               position: relative;
+               height: 66px;
+               .title{
+                  height: auto;
+                  position: absolute;
+                  left: 119px;
+                  bottom: 50%;
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  font-weight: 700;
+                  text-align: left;
+                  white-space: pre-wrap;
+                  transform: translateY(50%);
                }
             }
          }
