@@ -1,7 +1,7 @@
 import React from 'react';
-import { useResize, GetProducts } from '../../../hooks/utilities';
-import CarouselItems from '../../../components/ReactSlick/CarouselItems';
-import Item from '../../ItemListContainer/components/ItemList/Item';
+import { useResize, GetProducts } from '../../../../hooks/utilities';
+import CarouselItems from '../../../../components/ReactSlick/CarouselItems';
+import Item from '../../../ItemListContainer/components/ItemList/Item';
 
 function BottomContainer({ product }) {
 
