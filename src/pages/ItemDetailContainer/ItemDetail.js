@@ -3,7 +3,7 @@ import { priceItem } from '../../hooks/utilities';
 import ItemColumnLeft from './ItemColumnLeft';
 import ItemColumnRight from './ItemColumnRight';
 import ResponsiveDetail from './ResponsiveDetail';
-import BottomContainer from './components/BottomContainer';
+import BottomContainer from './components/BottomContainer/BottomContainer';
 
 function ItemDetail({ product, windowSize }) {
 
