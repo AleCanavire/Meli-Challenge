@@ -1,0 +1,54 @@
+.toggle-wrapper {
+   display: block;
+   width: 44px;
+   margin-left: auto;
+   margin-bottom: 12px;
+   .toggle {
+      background: var(--background-icons);
+      width: 100%;
+      height: 22px;
+      padding: 4px 5px;
+      border-radius: 11px;
+      position: relative;
+      transition: .5s background ease;
+      cursor: pointer;
+      &::before{
+         content: "";
+         position: absolute;
+         display: block;
+         width: 14px;
+         height: 14px;
+         border-radius: 50%;
+         background: var(--toggle);
+         transform: translate(0);
+         transition: transform .5s ease, background .5s ease;         
+         z-index: 2;
+      }
+      .icons {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 100%;
+         svg{
+            width: 14px;
+            height: 14px;
+            fill: var(--icon-toggle);
+            z-index: 0;
+         }
+      }
+      input{
+         position: absolute;
+         top: 0;
+         opacity: 0;
+      }
+   }
+   .toggle.enabled::before {
+      transform: translateX(20px);
+   }
+}
+
+@media (max-width: 1200px){
+   .toggle-wrapper{
+      margin: 0 10px 0 auto;
+   }
+}

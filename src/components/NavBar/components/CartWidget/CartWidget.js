@@ -1,18 +1,18 @@
 import { useContext } from 'react';
-import { cartContext } from "../../context/cartContext";
+import { cartContext } from "../../../../context/cartContext";
 import { Link } from 'react-router-dom';
+import { ReactComponent as CartIcon } from '../../../../assets/img/cart.svg';
+import { ReactComponent as InCartIcon } from '../../../../assets/img/inCart.svg';
 
 function CartWidget() {
 	const myContext = useContext(cartContext);
 	return (
 		<div className='cartWidget'>
 			<Link to={"/cart"}>
-				<img src={
-					myContext.itemsInCart() === 0
-					? '/img/cart.svg'
-					: '/img/inCart.svg'
-					}>
-				</img>
+				{ myContext.itemsInCart() === 0
+					? <CartIcon/>
+					: <InCartIcon/>
+				}
 				<div className='itemsInCart'>
 					{
 						myContext.itemsInCart() === 0 ? "" :

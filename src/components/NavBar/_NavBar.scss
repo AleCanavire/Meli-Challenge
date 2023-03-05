@@ -3,7 +3,7 @@
    overflow-x: hidden;
 }
 .nav{
-   background-color: #fff159;
+   background-color: var(--background-nav);
    width: 100%;
    height: 100px;
    box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
@@ -25,7 +25,7 @@
             grid-area: logo;
             width: 134px;
             height: 34px;
-            background-image: url(../../assets/img/meliLogo.png);
+            background-image: var(--meli-logo);
             margin-left: 10px;
             cursor: pointer;
          }
@@ -39,32 +39,34 @@
          position: relative;
          cursor: pointer;
          &:hover{
-               box-shadow: inset 0px 0px 1px 1px #eadd61;
-               border-radius: 5px;
+            box-shadow: inset 0px 0px 1px 1px #eadd61;
+            border-radius: 5px;
          }
-         img{
-               height: 23px;
-               width: 18px;
-               position: absolute;
-               left: 8px;
-               top: 4px;
+         > svg{
+            color: var(--background-icons);
+            position: absolute;
+            top: 3px;
+            left: 9px;
+            width: 18px;
+            height: 22px;
          }
          .envio{
                display: flex;
                flex-wrap: wrap;
                align-items: center;
                span{
-                  color: rgba(0, 0, 0, .5);
-                  padding-left: 22px;
+                  color: var(--nav-secondary-text);
+                  padding-left: 25px;
                   font-size: 12px;
                   font-weight: 500;
+                  line-height: 17px;
                }
                p{
-                  color: #333;
-                  padding-left: 23px;
+                  color: var(--nav-text);
+                  padding-left: 25px;
                   font-size: 14px;
                   font-weight: 500;
-                  line-height: 12px;
+                  line-height: 11px;
                }
          }
       }
@@ -81,12 +83,15 @@
             width: 100%;
             border-radius: 2px;
             input{
+               color: var(--text);
+               background-color: var(--background-item);
                grid-area: input;
                width: 100%;
                padding-left: 15px;
                border: none;
                &::placeholder{
-                  color: rgba(0, 0, 0, .2);
+                  color: var(--placeholder);
+                  font-family: inherit;
                   font-size: 16px;
                   font-weight: 500;
                }
@@ -95,12 +100,12 @@
                }
             }
             button{
+               background-color: var(--background-item);
                grid-area: button;
                position: relative;
                width: 46px;
                height: 39px;
                border: none;
-               background-color: #fff;
                cursor: pointer;
                &::after{
                   content: "";
@@ -108,11 +113,12 @@
                   left: 0;
                   top: 50%;
                   transform: translateY(-50%);
-                  border-left: 1px rgba(0, 0, 0, .1) solid;
+                  border-left: 1px solid var(--border);
                   height: 26px;
                   
                }
                img{
+                  filter: var(--brightness);
                   height: 16px;
                }
             }
@@ -193,7 +199,7 @@
             li{
                list-style: none;
                span{
-                  color: rgba(51, 51, 51, .6);
+                  color: var(--nav-categories);
                   font-size: 14px;
                   font-weight: 500;
                   transition: 300ms color ease;
@@ -210,6 +216,8 @@
          grid-area: disney;
          width: 340px;
          height: 39px;
+         background-image: var(--disney-plus-image);
+         background-size: 340px 39px;
          margin-left: 55px;
          margin-right: 10px;
          cursor: pointer;
@@ -232,7 +240,7 @@
                   display: none;
                }
                span{
-                  color: #333;
+                  color: var(--nav-text);
                   font-size: 14px;
                   line-height: 10px;
                   font-weight: 500;
@@ -249,9 +257,8 @@
                margin-bottom: 4px;
                cursor: pointer;
                position: relative;
-               img{
-                  width: 100%;
-                  height: 100%;
+               svg{
+                  color: var(--background-icons);
                }
                .itemsInCart{
                   position: absolute;
@@ -264,7 +271,7 @@
                      width: 100%;
                      font-size: 11px;
                      line-height: 11px;
-                     color: #333;
+                     color: var(--background-icons);
                      text-align: center;
                      text-decoration: none;
                   }
@@ -314,19 +321,22 @@
             height: 39px;
             padding: 0;
             margin: 0;
-            box-shadow: 0 -1px 0 0 rgb(0 0 0 / 10%);
+            box-shadow: 0 -1px 0 0 var(--nav-border);
             display: flex;
             align-items: center;
-            img{
+            &:hover{
+               box-shadow: 0 -1px 0 0 var(--nav-border);
+               border-radius: 0;
+            }
+            > svg{
                width: 12px;
                height: 14px;
                top: 10px;
                left: 10px;
-               filter: drop-shadow(0px 0px 0.6px black);
+               filter: drop-shadow(0px 0px 0.5px var(--background-icons));
             }
             .envio{
                span, p{
-                  color: #736c28;
                   font-size: 13px;
                   font-weight: 500;
                   line-height: 13px;
@@ -348,8 +358,8 @@
                grid-template-areas: "button input";
                input{
                   padding: 0;
+                  font-size: 16px;
                   &::placeholder{
-                     color: rgba(0 0 0 / 20%);
                      font-size: 16px;
                      font-weight: 500;
                   }
@@ -398,13 +408,13 @@
                   width: 45px;
                   height: 48px;
                   span{
-                     background-color: #333;
+                     background-color: var(--background-icons);
                      position: relative;
                      display: block;
                      width: 20px;
                      height: 1px;
                      &::before, &::after{
-                        background-color: #333;
+                        background-color: var(--background-icons);
                         position: absolute;
                         content: "";
                         top: 0;

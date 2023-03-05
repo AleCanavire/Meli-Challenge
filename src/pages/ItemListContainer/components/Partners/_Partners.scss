@@ -93,7 +93,7 @@
       overflow: hidden;
       padding: 24px 10px 2px;
       .partners{
-         background-color: #fff;
+         background-color: var(--background-item);
          box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
          border-radius: 6px;
          overflow: visible;
@@ -101,7 +101,7 @@
             margin: 0;
             padding: 0 16px;
             h2{
-               color: #000;
+               color: var(--text);
                font-size: 18px;
                font-weight: 700;
                line-height: 22px;
@@ -110,7 +110,7 @@
          }
          .partnersBody{
             padding: 16px;
-            border-top: 1px solid #ededed;
+            border-top: 1px solid var(--border);
             .slick-slider{
                .slick-list{
                   margin: 0 -4px;
@@ -168,7 +168,7 @@
             font-weight: 700;
             line-height: 18px;
             padding: 13px 16px;
-            border-top: 1px solid #ededed;
+            border-top: 1px solid var(--border);
             transition: .3s ease-out color;
             cursor: pointer;
             &:hover{

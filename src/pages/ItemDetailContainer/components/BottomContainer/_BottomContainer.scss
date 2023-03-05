@@ -53,17 +53,19 @@
    }
 }
 .footer{
-   background-color: #fff;
+   background-color: var(--background-item);
    text-align: center;
    padding: 30px 16px;
    margin-top: 70px;
    span{
+      color: var(--text);;
       font-weight: 700;
       a{
          color: $blue;
       }
    }
    p{
+      color: var(--text);
       margin-top: 10px;
    }
 }

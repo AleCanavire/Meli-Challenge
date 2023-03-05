@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useResize } from '../../hooks/utilities';
-import CartWidget from '../CartWidget/CartWidget';
+import CartWidget from './components/CartWidget/CartWidget';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import { ReactComponent as LocationIcon } from '../../assets/img/location.svg';
 
 function NavBar() {
   const [shadowActive, setShadow] = useState(false);
@@ -22,11 +24,12 @@ function NavBar() {
             <div className='meliLogo'></div>
           </Link>
           <div className='location'>
-            <img src='/img/location.svg' alt='location icon'></img>
+            <LocationIcon/>
             <div className='envio'>
               <span>Enviar a</span>
               <p>Capital Federal</p>
             </div>
+            { !useResize(1200) && <ThemeToggle/> }
           </div>
           <div className='search'>
             <form>
@@ -72,8 +75,9 @@ function NavBar() {
               <li><span>Vender</span></li>
               <li><span>Ayuda</span></li>
             </ul>
+            <ThemeToggle/>
           </div>
-          <img className='disney' src='/img/disneyStar.webp' alt='disney icon'></img>
+          <div className='disney'></div>
           <div className='account'>
             <ul>
               <li className='accountOptions'><span>Creá  tu cuenta</span></li>

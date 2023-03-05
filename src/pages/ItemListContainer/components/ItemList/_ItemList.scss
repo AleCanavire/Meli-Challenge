@@ -3,7 +3,7 @@
    align-items: baseline;
    margin-bottom: 22px;
    h2{
-      color: #666;
+      color: var(--title);
       font-size: 26px;
       font-weight: 300;
       line-height: 1.2;
@@ -70,7 +70,7 @@
       margin: 0;
       padding: 0 10px 40px;
       .recommendationsList{
-         background-color: #fff;
+         background-color: var(--background-item);
          box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
          border-radius: 6px;
          margin: 0;
@@ -78,7 +78,7 @@
             margin: 0;
             padding: 0 16px;
             h2{
-               color: #000;
+               color: var(--text);
                font-size: 18px;
                font-weight: 700;
                line-height: 22px;
