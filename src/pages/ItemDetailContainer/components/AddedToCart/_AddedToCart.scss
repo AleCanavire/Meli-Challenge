@@ -17,6 +17,7 @@
          .imgProduct{
             position: relative;
             width: 66px;
+            min-width: 66px;
             height: 66px;
             &::before{
                content: "";
