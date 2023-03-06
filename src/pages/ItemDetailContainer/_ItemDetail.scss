@@ -13,7 +13,7 @@
             position: relative;
             text-decoration: none;
             margin-right: 25px;
-            color: rgb(0 0 0 / 90%);
+            color: var(--text);
             &:hover{
                color: $dark-blue;
             }
@@ -24,7 +24,7 @@
                right: -14px;
                height: 12px;
                width: 1px;
-               background-color: rgb(0 0 0 / 20%);
+               background-color: var(--placeholder);
             }
          }
          span{
@@ -48,7 +48,7 @@
                right: -15px;
                height: 14px;
                width: 1px;
-               background-color: rgb(0 0 0 / 20%);
+               background-color: var(--placeholder);
             }
             &:hover{
                color: $dark-blue;
@@ -64,7 +64,7 @@
    .itemDetail{
       display: grid;
       grid-template-columns: 768px 416px;
-      background-color: #fff;
+      background-color: var(--background-item);
       border-radius: 4px;
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 25%);
       overflow: hidden;
@@ -80,6 +80,7 @@
                   width: 50px;
                   height: 100%;
                   .preview{
+                     background: #fff;
                      width: 100%;
                      height: 50px;
                      margin-bottom: 8px;
@@ -102,6 +103,7 @@
                   }
                }
                .focusImg{
+                  background-color: #fff;
                   padding: 40px 12px 16px 16px;
                   img{
                      width: 100%;
@@ -113,11 +115,11 @@
             }
          }
          .sellerProducts{
-            border-top: 1px solid rgb(0 0 0 / 10%);
+            border-top: 1px solid var(--border);
             padding: 40px 0;
             margin-left: 50px;
             h2{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 24px;
                font-weight: 500;
                line-height: 30px;
@@ -125,21 +127,22 @@
             }
          }
          .techSpecs{
-            border-top: 1px solid rgb(0 0 0 / 10%);
+            border-top: 1px solid var(--border);
             margin-left: 50px;
             padding: 40px 0;
             h2{
-               color: #333;
+               color: var(--detail-text);
                font-size: 24px;
                font-weight: 500;
                line-height: 30px;
                padding-bottom: 32px;
             }
             .table{
-               border: 1px solid #ededed;
+               border: 1px solid var(--border);
                border-radius: 5px;
                overflow: hidden;
                table{
+                  color: var(--text);
                   width: 100%;
                   border-spacing: 0;
                   tbody{
@@ -157,18 +160,18 @@
                      }
                      tr:nth-child(odd){
                         th{
-                           background-color: #ebebeb;
+                           background-color: var(--table-color-1);
                         }
                         td{
-                           background-color: #f5f5f5;
+                           background-color: var(--table-color-2);
                         }
                      }
                      tr:nth-child(even){
                         th{
-                           background-color: #f5f5f5;
+                           background-color: var(--table-color-2);
                         }
                         td{
-                           background-color: #fff;
+                           background-color: var(--table-color-3);
                         }
                      }
                   }
@@ -178,6 +181,7 @@
          .otherSpecs{
             margin-top: 32px;
             h3{
+               color: var(--detail-text);
                font-size: 20px;
                font-weight: 500;
                padding-bottom: 24px;
@@ -191,6 +195,7 @@
                      width: 50%;
                      list-style: none;
                      p{
+                        color: var(--detail-text);
                         font-size: 14px;
                         line-height: 16px;
                         padding-bottom: 14px;
@@ -203,17 +208,18 @@
             }
          }
          .description{
-            border-top: 1px solid rgb(0 0 0 / 10%);
+            border-top: 1px solid var(--border);
             padding: 40px 0;
             margin-left: 50px;
             h2{
+               color: var(--detail-text);
                font-size: 24px;
                font-weight: 500;
                line-height: 30px;
                padding-bottom: 24px;
             }
             p{
-               color: #666;
+               color: var(--detail-secondary-text);
                font-size: 20px;
                font-weight: 500;
                line-height: 28px;
@@ -224,6 +230,7 @@
             padding-top: 40px;
             margin-left: 50px;
             h2{
+               color: var(--detail-text);
                font-size: 24px;
                font-weight: 500;
                line-height: 30px;
@@ -231,6 +238,7 @@
             .buttons{
                margin-top: 40px;
                h3{
+                  color: var(--text);
                   font-size: 18px;
                   font-weight: 700;
                   line-height: 24px;
@@ -253,6 +261,7 @@
             .yourQuestion{
                margin-top: 40px;
                h3{
+                  color: var(--detail-text);
                   font-size: 18px;
                   font-weight: 700;
                   line-height: 24px;
@@ -262,6 +271,8 @@
                   display: flex;
                   gap: 16px;
                   input{
+                     color: var(--text);
+                     background-color: var(--background-other-items);
                      font-size: 16px;
                      flex: 1;
                      padding-left: 16px;
@@ -269,7 +280,7 @@
                      border-radius: 5px;
                      box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
                      &::placeholder{
-                        color: rgb(0 0 0 / 25%);
+                        color: var(--placeholder);
                      }
                      &:focus-visible{
                         outline: $blue auto;
@@ -294,18 +305,19 @@
             }
             .yoursQuestions{
                margin-top: 40px;
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                h3{
                   font-size: 18px;
                   font-weight: 700;
                   line-height: 22px;
                }
                .question{
-                  background-color: rgba(0 0 0 / 4%);
+                  background-color: var(--options-hover);
                   border-radius: 6px;
                   margin-top: 25px;
                   padding: 16px;
                   p{
+                     color: var(--text);
                      font-size: 16px;
                      font-weight: 500;
                      line-height: 23px;
@@ -315,6 +327,7 @@
             .lastQuestions{
                margin-top: 40px;
                h3{
+                  color: var(--detail-text);
                   font-size: 18px;
                   font-weight: 700;
                   line-height: 22px;
@@ -328,7 +341,7 @@
                         opacity: 1;
                      }
                      p{
-                        color: rgb(0 0 0 / 90%);
+                        color: var(--detail-text);
                         font-size: 16px;
                         font-weight: 500;
                         line-height: 24px;
@@ -359,17 +372,17 @@
                         left: 12px;
                         width: 12px;
                         height: 12px;
-                        border-left: 1px solid rgb(0 0 0 / 25%);
-                        border-bottom: 1px solid rgb(0 0 0 / 25%);
+                        border-left: 1px solid var(--placeholder);
+                        border-bottom: 1px solid var(--placeholder);
                      }
                      p{
-                        margin-left: 32px;
-                        color: rgb(0 0 0 / 55%);
+                        color: var(--detail-secondary-text);
                         font-size: 16px;
                         font-weight: 500;
                         line-height: 24px;
+                        margin-left: 32px;
                         span{
-                           color: rgb(0 0 0 / 55%);
+                           color: var(--detail-secondary-text);
                            font-size: 14px;
                            line-height: 24px;
                            margin-left: 8px;
@@ -403,7 +416,7 @@
             }
             .opinions{
                h2{
-                  color: #000;
+                  color: var(--text);
                   font-size: 24px;
                   font-weight: 500;
                   line-height: 30px;
@@ -453,14 +466,14 @@
                                  display: flex;
                                  gap: 9px;
                                  svg{
-                                    fill: rgb(0 0 0 / 10%);
+                                    fill: var(--stars-grey);
                                     width: 18px;
                                     height: 18px;
                                  }
                               }
                            }
                            p{
-                              color: rgba(0 0 0 / 55%);
+                              color: var(--detail-secondary-text);
                               font-size: 14px;
                               font-weight: 500;
                               line-height: 16px;
@@ -483,7 +496,7 @@
                                  width: 100%;
                                  height: 4px;
                                  border-radius: 2px;
-                                 background-color: rgb(0 0 0 / 10%);
+                                 background-color: var(--stars-grey);
                                  span{
                                     position: absolute;
                                     top: 0;
@@ -491,14 +504,14 @@
                                     width: 0;
                                     height: 4px;
                                     border-radius: 2px;
-                                    background-color: rgb(0 0 0 / 55%);
+                                    background-color: var(--detail-secondary-text);
                                  }
                               }
                               .level{
                                  display: flex;
                                  align-items: center;
                                  span{
-                                    color: rgb(0 0 0 / 55%);
+                                    color: var(--detail-secondary-text);
                                     width: 8px;
                                     font-size: 14px;
                                     font-weight: 300;
@@ -506,7 +519,7 @@
                                     text-align: center;
                                  }
                                  svg{
-                                    fill: rgb(0 0 0 / 25%);
+                                    fill: var(--stars-grey);
                                     width: 11px;
                                     height: 11px;
                                     margin-left: 5px;
@@ -553,12 +566,13 @@
                               width: 100%;
                               margin-top: 10px;
                               padding: 10px 0;
-                              background-color: #fff;
+                              background-color: var(--background-other-items);
                               border-radius: 6px;
                               box-shadow: 0 0 6px rgb(0 0 0 / 10%), 0 6px 16px rgb(0 0 0 / 10%);
                               z-index: 3;
                               ul{
                                  li{
+                                    color: var(--text);
                                     position: relative;
                                     font-size: 14px;
                                     font-weight: 500;
@@ -568,9 +582,10 @@
                                     list-style: none;
                                     cursor: pointer;
                                     &:hover{
-                                       background-color: #f5f5f5;
+                                       background-color: var(--options-hover);
                                     }
                                     svg{
+                                       fill: var(--text);
                                        position: absolute;
                                        top: 10px;
                                        left: 30px;
@@ -607,21 +622,21 @@
                                     display: flex;
                                     gap: 3px;
                                     svg{
-                                       fill: rgb(0 0 0 / 10%);
+                                       fill: var(--stars-grey);
                                        width: 12px;
                                        height: 12px;
                                     }
                                  }
                               }
                               .date{
-                                 color: rgba(0 0 0 / 55%);
+                                 color: var(--detail-secondary-text);
                                  font-size: 12px;
                                  font-weight: 300;
                                  line-height: 20px;
                               }
                            }
                            .comment{
-                              color: rgba(0 0 0 / 90%);
+                              color: var(--detail-text);
                               font-size: 16px;
                               font-weight: 400;
                               line-height: 20px;
@@ -638,9 +653,9 @@
                                     display: flex;
                                     align-items: center;
                                     height: 32px;
-                                    color: rgb(0 0 0 / 55%);
-                                    background-color: #fff;
-                                    border: 1px solid rgb(0 0 0 / 20%);
+                                    color: var(--detail-secondary-text);
+                                    background-color: var(--background-item);
+                                    border: 1px solid var(--stars-grey);
                                     border-radius: 16px;
                                     transition-property: color background-color border;
                                     transition: .3s ease;
@@ -761,7 +776,7 @@
       .columnRight{
          margin: 16px 16px 16px 48px;
          .borderRow{
-            border: 1px solid rgb(0 0 0 / 10%);
+            border: 1px solid var(--border);
             border-radius: 8px;
          }
          .infoProduct{
@@ -771,7 +786,7 @@
             .productHeader{
                span{
                   display: block;
-                  color: rgb(0 0 0 / 55%);
+                  color: var(--detail-secondary-text);
                   font-size: 14px;
                   font-weight: 500;
                   line-height: 20px;
@@ -779,7 +794,7 @@
                   margin: 0 40px 8px 0;
                }
                h1{
-                  color: rgb(0 0 0 / 90%);
+                  color: var(--detail-text);
                   font-size: 22px;
                   font-weight: 700;
                   line-height: 26px;
@@ -815,7 +830,7 @@
                      width: 15px;
                      height: 14px;
                      margin-right: 3px;
-                     fill: rgb(0 0 0 / 10%);
+                     fill: var(--stars-grey);
                   }
                }
                span{
@@ -832,18 +847,18 @@
                   line-height: 36px;
                   margin-bottom: 4px;
                   .priceSimbol{
-                     color: rgb(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-weight: 300;
                      margin-right: 0.2em;
                   }
                   .price{
-                     color: rgb(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-weight: 300;
                   }
                }
                .quotas{
                   p{
-                     color: rgb(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-size: 18px;
                      font-weight: 500;
                      line-height: 18px;
@@ -885,7 +900,7 @@
                      margin-bottom: 3px;
                   }
                   p:nth-child(2){
-                     color: rgb(0 0 0 / 55%);
+                     color: var(--detail-secondary-text);
                      font-size: 14px;
                      font-weight: 500;
                      line-height: 20px;
@@ -904,7 +919,7 @@
             }
             .cart{
                .stockInformation{
-                  color: rgb(0 0 0 / 90%);
+                  color: var(--detail-text);
                   font-size: 16px;
                   font-weight: 700;
                }
@@ -919,13 +934,13 @@
                      .buttonContent{
                         display: flex;
                         .quantity{
-                           color: rgba(0 0 0 / 90%);
+                           color: var(--detail-text);
                            font-size: 16px;
                            font-weight: 500;
                            line-height: 1;
                         }
                         .count{
-                           color: rgba(0 0 0 / 90%);
+                           color: var(--detail-text);
                            font-size: 16px;
                            font-weight: 700;
                            line-height: 1;
@@ -953,7 +968,7 @@
                            transform: rotate(180deg);
                         }
                         .quantityAvariable{
-                           color: rgba(0 0 0 / 55%);
+                           color: var(--detail-secondary-text);
                            font-size: 14px;
                            font-weight: 500;
                            line-height: 1;
@@ -967,8 +982,8 @@
                      left: 3px;
                      width: 200px;
                      min-height: 150px;
-                     color: rgb(0 0 0 / 90%);
-                     background-color: #fff;
+                     color: var(--detail-text);
+                     background-color: var(--background-other-items);
                      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%), 0 0 6px 0 rgb(0 0 0 / 10%);
                      z-index: 10;
                      ul{
@@ -981,7 +996,7 @@
                            transition: background-color .1s ease-out;
                            cursor: pointer;
                            &:hover{
-                              background-color: rgba(0 0 0 / 4%);
+                              background-color: var(--options-hover);
                            }
                         }
                      }
@@ -1024,15 +1039,17 @@
                margin-top: 24px;
                li{
                   display: flex;
-                  img{
+                  svg{
+                     color: var(--detail-secondary-text);
                      width: 16px;
+                     min-width: 16px;
                      height: 16px;
                      margin: 2px 10px 0 0;
                   }
                   p{
                      font-size: 14px;
                      line-height: 20px;
-                     color: rgb(0 0 0 / 55%);
+                     color: var(--detail-secondary-text);
                      span{
                         color: $blue;
                         cursor: pointer;
@@ -1049,7 +1066,7 @@
             padding: 32px 16px;
             margin-top: 16px;
             h2{
-               color: rgba(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 18px;
                font-weight: 500;
                line-height: 1.25;
@@ -1061,19 +1078,20 @@
                   margin-bottom: 20px;
                   .icon{
                      margin-right: 10px;
-                     img{
+                     svg, img{
+                        color: var(--detail-secondary-text);
                         width: 20px;
                      }
                   }
                   .text{
                      p:first-child{
-                        color: rgb(0 0 0 / 90%);
+                        color: var(--detail-text);
                         font-size: 16px;
                         font-weight: 500;
                         line-height: 1.35;
                      }
                      p:nth-child(2){
-                        color: rgb(0 0 0 / 55%);
+                        color: var(--detail-secondary-text);
                         font-size: 14px;
                         font-weight: 500;
                         line-height: 1.35;
@@ -1121,20 +1139,21 @@
                         padding: 0 5px;
                         list-style: none;
                         span{
-                           color: #000;
+                           color: var(--detail-text);
                            display: block;
                            font-size: 24px;
                            font-weight: 400;
                            line-height: 28px;
                            text-align: center;
                            height: 28px;
-                           img{
+                           svg{
+                              color: var(--detail-text);
                               width: 28px;
                               padding-top: 3px;
                            }
                         }
                         p{
-                           color: rgba(0 0 0 / 70%);
+                           color: var(--detail-secondary-text);
                            font-size: 12px;
                            font-weight: 500;
                            line-height: 1;
@@ -1179,20 +1198,20 @@
             .freeReturn, .warranty{
                padding: 32px 16px;
                h2{
-                  color: rgb(0 0 0 / 90%);
+                  color: var(--detail-text);
                   font-size: 18px;
                   font-weight: 500;
                   line-height: 22px;
                   margin-bottom: 28px;
                }
                h3{
-                  color: rgb(0 0 0 / 90%);
+                  color: var(--detail-text);
                   font-size: 16px;
                   font-weight: 500;
                   margin-bottom: 12px;
                }
                p{
-                  color: rgb(0 0 0 / 55%);
+                  color: var(--detail-secondary-text);
                   font-size: 14px;
                   font-weight: 500;
                   line-height: 18px;
@@ -1211,26 +1230,26 @@
                }
             }
             .warranty{
-               border-top: 1px solid rgba(0 0 0 / 10%);
+               border-top: 1px solid var(--border);
                p{
                   margin-bottom: 24px;
                }
             }
             .paymentMethods{
-               border-top: 1px solid rgba(0 0 0 / 10%);
+               border-top: 1px solid var(--border);
                padding: 32px 16px;
                .creditCards, .debitCards, .cash{
                   margin-top: 28px;
                }
                h2{
-                  color: rgb(0 0 0 / 90%);
+                  color: var(--detail-text);
                   font-size: 18px;
                   font-weight: 500;
                   line-height: 16px;
                   margin-bottom: 28px;
                }
                p{
-                  color: rgb(0 0 0 / 90%);
+                  color: var(--detail-text);
                   font-size: 16px;
                   font-weight: 400;
                   line-height: 12px;

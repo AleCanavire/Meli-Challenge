@@ -1,18 +1,20 @@
 .sellerItems{
    .sellerItem{
+      background-color: var(--background-other-items);
       width: 222px;
       min-height: 320px;
-      border: 1px solid #f5f5f5;
+      border: 1px solid var(--border);
       border-radius: 4px;
       box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
       margin-bottom: 25px;
       cursor: pointer;
       &:hover{
-         box-shadow: 0 7px 11px 0 rgb(0 0 0 / 10%), 0 2px 4px 0 rgb(0 0 0 / 10%);
+         box-shadow: 0 7px 11px 0 var(--stars-grey), 0 2px 4px 0 var(--stars-grey);
       }
       a{
          text-decoration: none;
          .productImage{
+            background-color: #fff;
             height: 220px;
             padding: 25px 15px;
             img{
@@ -25,13 +27,13 @@
             padding: 16px 16px 0;
             border-top: 2px solid #f5f5f5;
             div{
-               color: #333;
+               color: var(--secondary-text);
                font-size: 24px;
                line-height: 24px;
                margin-bottom: 8px;
             }
             p{
-               color: rgba(0 0 0 / 80%);
+               color: var(--detail-text);
                font-size: 14px;
                line-height: 18px;
                height: 36px;

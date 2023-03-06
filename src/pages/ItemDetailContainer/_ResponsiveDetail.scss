@@ -18,7 +18,7 @@
             margin-bottom: 8px;
             span{
                display: block;
-               color: rgb(0 0 0 / 55%);
+               color: var(--detail-secondary-text);
                font-size: 12px;
                font-weight: 500;
                line-height: 16px;
@@ -45,7 +45,7 @@
                      width: 10px;
                      height: 10px;
                      margin-right: 3px;
-                     fill: rgb(0 0 0 / 10%);
+                     fill: var(--stars-grey);
                   }
                }
                span{
@@ -57,7 +57,7 @@
             }
          }
          h1{
-            color: rgb(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 16px;
             font-weight: 500;
             line-height: 1.18;
@@ -68,10 +68,11 @@
          padding: 16px;
          margin: 16px 0;
          .imgProduct{
+            background-color: #fff;
             position: relative;
             .imageNumber{
-               background-color: #f5f5f5;
-               color: rgb(0 0 0 / 90%);
+               background-color: var(--table-color-2);
+               color: var(--detail-text);
                position: absolute;
                top: -16px;
                left: 0;
@@ -102,18 +103,18 @@
             line-height: 32px;
             margin: 20px 0 4px;
             .priceSimbol{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-weight: 300;
                margin-right: 0.2em;
             }
             .price{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-weight: 300;
             }
          }
          .quotas{
             p{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 18px;
                font-weight: 500;
                line-height: 18px;
@@ -157,7 +158,7 @@
                margin-bottom: 2px;
             }
             p:nth-child(2){
-               color: rgb(0 0 0 / 55%);
+               color: var(--detail-secondary-text);
                font-size: 16px;
                font-weight: 500;
                line-height: 20px;
@@ -178,7 +179,7 @@
          width: 100%;
          padding: 0 16px;
          .stockInformation{
-            color: rgb(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 16px;
             font-weight: 700;
          }
@@ -193,13 +194,13 @@
                .buttonContent{
                   display: flex;
                   .quantity{
-                     color: rgba(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-size: 16px;
                      font-weight: 500;
                      line-height: 1;
                   }
                   .count{
-                     color: rgba(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-size: 16px;
                      font-weight: 700;
                      line-height: 1;
@@ -227,7 +228,7 @@
                      transform: rotate(180deg);
                   }
                   .quantityAvariable{
-                     color: rgba(0 0 0 / 55%);
+                     color: var(--detail-secondary-text);
                      font-size: 14px;
                      font-weight: 500;
                      line-height: 1;
@@ -241,8 +242,8 @@
                left: 3px;
                width: 200px;
                min-height: 150px;
-               color: rgb(0 0 0 / 90%);
-               background-color: #fff;
+               color: var(--detail-text);
+               background-color: var(--background-other-items);
                box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%), 0 0 6px 0 rgb(0 0 0 / 10%);
                z-index: 10;
                ul{
@@ -255,7 +256,7 @@
                      transition: background-color .1s ease-out;
                      cursor: pointer;
                      &:hover{
-                        background-color: rgba(0 0 0 / 4%);
+                        background-color: var(--options-hover);
                      }
                   }
                }
@@ -299,7 +300,8 @@
          padding: 0 16px;
          li{
             display: flex;
-            img{
+            svg{
+               color: var(--detail-secondary-text);
                width: 16px;
                height: 16px;
                margin: 2px 10px 0 0;
@@ -307,7 +309,7 @@
             p{
                font-size: 14px;
                line-height: 20px;
-               color: rgb(0 0 0 / 55%);
+               color: var(--detail-secondary-text);
                span{
                   color: $blue;
                   cursor: pointer;
@@ -320,11 +322,11 @@
       }
       .sellerProducts{
          width: 100%;
-         border-top: 1px solid rgb(0 0 0 / 10%);
+         border-top: 1px solid var(--border);
          padding: 40px 0;
          overflow: hidden;
          h2{
-            color: rgb(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 20px;
             font-weight: 500;
             line-height: 25px;
@@ -358,16 +360,16 @@
             line-height: 1;
             margin: 0 16px;
             padding: 16px;
-            border: 1px solid rgb(0 0 0 / 10%);
+            border: 1px solid var(--border);
             border-radius: 6px;
          }
       }
       .sellerInfoContainer{
          width: 100%;
          padding: 40px 16px;
-         border-top: 1px solid rgb(0 0 0 / 10%);
+         border-top: 1px solid var(--border);
          h2{
-            color: rgba(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 20px;
             font-weight: 500;
             line-height: 1.25;
@@ -379,19 +381,20 @@
                margin-bottom: 20px;
                .icon{
                   margin-right: 10px;
-                  img{
+                  svg{
+                     color: var(--detail-secondary-text);
                      width: 20px;
                   }
                }
                .text{
                   p:first-child{
-                     color: rgb(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-size: 16px;
                      font-weight: 500;
                      line-height: 1.35;
                   }
                   p:nth-child(2){
-                     color: rgb(0 0 0 / 55%);
+                     color: var(--detail-secondary-text);
                      font-size: 14px;
                      font-weight: 500;
                      line-height: 1.35;
@@ -439,20 +442,20 @@
                      padding: 0 5px;
                      list-style: none;
                      span{
-                        color: #000;
+                        color: var(--text);
                         display: block;
                         font-size: 24px;
                         font-weight: 400;
                         line-height: 28px;
                         text-align: center;
                         height: 28px;
-                        img{
+                        svg{
                            width: 28px;
                            padding-top: 3px;
                         }
                      }
                      p{
-                        color: rgba(0 0 0 / 70%);
+                        color: var(--detail-secondary-text);
                         font-size: 12px;
                         font-weight: 500;
                         line-height: 1;
@@ -485,7 +488,7 @@
                   line-height: 16px;
                   margin-top: 32px;
                   padding: 16px;
-                  border: 1px solid rgb(0 0 0 / 10%);
+                  border: 1px solid var(--border);
                   border-radius: 6px;
                   transition: .3s color ease;
                   cursor: pointer;
@@ -499,19 +502,20 @@
       .techSpecs{
          width: 100%;
          padding: 40px 16px;
-         border-top: 1px solid rgb(0 0 0 / 10%);
+         border-top: 1px solid var(--border);
          h2{
-            color: rgb(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 20px;
             font-weight: 500;
             line-height: 25px;
             margin-bottom: 24px;
          }
          .table{
-            border: 1px solid #ededed;
+            border: 1px solid var(--border);
             border-radius: 5px;
             overflow: hidden;
             table{
+               color: var(--text);
                width: 100%;
                border-spacing: 0;
                tbody{
@@ -530,18 +534,18 @@
                   }
                   tr:nth-child(odd){
                      th{
-                        background-color: #ebebeb;
+                        background-color: var(--table-color-1);
                      }
                      td{
-                        background-color: #f5f5f5;
+                        background-color: var(--table-color-2);
                      }
                   }
                   tr:nth-child(even){
                      th{
-                        background-color: #f5f5f5;
+                        background-color: var(--table-color-2);
                      }
                      td{
-                        background-color: #fff;
+                        background-color: var(--table-color-3);
                      }
                   }
                }
@@ -554,7 +558,7 @@
             line-height: 16px;
             margin-top: 32px;
             padding: 16px;
-            border: 1px solid rgba(0 0 0 / 10%);
+            border: 1px solid var(--border);
             border-radius: 6px;
             transition: 0.3s color ease;
             cursor: pointer;
@@ -564,17 +568,17 @@
          }
       }
       .description{
-         border-top: 1px solid rgb(0 0 0 / 10%);
+         border-top: 1px solid var(--border);
          padding: 40px 16px;
          h2{
-            color: rgb(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 20px;
             font-weight: 500;
             line-height: 25px;
             margin-bottom: 24px;
          }
          p{
-            color: #666;
+            color: var(--detail-secondary-text);
             font-size: 16px;
             font-weight: 500;
             line-height: 22px;
@@ -583,25 +587,25 @@
       }
       .listContent{
          width: 100%;
-         border-top: 1px solid rgb(0 0 0 / 10%);
+         border-top: 1px solid var(--border);
          .freeReturn, .warranty{
             padding: 40px 16px;
             h2{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 20px;
                font-weight: 500;
                line-height: 25px;
                margin-bottom: 24px;
             }
             h3{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 16px;
                font-weight: 500;
                line-height: 22px;
                margin-bottom: 8px;
             }
             p{
-               color: rgb(0 0 0 / 55%);
+               color: var(--detail-secondary-text);
                font-size: 16px;
                font-weight: 500;
                line-height: 22px;
@@ -614,7 +618,7 @@
                line-height: 16px;
                margin-top: 32px;
                padding: 16px;
-               border: 1px solid rgba(0 0 0 / 10%);
+               border: 1px solid var(--border);
                border-radius: 6px;
                transition: .3s color ease;
                cursor: pointer;
@@ -624,26 +628,26 @@
             }
          }
          .warranty{
-            border-top: 1px solid rgba(0 0 0 / 10%);
+            border-top: 1px solid var(--border);
             p{
                margin-bottom: 32px;
             }
          }
          .paymentMethods{
-            border-top: 1px solid rgba(0 0 0 / 10%);
+            border-top: 1px solid var(--border);
             padding: 40px 16px;
             .creditCards, .debitCards, .cash{
                margin-top: 28px;
             }
             h2{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 20px;
                font-weight: 500;
                line-height: 25px;
                margin-bottom: 24px;
             }
             p{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 16px;
                font-weight: 400;
                line-height: 12px;
@@ -663,7 +667,7 @@
                line-height: 16px;
                margin-top: 32px;
                padding: 16px;
-               border: 1px solid rgba(0 0 0 / 10%);
+               border: 1px solid var(--border);
                border-radius: 6px;
                transition: 0.3s color ease;
                cursor: pointer;
@@ -675,10 +679,10 @@
       }
       .questionsContainer{
          width: 100%;
-         border-top: 1px solid rgb(0 0 0 / 10%);
+         border-top: 1px solid var(--border);
          padding: 40px 16px;
          h2{
-            color: rgb(0 0 0 / 90%);
+            color: var(--detail-text);
             font-size: 20px;
             font-weight: 500;
             line-height: 25px;
@@ -686,6 +690,7 @@
          .buttons{
             margin-top: 24px;
             h3{
+               color: var(--detail-text);
                font-size: 18px;
                font-weight: 700;
                line-height: 24px;
@@ -708,6 +713,7 @@
          .yourQuestion{
             margin-top: 32px;
             h3{
+               color: var(--detail-text);
                font-size: 18px;
                font-weight: 700;
                line-height: 24px;
@@ -718,6 +724,8 @@
                flex-wrap: wrap;
                gap: 16px;
                textarea{
+                  color: var(--text);
+                  background-color: var(--background-other-items);
                   width: 100%;
                   padding: 12px;
                   font-size: 16px;
@@ -726,7 +734,7 @@
                   border-radius: 5px;
                   box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
                   &::placeholder{
-                     color: rgb(0 0 0 / 25%);
+                     color: var(--placeholder);
                   }
                   &:focus-visible{
                      outline: $blue auto;
@@ -772,6 +780,7 @@
          .lastQuestions{
             padding: 40px 0;
             h3{
+               color: var(--detail-text);
                font-size: 18px;
                font-weight: 700;
                line-height: 22px;
@@ -785,7 +794,7 @@
                      opacity: 1;
                   }
                   p{
-                     color: rgb(0 0 0 / 90%);
+                     color: var(--detail-text);
                      font-size: 16px;
                      font-weight: 500;
                      line-height: 24px;
@@ -816,17 +825,17 @@
                      left: 12px;
                      width: 12px;
                      height: 12px;
-                     border-left: 1px solid rgb(0 0 0 / 25%);
-                     border-bottom: 1px solid rgb(0 0 0 / 25%);
+                     border-left: 1px solid var(--placeholder);
+                     border-bottom: 1px solid var(--placeholder);
                   }
                   p{
-                     margin-left: 32px;
-                     color: rgb(0 0 0 / 55%);
+                     color: var(--detail-secondary-text);
                      font-size: 16px;
                      font-weight: 500;
                      line-height: 24px;
+                     margin-left: 32px;
                      span{
-                        color: rgb(0 0 0 / 55%);
+                        color: var(--detail-secondary-text);
                         font-size: 14px;
                         line-height: 24px;
                         margin-left: 8px;
@@ -853,7 +862,7 @@
                line-height: 16px;
                margin-top: 24px;
                padding: 16px;
-               border: 1px solid rgba(0 0 0 / 10%);
+               border: 1px solid var(--border);
                border-radius: 6px;
                transition: color .3s ease;
                &:hover{
@@ -865,7 +874,7 @@
          .opinions{
             padding: 0 4px;
             h2{
-               color: rgb(0 0 0 / 90%);
+               color: var(--detail-text);
                font-size: 20px;
                font-weight: 500;
                line-height: 25px;
@@ -916,14 +925,14 @@
                               display: flex;
                               gap: 9px;
                               svg{
-                                 fill: rgb(0 0 0 / 10%);
+                                 fill: var(--stars-grey);
                                  width: 18px;
                                  height: 18px;
                               }
                            }
                         }
                         p{
-                           color: rgba(0 0 0 / 55%);
+                           color: var(--detail-secondary-text);
                            font-size: 14px;
                            font-weight: 500;
                            line-height: 16px;
@@ -946,7 +955,7 @@
                               width: 100%;
                               height: 4px;
                               border-radius: 2px;
-                              background-color: rgb(0 0 0 / 10%);
+                              background-color: var(--stars-grey);
                               span{
                                  position: absolute;
                                  top: 0;
@@ -954,14 +963,14 @@
                                  width: 0;
                                  height: 4px;
                                  border-radius: 2px;
-                                 background-color: rgb(0 0 0 / 55%);
+                                 background-color: var(--detail-secondary-text);
                               }
                            }
                            .level{
                               display: flex;
                               align-items: center;
                               span{
-                                 color: rgb(0 0 0 / 55%);
+                                 color: var(--detail-secondary-text);
                                  width: 8px;
                                  font-size: 14px;
                                  font-weight: 300;
@@ -969,7 +978,7 @@
                                  text-align: center;
                               }
                               svg{
-                                 fill: rgb(0 0 0 / 25%);
+                                 fill: var(--stars-grey);
                                  width: 11px;
                                  height: 11px;
                                  margin-left: 5px;
@@ -1015,12 +1024,13 @@
                            width: 100%;
                            margin-top: 10px;
                            padding: 10px 0;
-                           background-color: #fff;
+                           background-color: var(--background-other-items);
                            border-radius: 6px;
                            box-shadow: 0 0 6px rgb(0 0 0 / 10%), 0 6px 16px rgb(0 0 0 / 10%);
                            z-index: 3;
                            ul{
                               li{
+                                 color: var(--text);
                                  position: relative;
                                  font-size: 14px;
                                  font-weight: 500;
@@ -1030,9 +1040,10 @@
                                  list-style: none;
                                  cursor: pointer;
                                  &:hover{
-                                    background-color: #f5f5f5;
+                                    background-color: var(--options-hover);
                                  }
                                  svg{
+                                    fill: var(--text);
                                     position: absolute;
                                     top: 10px;
                                     left: 30px;
@@ -1069,21 +1080,21 @@
                                  display: flex;
                                  gap: 3px;
                                  svg{
-                                    fill: rgb(0 0 0 / 10%);
+                                    fill: var(--stars-grey);
                                     width: 12px;
                                     height: 12px;
                                  }
                               }
                            }
                            .date{
-                              color: rgba(0 0 0 / 55%);
+                              color: var(--detail-secondary-text);
                               font-size: 12px;
                               font-weight: 300;
                               line-height: 20px;
                            }
                         }
                         .comment{
-                           color: rgba(0 0 0 / 90%);
+                           color: var(--detail-text);
                            font-size: 16px;
                            font-weight: 400;
                            line-height: 20px;
@@ -1100,9 +1111,9 @@
                                  display: flex;
                                  align-items: center;
                                  height: 32px;
-                                 color: rgb(0 0 0 / 55%);
-                                 background-color: #fff;
-                                 border: 1px solid rgb(0 0 0 / 20%);
+                                 color: var(--detail-secondary-text);
+                                 background-color: var(--background-item);
+                                 border: 1px solid var(--stars-grey);
                                  border-radius: 16px;
                                  transition-property: color background-color border;
                                  transition: .3s ease;

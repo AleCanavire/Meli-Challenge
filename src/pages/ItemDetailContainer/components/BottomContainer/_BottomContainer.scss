@@ -6,6 +6,7 @@
    line-height: 1.35;
    margin: 20px 0;
    p{
+      color: var(--detail-text);
       padding: 0 12px;
       span{
          font-weight: 700;
@@ -24,7 +25,7 @@
          width: 1px;
          height: 12px;
          display: block;
-         background-color: rgba(0 0 0 / 25%);
+         background-color: var(--placeholder);
       }
       &:hover{
          color: $dark-blue;
@@ -33,7 +34,7 @@
 }
 .productsCarousel{
    h2{
-      color: rgb(0 0 0 / 90%);
+      color: var(--detail-text);
       font-size: 24px;
       font-weight: 500;
       line-height: 30px;

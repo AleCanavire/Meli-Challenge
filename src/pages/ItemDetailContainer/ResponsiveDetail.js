@@ -7,6 +7,12 @@ import ItemCount from './components/ItemCount/ItemCount';
 import SellerItem from './components/SellerItem/SellerItem';
 import Opinion from './components/Opinion/Opinion';
 import CarouselItems from '../../components/ReactSlick/CarouselItems';
+import { ReactComponent as ProtectedIcon } from '../../assets/img/protected.svg';
+import { ReactComponent as MercadoPointsIcon } from '../../assets/img/mercadoPoints.svg';
+import { ReactComponent as GarantiaIcon } from '../../assets/img/garantia.svg';
+import { ReactComponent as UbicationIcon } from '../../assets/img/ubication.svg';
+import { ReactComponent as MessageIcon } from '../../assets/img/messagePositive.svg';
+import { ReactComponent as TimeIcon } from '../../assets/img/timePositive.svg';
 
 function ResponsiveDetail({ product, price, quota, solds }) {
 
@@ -110,15 +116,15 @@ function ResponsiveDetail({ product, price, quota, solds }) {
       <ItemCount onAddToCart={onAddToCart} stock={10}/>
       <ul className='benefits'>
         <li>
-          <img src='/img/protected.svg' alt="icon"></img>
+          <ProtectedIcon/>
           <p><span>Compra Protegida</span>, recibí el producto que esperabas o te devolvemos tu dinero.</p>
         </li>
         <li>
-          <img src='/img/mercadoPoints.svg' alt="icon"></img>
+          <MercadoPointsIcon/>
           <p><span>Mercado Puntos</span>. Sumás 14 puntos.</p>
         </li>
         <li>
-          <img src='/img/garantia.svg' alt="icon"></img>
+          <GarantiaIcon/>
           <p>1 año de garantía de fábrica.</p>
         </li>  
       </ul>
@@ -155,7 +161,7 @@ function ResponsiveDetail({ product, price, quota, solds }) {
         <div className="sellerInfo">
           <div className="ubicationAndMercadoLider">
             <div className="icon">
-              <img src='/img/ubication.svg' alt="icon"></img>
+              <UbicationIcon/>
             </div>
             <div className="text">
               <p>Ubicación</p>
@@ -185,11 +191,11 @@ function ResponsiveDetail({ product, price, quota, solds }) {
                 <p>Ventas en los últimos 60 días</p>
               </li>
               <li className='reputationItem'>
-                <span><img src='/img/messagePositive.svg' alt="" /></span>
+                <span> <MessageIcon/> </span>
                 <p>Brinda buena atención</p>
               </li>
               <li className='reputationItem'>
-                <span><img src='/img/timePositive.svg' alt="" /></span>
+                <span> <TimeIcon/> </span>
                 <p>Despacha sus productos a tiempo</p>
               </li>
             </ul>

@@ -19,7 +19,7 @@
    top: 50%;
    width: 64px;
    height: 64px;
-   background-color: var(--background-arrow);
+   background-color: var(--background-other-items);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -36,7 +36,7 @@
    right: 0;
    transform: translate(50%, -100%);
    &:hover{
-      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+      box-shadow: var(--shadow-items);
    }
    svg{
       transform: rotate(180deg);
@@ -46,6 +46,6 @@
    left: 0;
    transform: translate(-50%, -100%);
    &:hover{
-      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+      box-shadow: var(--shadow-items);
    }
 }

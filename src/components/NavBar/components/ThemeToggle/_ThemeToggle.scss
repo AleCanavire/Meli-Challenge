@@ -3,6 +3,7 @@
    width: 44px;
    margin-left: auto;
    margin-bottom: 12px;
+   cursor: pointer;
    .toggle {
       background: var(--background-icons);
       width: 100%;
@@ -11,7 +12,6 @@
       border-radius: 11px;
       position: relative;
       transition: .5s background ease;
-      cursor: pointer;
       &::before{
          content: "";
          position: absolute;
@@ -40,6 +40,7 @@
          position: absolute;
          top: 0;
          opacity: 0;
+         cursor: pointer;
       }
    }
    .toggle.enabled::before {

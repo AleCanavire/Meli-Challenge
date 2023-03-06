@@ -1,5 +1,5 @@
 .addedContainer{
-   background-color: #fff;
+   background-color: var(--background-item);
    width: 100%;
    .addedToCart{
       width: 1200px;
@@ -29,12 +29,18 @@
                z-index: 2;
                border-radius: 50%;
             }
-            img{
+            .image{
                background-color: #fff;
-               width: 66px;
-               height: 66px;
-               padding: 9px;
-               object-fit: contain;
+               width: 100%;
+               height: 100%;
+               border-radius: 50%;
+               overflow: hidden;
+               img{
+                  width: 100%;
+                  height: 100%;
+                  padding: 6px;
+                  object-fit: contain;
+               }   
             }
             svg{
                position: absolute;
@@ -52,16 +58,18 @@
                font-size: 18px;
             }
             p{
+               color: var(--text);
                font-size: 14px;
             }
          }
       }
       .detailCart{
-         display: flex;
-         border-left: 1px solid rgb(0 0 0 / 10%);
-         padding: 24px;
-         align-items: center;
+         color: var(--text);
          height: 92px;
+         padding: 24px;
+         display: flex;
+         align-items: center;
+         border-left: 1px solid var(--border);
          p{
             font-size: 14px;
             font-weight: 500;
@@ -143,7 +151,7 @@
             width: 100%;
             margin: 0;
             padding: 0 0 24px;
-            border-bottom: 1px solid rgb(0 0 0 / 10%);
+            border-bottom: 1px solid var(--border);
             box-sizing: border-box;
             .productTitle{
                margin-left: 16px;
