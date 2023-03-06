@@ -3,10 +3,12 @@
    overflow-x: hidden;
 }
 .nav{
+   position: relative;
    background-color: var(--background-nav);
    width: 100%;
    height: 100px;
-   box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+   box-shadow: 0 1px 0 0 var(--nav-border);
+   z-index: 10;
    .navContainer{
       max-width: 1200px;
       height: 100%;
@@ -138,16 +140,13 @@
                position: relative;
                width: 80px;
                cursor: pointer;
-               &:hover > .allCategories{
-                  visibility: visible;
-               }
                &::before{
                   content: "";
-                  width: 6px;
-                  height: 6px;
                   position: absolute;
                   right: 0;
-                  color: rgba(0,0,0,.3);
+                  width: 6px;
+                  height: 6px;
+                  color: var(--nav-categories);
                   border-style: solid;
                   border-width: 0 1.5px 1.5px 0;
                   margin: 9px 0 0 6px;
@@ -155,44 +154,42 @@
                   box-sizing: border-box;
                }
                .allCategories{
-                  background-color: #333;
                   position: absolute;
-                  top: 30px;
+                  top: 20px;
                   left: 50%;
-                  transform: translateX(-50%);
                   width: 257px;
-                  padding: 22px 0;
-                  border-radius: 4px;
+                  padding-top: 10px;
+                  transform: translateX(-50%);
                   z-index: 10;
-                  visibility: hidden;
                   cursor: default;
-                  transition-delay: 0.1s;
-                  transition-property: visibility;
-                  &:hover{
-                     visibility: visible;
-                  }
-                  &::before{
-                     content: "";
-                     position: absolute;
-                     top: 0;
-                     left: 155px;
-                     transform: rotate(180deg) translateY(100%);
-                     border-left: 8px solid transparent;
-                     border-right: 8px solid transparent;
-                     border-top: 8px solid #333;
-                  }
-                  a, span{
-                     color: #fff;
-                     display: block;
-                     font-size: 14px;
-                     font-weight: 700;
-                     line-height: 36px;
-                     text-decoration: none;
-                     padding: 0 36px;
-                     cursor: pointer;
-                     &:hover{
-                        background-color: $blue;
+                  .allCategoriesContent{
+                     position: relative;
+                     background-color: #333;
+                     padding: 22px 0;
+                     border-radius: 4px;
+                     &::before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 155px;
+                        transform: rotate(180deg) translateY(100%);
+                        border-left: 8px solid transparent;
+                        border-right: 8px solid transparent;
+                        border-top: 8px solid #333;
                      }
+                     a, span{
+                        color: #fff;
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                        line-height: 36px;
+                        text-decoration: none;
+                        padding: 0 36px;
+                        cursor: pointer;
+                        &:hover{
+                           background-color: $blue;
+                        }
+                     }   
                   }
                }
             }
@@ -205,7 +202,7 @@
                   transition: 300ms color ease;
                   cursor: pointer;
                   &:hover{
-                     color: rgba(51, 51, 51, .9);
+                     color: var(--nav-categories-hover);
                      transition: 500ms color ease;
                   }
                }
@@ -236,9 +233,6 @@
             padding-bottom: 10px;
             li{
                list-style: none;
-               &:nth-child(4){
-                  display: none;
-               }
                span{
                   color: var(--nav-text);
                   font-size: 14px;
@@ -381,12 +375,6 @@
                }
             }
          }
-         .categories{
-            display: none;
-         }
-         .disney{
-            display: none;
-         }
          .account{
             width: 90px;
             padding-left: 5px;
@@ -398,9 +386,6 @@
                justify-content: flex-end;
                gap: 0;
                padding: 0;
-               .accountOptions{
-                  display: none;
-               }
                .burgerButton{
                   display: flex !important;
                   align-items: center;
@@ -451,7 +436,7 @@
                            width: 100%;
                            font-size: 11px;
                            line-height: 11px;
-                           color: #333;
+                           color: var(--background-icons);
                            text-align: center;
                            text-decoration: none;
                         }
