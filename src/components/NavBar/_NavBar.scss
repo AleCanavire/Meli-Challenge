@@ -3,8 +3,8 @@
    overflow-x: hidden;
 }
 .nav{
-   position: relative;
    background-color: var(--background-nav);
+   position: relative;
    width: 100%;
    height: 100px;
    box-shadow: 0 1px 0 0 var(--nav-border);
@@ -13,31 +13,29 @@
       max-width: 1200px;
       height: 100%;
       margin: 0 auto;
-      padding-top: 6px;
+      padding: 8px 10px 12px;
       display: grid;
       align-items: center;
       justify-content: center;
-      grid-template-columns: minmax(134px, auto) 600px minmax(340px, auto);
+      grid-template-rows: 40px 28px;
+      grid-template-columns: 162px minmax(340px, 580px) minmax(350px, 390px);
+      grid-row-gap: 12px;
+      grid-column-gap: 24px;
       grid-template-areas:
       "logo search disney"
       "location categories account";
-      a{
-         display: contents;
+      > a{
+         grid-area: logo;
+         width: 134px;
          .meliLogo{
-            grid-area: logo;
-            width: 134px;
+            width: 100%;
             height: 34px;
             background-image: var(--meli-logo);
-            margin-left: 10px;
             cursor: pointer;
          }
       }
       .location{
          grid-area: location;
-         width: 134px;
-         height: 40px;
-         padding: 4px 8px;
-         margin: 0 60px 5px 0;
          position: relative;
          cursor: pointer;
          &:hover{
@@ -47,37 +45,38 @@
          > svg{
             color: var(--background-icons);
             position: absolute;
-            top: 3px;
-            left: 9px;
+            top: -4px;
+            left: 0;
             width: 18px;
             height: 22px;
          }
          .envio{
                display: flex;
-               flex-wrap: wrap;
-               align-items: center;
+               align-items: flex-start;
+               flex-direction: column;
                span{
                   color: var(--nav-secondary-text);
-                  padding-left: 25px;
                   font-size: 12px;
                   font-weight: 500;
-                  line-height: 17px;
+                  line-height: 1;
+                  padding-left: 24px;
                }
                p{
                   color: var(--nav-text);
-                  padding-left: 25px;
                   font-size: 14px;
                   font-weight: 500;
-                  line-height: 11px;
+                  line-height: 14px;
+                  padding: 0 0 2px 24px;
                }
          }
       }
       .search{
          grid-area: search;
-         width: 600px;
+         width: 100%;
+         height: 40px;
          border-radius: 2px;
+         box-shadow: 0 1px 2px 0 rgba(0 0 0 / 20%);
          overflow: hidden;
-         box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
          form{
             display: grid;
             grid-template-areas: "input button";
@@ -89,7 +88,7 @@
                background-color: var(--background-item);
                grid-area: input;
                width: 100%;
-               padding-left: 15px;
+               padding-left: 16px;
                border: none;
                &::placeholder{
                   color: var(--placeholder);
@@ -106,7 +105,7 @@
                grid-area: button;
                position: relative;
                width: 46px;
-               height: 39px;
+               height: 40px;
                border: none;
                cursor: pointer;
                &::after{
@@ -117,7 +116,6 @@
                   transform: translateY(-50%);
                   border-left: 1px solid var(--border);
                   height: 26px;
-                  
                }
                img{
                   filter: var(--brightness);
@@ -128,17 +126,17 @@
       }
       .categories{
          grid-area: categories;
-         width: 600px;
          height: 100%;
          display: flex;
          align-items: flex-end;
          ul{
+            height: 28px;
             display: flex;
-            gap: 18px;
-            padding-bottom: 10px;
+            align-items: flex-end;
+            gap: 16px;
             li:first-child{
                position: relative;
-               width: 80px;
+               padding-right: 14px;
                cursor: pointer;
                &::before{
                   content: "";
@@ -149,13 +147,13 @@
                   color: var(--nav-categories);
                   border-style: solid;
                   border-width: 0 1.5px 1.5px 0;
-                  margin: 9px 0 0 6px;
+                  margin: 6px 2px 0 0px;
                   transform: rotate(45deg);
                   box-sizing: border-box;
                }
                .allCategories{
                   position: absolute;
-                  top: 20px;
+                  top: 17px;
                   left: 50%;
                   width: 257px;
                   padding-top: 10px;
@@ -180,6 +178,7 @@
                      a, span{
                         color: #fff;
                         display: block;
+                        width: 100%;
                         font-size: 14px;
                         font-weight: 700;
                         line-height: 36px;
@@ -194,16 +193,19 @@
                }
             }
             li{
+               height: 18px;
                list-style: none;
                span{
                   color: var(--nav-categories);
+                  display: block;
                   font-size: 14px;
                   font-weight: 500;
-                  transition: 300ms color ease;
+                  line-height: 18px;
+                  transition: .3s color ease;
                   cursor: pointer;
                   &:hover{
                      color: var(--nav-categories-hover);
-                     transition: 500ms color ease;
+                     transition: .5s color ease;
                   }
                }
             }
@@ -215,42 +217,38 @@
          height: 39px;
          background-image: var(--disney-plus-image);
          background-size: 340px 39px;
-         margin-left: 55px;
-         margin-right: 10px;
+         margin-left: auto;
          cursor: pointer;
       }
       .account{
          grid-area: account;
          height: 100%;
          display: flex;
-         align-content: flex-end;
          justify-content: flex-end;
          ul{
             display: flex;
             align-items: flex-end;
-            justify-content: flex-end;
-            gap: 20px;
-            padding-bottom: 10px;
+            gap: 22px;
             li{
                list-style: none;
                span{
                   color: var(--nav-text);
+                  display: block;
                   font-size: 14px;
-                  line-height: 10px;
                   font-weight: 500;
+                  line-height: 18px;
                   cursor: pointer;
                   &:hover{
-                     color: #000;
+                     color: var(--nav-categories-hover);
                   }
                }
             }
             .cartWidget{
-               height: 20px;
-               width: 20px;
-               margin-right: 10px;
-               margin-bottom: 4px;
-               cursor: pointer;
                position: relative;
+               width: 21px;
+               height: 20px;
+               margin: 0 2px 2px 0;
+               cursor: pointer;
                svg{
                   color: var(--background-icons);
                }
@@ -258,7 +256,7 @@
                   position: absolute;
                   top: -2px;
                   right: 0;
-                  width: 16px;
+                  width: 17px;
                   height: 12px;
                   span{
                      display: block;
@@ -290,7 +288,35 @@
    z-index: 5;
 }
 
-@media (max-width:1200px){
+@media (max-width: 1200px){
+   .nav{
+      .navContainer{
+         .categories{
+            ul{
+               li:nth-child(5){
+                  display: none;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 1100px){
+   .nav{
+      .navContainer{
+         .categories{
+            ul{
+               li:nth-child(4){
+                  display: none;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (max-width:1024px){
    .nav{
       height: 87px;
       .navContainer{
@@ -298,16 +324,20 @@
          width: 100%;
          padding: 0;
          grid-template-columns: 64px 1fr 95px;
+         grid-template-rows: 49px auto;
          grid-template-areas:
          "logo search account"
          "location location location";
-         a{
+         gap: 0;
+         > a{
+            width: 44px;
+            margin: 0 10px 2px;
             .meliLogo{
                width: 44px;
                height: 32px;
                background-image: url(../../assets/img/meliLogo2.png);
-               background-size: 44px 32px;
-               margin: 0 10px 0;
+               background-size: 44px 31px;
+               background-repeat: no-repeat;
             }
          }
          .location{
@@ -325,11 +355,12 @@
             > svg{
                width: 12px;
                height: 14px;
-               top: 10px;
+               top: 9px;
                left: 10px;
                filter: drop-shadow(0px 0px 0.5px var(--background-icons));
             }
             .envio{
+               flex-direction: row;
                span, p{
                   font-size: 13px;
                   font-weight: 500;
@@ -345,9 +376,12 @@
          }
          .search{
             width: 100%;
-            height: 32px;
-            margin: 8px 0;
+            height: auto;
+            padding: 7px 0 8px;
+            box-shadow: none;
             form{
+               box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+               height: 34px;
                grid-template-columns: 35px 1fr;
                grid-template-areas: "button input";
                input{
@@ -362,7 +396,7 @@
                   }
                }
                button{
-                  height: 32px;
+                  height: 34px;
                   width: 35px;
                   img{
                      height: 13px;
@@ -377,7 +411,7 @@
          }
          .account{
             width: 90px;
-            padding-left: 5px;
+            margin-left: 5px;
             align-items: center;
             justify-content: flex-start;
             ul{
@@ -387,11 +421,11 @@
                gap: 0;
                padding: 0;
                .burgerButton{
-                  display: flex !important;
+                  display: flex;
                   align-items: center;
                   justify-content: center;
                   width: 45px;
-                  height: 48px;
+                  height: 49px;
                   span{
                      background-color: var(--background-icons);
                      position: relative;
@@ -420,26 +454,13 @@
                   align-items: center;
                   justify-content: center;
                   width: 45px;
-                  height: 48px;
+                  height: 49px;
                   .cartWidget{
                      height: 23px;
                      width: 23px;
                      margin: 0;
                      .itemsInCart{
-                        position: absolute;
-                        top: -2px;
-                        right: 1px;
-                        width: 16px;
-                        height: 12px;
-                        span{
-                           display: block;
-                           width: 100%;
-                           font-size: 11px;
-                           line-height: 11px;
-                           color: var(--background-icons);
-                           text-align: center;
-                           text-decoration: none;
-                        }
+                        width: 18px;
                      }
                   }
                }

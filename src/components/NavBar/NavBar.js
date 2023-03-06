@@ -12,7 +12,7 @@ function NavBar() {
     setShadow(state)
   }
 
-  const searchText = useResize(1200)
+  const searchText = useResize(1024)
   ? "Buscar productos, marcas y más..."
   : "Estoy buscando..."
 
@@ -29,7 +29,7 @@ function NavBar() {
               <span>Enviar a</span>
               <p>Capital Federal</p>
             </div>
-            { !useResize(1200) && <ThemeToggle/> }
+            { !useResize(1024) && <ThemeToggle/> }
           </div>
           <div className='search'>
             <form>
@@ -39,7 +39,7 @@ function NavBar() {
               </button>
             </form>
           </div>
-          { useResize(1200) &&
+          { useResize(1024) &&
             <div className='categories'>
               <ul>
                 <li onMouseOver={()=>shadowEffect(true)} onMouseOut={()=>shadowEffect(false)}>
@@ -83,10 +83,10 @@ function NavBar() {
               <ThemeToggle/>
             </div>
           }
-          { useResize(1200) && <div className='disney'></div> }
+          { useResize(1024) && <div className='disney'></div> }
           <div className='account'>
             <ul>
-              { useResize(1200)
+              { useResize(1024)
               ? <>
                 <li className='accountOptions'><span>Creá  tu cuenta</span></li>
                 <li className='accountOptions'><span>Ingresá</span></li>
