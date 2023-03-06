@@ -6,9 +6,9 @@
       width: 224px;
       height: 330px;
       margin-right: 12px;
-      border-left: 1px rgb(0 0 0 / 1%) solid;
-      border-right: 1px rgb(0 0 0 / 1%) solid;
-      border-bottom: 1px rgb(0 0 0 / 10%) solid;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       position: relative;
@@ -17,7 +17,7 @@
       box-shadow: 0 0 0 0 transparent;
       transition: .2s box-shadow, height ease-out;
       &:hover{
-         box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+         box-shadow: var(--shadow-items);
          height: auto;
       }
       a{

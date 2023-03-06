@@ -29,7 +29,7 @@
             overflow: hidden;
             cursor: pointer;
             &:hover{
-               box-shadow: 0 7px 16px 0 rgb(0 0 0 / 20%), 0 1px 3px 0 rgb(0 0 0 / 10%);
+               box-shadow: var(--shadow-items);
             }
             &:hover .seeShop{
                color: $blue;
