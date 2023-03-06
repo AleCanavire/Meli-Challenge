@@ -9,7 +9,7 @@
       width: 100%;
       height: auto;
       padding: 52px 64px;
-      background-color: #fff;
+      background-color: var(--background-item);
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
       border-radius: 4px;
       .sections{
@@ -17,7 +17,7 @@
             width: 100%;
             display: flex;
             justify-content: flex-start;
-            border-bottom: 1px solid rgb(0 0 0 / 10%);
+            border-bottom: 1px solid var(--border);
             position: relative;
             li{
                font-size: 17px;
@@ -30,6 +30,7 @@
                   border-bottom: 2px solid $blue;
                }
                &:nth-child(2){
+                  color: var(--text);
                   font-weight: 500;
                }
                span{
@@ -50,11 +51,14 @@
          display: flex;
          flex-wrap: wrap;
          padding: 44px 0 48px;
-         border-bottom: 1px solid rgb(0 0 0 /10%);
+         border-bottom: 1px solid var(--border);
          .imgProduct{
+            background-color: #fff;
             width: 48px;
             height: 48px;
+            padding: 2px;
             margin-right: 16px;
+            border-radius: 5px;
             img{
                width: 100%;
                height: 100%;
@@ -71,7 +75,7 @@
                a{
                   text-decoration: none;
                   h2{
-                     color: rgba(0 0 0 /80%);
+                     color: var(--detail-text);
                      font-size: 20px;
                      font-weight: 700;
                      line-height: 28px;
@@ -82,7 +86,7 @@
                   }
                }
                h3{
-                  color: rgba(0 0 0 / 45%);
+                  color: var(--detail-secondary-text);
                   font-size: 16px;
                   font-weight: 500;
                   line-height: 20px;
@@ -92,18 +96,19 @@
             .count{
                width: 15%;
                .countButtons{
+                  background-color: var(--background-other-items);
                   width: 120px;
                   padding: 10px;
                   display: flex;
                   align-items: center;
                   flex-wrap: wrap;
-                  border: 1px solid rgba(0 0 0 / 10%);
+                  border: 1px solid var(--border);
                   border-radius: 4px;
                   overflow: hidden;
                   float: right;
                   .addRemove{
                      color: $blue;
-                     background-color: #fff;
+                     background-color: var(--background-other-items);
                      font-size: 24px;
                      font-weight: 500;
                      line-height: 24px;
@@ -112,6 +117,7 @@
                      cursor: pointer;
                   }
                   .quantity{
+                     color: var(--text);
                      width: 75px;
                      text-align: center;
                      cursor: default;
@@ -123,6 +129,7 @@
                margin-left: auto;
                height: 26px;
                span{
+                  color: var(--text);
                   font-size: 26px;
                   font-weight: 500;
                   line-height: 30px;
@@ -151,7 +158,7 @@
       .totalCart{
          display: block;
          padding: 48px 0;
-         border-bottom: 1px solid rgba(0 0 0 / 10%);
+         border-bottom: 1px solid var(--border);
          .shipping{
             width: 100%;
             display: flex;
@@ -178,7 +185,7 @@
                }
             }
             .priceShipping{
-               color: #333;
+               color: var(--text);
                width: 194px;
                font-size: 24px;
                font-weight: 300;
@@ -191,12 +198,14 @@
             display: flex;
             justify-content: flex-end;
             .totalShipping{
+               color: var(--text);
                font-size: 26px;
                font-weight: 500;
                line-height: 26px;
             }
             .finalPrice{
                width: 194px;
+               color: var(--text);
                font-size: 26px;
                font-weight: 500;
                line-height: 28px;
@@ -209,13 +218,13 @@
          max-width: 450px;
          text-align: center;
          h3{
-            color: #666;
+            color: var(--title);
             font-size: 32px;
             line-height: 40px;
             font-weight: 300;
          }
          p{
-            color: #999;
+            color: var(--detail-secondary-text);
             font-size: 18px;
             line-height: 26px;
             font-weight: 300;
@@ -246,12 +255,12 @@
                   text-align: center;
                   padding: 10px 0;
                   &:first-child{
-                     color: #1a1a1a;
+                     color: var(--background-icons);
                      font-weight: 500;
-                     border-bottom: 2px solid #1a1a1a;
+                     border-bottom: 2px solid var(--background-icons);
                   }
                   &:nth-child(2){
-                     color: rgb(0 0 0 / 55%);
+                     color: var(--detail-secondary-text);
                   }
                }
                .clearCart{
@@ -260,9 +269,10 @@
             }
          }
          .itemInCart{
-            background-color: #fff;
+            background-color: var(--background-item);
             padding: 16px 0;
             .imgProduct{
+               border-radius: 5px;
                margin: 0 16px;
             }
             .itemInfo{
@@ -311,7 +321,7 @@
             }
             .buyOptions{
                padding: 16px 0 0 16px;
-               border-top: 1px solid rgb(0 0 0 / 10%);
+               border-top: 1px solid var(--border);
                ul{
                   gap: 16px;
                   li{
@@ -327,7 +337,7 @@
          }
 
          .totalCart{
-            background-color: #fff;
+            background-color: var(--background-item);
             padding: 48px 16px;
             margin-top: 50%;
             .shipping{
@@ -353,13 +363,11 @@
          }
          .emptyCart{
             h3{
-               color: #000;
                font-size: 18px;
                line-height: 1;
                margin: 12px 0;
             }
             p{
-               color: rgb(0 0 0 / 55%);
                font-size: 14px;
                line-height: 1;
                margin: 12px 0;

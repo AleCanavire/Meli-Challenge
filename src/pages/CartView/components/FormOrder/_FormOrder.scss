@@ -8,17 +8,19 @@
       display: flex;
       flex-direction: column;
       label{
-         color: rgba(0,0,0,.9);
+         color: var(--detail-text);
          font-size: 14px;
          font-weight: 500;
          padding-left: 3px;
          margin-bottom: 3px;
       }
       input{
+         color: var(--text);
+         background-color: var(--background-other-items);
          width: 250px;
          height: 35px;
          padding-left: 10px;
-         box-shadow: 0 0 0 1px rgb(0 0 0 / 25%);
+         box-shadow: 0 0 0 1px var(--placeholder);
          border: none;
          border-radius: 4px;
          outline: none;
@@ -55,7 +57,7 @@
 
 @media (max-width:1200px){
    .formOrder{
-      background-color: #fff;
+      background-color: var(--background-item);
       padding: 48px 16px;
       margin: 0;
    }
