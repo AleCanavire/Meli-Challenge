@@ -14,7 +14,11 @@ function NavBar() {
 
   const searchText = useResize(1024)
   ? "Buscar productos, marcas y más..."
-  : "Estoy buscando..."
+  : "Estoy buscando...";
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <>
@@ -32,7 +36,7 @@ function NavBar() {
             { !useResize(1024) && <ThemeToggle/> }
           </div>
           <div className='search'>
-            <form>
+            <form onSubmit={onSubmit}>
               <input placeholder={searchText}></input>
               <button>
                 <img src='/img/search.svg' alt='search icon'></img>

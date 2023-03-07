@@ -16,8 +16,8 @@ function ItemList() {
       { useResize(1024)
         ? <>
             <div className="sectionTitle">
-              <h2>Productos</h2>
-              <a>Ver todos</a>
+              <h2>Ofertas</h2>
+              <a>Ver todas</a>
             </div>
             <div className="itemsContainer">
             { products

@@ -6,6 +6,7 @@ $dark-blue: #2968c8;
 :root{
    --background: #ededed;
    --background-item: #fff;
+   --background-other-items: #fff;
    --title: #666;
    --secondary-text: #333;
    --text: #000;
@@ -22,8 +23,6 @@ $dark-blue: #2968c8;
    --disney-plus-image: url(../../public/img/disneyStar.webp);
    // Advertising
    --advertising-text: #4b4b4b;
-   // Arrows
-   --background-other-items: #fff;
    // Toggle
    --background-icons: #343434;
    --icon-toggle: #fff159;
@@ -45,6 +44,7 @@ $dark-blue: #2968c8;
 .dark-mode{
    --background: #202023;
    --background-item: #343434;
+   --background-other-items: #3c3c3c;
    --title: #fff;
    --secondary-text: #fff;
    --text: #fff;
@@ -59,7 +59,6 @@ $dark-blue: #2968c8;
    --brightness: brightness(5);
    --disney-plus-image: url(../../public/img/disneyStar-dark.webp);
    --advertising-text: #fff;
-   --background-other-items: #3c3c3c;
    --background-icons: #fff159;
    --icon-toggle: #343434;
    --toggle: #343434;

@@ -35,13 +35,10 @@
          }
       }
       .location{
+         width: max-content;
          grid-area: location;
          position: relative;
          cursor: pointer;
-         &:hover{
-            box-shadow: inset 0px 0px 1px 1px #eadd61;
-            border-radius: 5px;
-         }
          > svg{
             color: var(--background-icons);
             position: absolute;
@@ -50,24 +47,41 @@
             width: 18px;
             height: 22px;
          }
+         &:hover .envio::before{
+            opacity: 1;
+         }
          .envio{
-               display: flex;
-               align-items: flex-start;
-               flex-direction: column;
-               span{
-                  color: var(--nav-secondary-text);
-                  font-size: 12px;
-                  font-weight: 500;
-                  line-height: 1;
-                  padding-left: 24px;
-               }
-               p{
-                  color: var(--nav-text);
-                  font-size: 14px;
-                  font-weight: 500;
-                  line-height: 14px;
-                  padding: 0 0 2px 24px;
-               }
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            position: relative;
+            span{
+               color: var(--nav-secondary-text);
+               font-size: 12px;
+               font-weight: 500;
+               line-height: 1;
+               padding-left: 24px;
+            }
+            p{
+               color: var(--nav-text);
+               font-size: 14px;
+               font-weight: 500;
+               line-height: 14px;
+               padding: 0 0 2px 24px;
+            }
+            &::before{
+               content: "";
+               width: 100%;
+               height: 100%;
+               position: absolute;
+               top: -6px;
+               left: -8px;
+               padding: 6px 8px 4px 8px;
+               border-radius: 6px;
+               border: 1px solid #eadd61;
+               box-sizing: content-box;
+               opacity: 0;
+            }
          }
       }
       .search{
