@@ -26,8 +26,8 @@ export const payments = [
 function PaymentData({icon, title, subtitle}) {
   return (
     <div className='paymentData'>
-      <img src={icon} alt={title}></img>
-      <div className='titles'>
+      <div className='paymentDataContent'>
+        <img src={icon} alt={title}></img>
         <div className='title'>{title}</div>
         <span>{subtitle}</span>
       </div>

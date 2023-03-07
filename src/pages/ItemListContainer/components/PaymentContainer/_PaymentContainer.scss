@@ -5,7 +5,7 @@
    padding: 40px 8px;
    border-radius: 4px;
    display: flex;
-   flex-wrap: wrap;
+   flex-wrap: nowrap;
    .paymentOptions{
       height: 90px;
       display: flex;
@@ -15,34 +15,35 @@
       background-color: var(--background-item);
       box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
       .paymentData{
-         padding: 20px;
-         display: flex;
          flex: 1 0 auto;
          white-space: nowrap;
+         padding: 20px;
          img{
             background-color: #fff;
             width: 48px;
             height: 48px;
             margin-right: 16px;
             border-radius: 50%;
+            float: left;
             overflow: hidden;
             cursor: pointer;
          }
-         .titles{
-            .title{
-               color: var(--text);
-               font-size: 18px;
-            }
-            span{
-               font-size: 14px;
-               color: $blue;
-               cursor: pointer;
-               display: block;
-               height: 16px;
-               white-space: nowrap;
-               &:hover{
-                  color: #1259c3;
-               }
+         .title{
+            display: inline-block;
+            color: var(--text);
+            font-size: 18px;
+            margin-top: 1px;
+         }
+         span{
+            color: $blue;
+            display: block;
+            height: 16px;
+            margin-top: -1px;
+            font-size: 14px;
+            white-space: nowrap;
+            cursor: pointer;
+            &:hover{
+               color: #1259c3;
             }
          }
       }
@@ -69,46 +70,20 @@
    }
 }
 
-@media (max-width: 1056px){
+@media (max-width: 1024px){
    .paymentContainer{
       padding: 0;
       .paymentOptions{
          .paymentData{
-            justify-content: center;
-            &:nth-child(4){
-               display: none;
+            display: flex;
+            padding: 0;
+            .paymentDataContent{
+               margin: auto;
+               .title{
+                  font-size: 16px;
+               } 
             }
          }
-      }
-   }
-}
-
-@media (max-width: 890px){
-   .paymentContainer{
-      .paymentOptions{
-         .paymentData{
-            &:nth-child(3){
-               display: none;
-            }
-         }
-      }
-   }
-}
-@media (max-width: 630px){
-   .paymentContainer{
-      .paymentOptions{
-         .paymentData{
-            &:nth-child(2){
-               display: none;
-            }
-         }
-      }
-   }
-}
-@media (max-width: 380px){
-   .paymentContainer{
-      .moreOptions{
-         display: none;
       }
    }
 }
