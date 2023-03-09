@@ -5,10 +5,10 @@ function Store({ name, background, logo, products }) {
   return (
     <div className="store">
       <div className="storeBackground">
-        <img src={background}/>
+        <img src={background} alt={`Fondo de ${name}`}/>
       </div>
       <div className="storeLogo">
-        <img src={logo}/>
+        <img src={logo} alt={name}/>
       </div>
       <div className="storeTitle">
         <div className="title">{name}</div>
@@ -19,7 +19,7 @@ function Store({ name, background, logo, products }) {
           { products &&
             products.map((product, index)=>{
             return(
-              <img key={index} src={product[index]}/>
+              <img key={index} src={product[index]} alt={`Producto ${index}`}/>
             )})
           }
         </div>

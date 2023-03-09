@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import { ReactComponent as SunIcon } from '../../../../assets/img/sun.svg';
 import { ReactComponent as MoonIcon } from '../../../../assets/img/moon.svg';
 
 function ThemeToggle() {
 
-  const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const useDark = useRef(window.matchMedia("(prefers-color-scheme: dark)"));
 
   function toggleDarkMode(state) {
     document.documentElement.classList.toggle("dark-mode", state);
   }
-  toggleDarkMode(useDark.matches);
+  toggleDarkMode(useDark.current.matches);
 
-  useDark.addEventListener("change", (evt) => {
+  useDark.current.addEventListener("change", (evt) => {
     toggleDarkMode(evt.matches);
     setIsEnabled(evt.matches);
   });
 
   const [isEnabled, setIsEnabled] = useState(false);
+  
   function toggleState() {
     setIsEnabled(!isEnabled);
   };
