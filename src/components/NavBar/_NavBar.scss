@@ -375,6 +375,9 @@
             }
             .envio{
                flex-direction: row;
+               &::before{
+                  display: none;
+               }
                span, p{
                   font-size: 13px;
                   font-weight: 500;
